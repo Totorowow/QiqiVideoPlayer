@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 
-public class DemoActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextView mTv1;
     private TextView mTv12;

@@ -14,13 +14,10 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.woodpecker.qiqivideoplayer.R;
-
 import com.yc.kernel.utils.VideoLogUtils;
 import com.yc.music.model.AudioBean;
 import com.yc.music.service.PlayService;
 import com.yc.music.tool.BaseAppHelper;
-import com.woodpecker.qiqivideoplayer.activity.DemoActivity;
 import com.woodpecker.qiqivideoplayer.m3u8.M3u8Activity;
 import com.woodpecker.qiqivideoplayer.music.MusicPlayerActivity;
 import com.woodpecker.qiqivideoplayer.newPlayer.activity.TypeActivity;
@@ -83,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.tv_1:
-                startActivity(DemoActivity.class);
+                startActivity(com.woodpecker.qiqivideoplayer.activity.MainActivity.class);
                 break;
             case R.id.tv_2:
                 startActivity(TypeActivity.class);
