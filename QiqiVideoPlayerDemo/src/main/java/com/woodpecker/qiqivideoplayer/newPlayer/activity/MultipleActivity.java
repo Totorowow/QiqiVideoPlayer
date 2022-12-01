@@ -19,8 +19,8 @@ import java.util.List;
 
 public class MultipleActivity extends AppCompatActivity {
 
-    private static final String VOD_URL_1 = ConstantVideo.VideoPlayerList[3];
-    private static final String VOD_URL_2 = ConstantVideo.VideoPlayerList[0];
+    private static String videoPath;
+    private static String chestnutPath;
     private VideoPlayer player1;
     private VideoPlayer player2;
     private List<VideoPlayer> mVideoViews = new ArrayList<>();
@@ -41,7 +41,8 @@ public class MultipleActivity extends AppCompatActivity {
 
     private void initVideoPlayer() {
         //必须设置
-        player1.setUrl(VOD_URL_1);
+        videoPath="android.resource://" + getPackageName() + "/" + R.raw.flower;
+        player1.setUrl(videoPath);
         VideoPlayerBuilder.Builder builder = VideoPlayerBuilder.newBuilder();
         builder.setEnableAudioFocus(false);
         VideoPlayerBuilder videoPlayerBuilder = new VideoPlayerBuilder(builder);
@@ -50,8 +51,8 @@ public class MultipleActivity extends AppCompatActivity {
         player1.setController(controller1);
         mVideoViews.add(player1);
 
-        //必须设置
-        player2.setUrl(VOD_URL_2);
+        chestnutPath="android.resource://" + getPackageName() + "/" + R.raw.gold_flower;
+        player2.setUrl(chestnutPath);
         VideoPlayerBuilder.Builder builder2 = VideoPlayerBuilder.newBuilder();
         builder.setEnableAudioFocus(false);
         VideoPlayerBuilder videoPlayerBuilder2 = new VideoPlayerBuilder(builder2);

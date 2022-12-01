@@ -81,7 +81,7 @@ public class PipActivity extends AppCompatActivity{
                     .load(R.drawable.image_default)
                     .placeholder(android.R.color.darker_gray)
                     .into(thumb);
-            videoView.setUrl(ConstantVideo.VideoPlayerList[0]);
+            videoView.setUrl("android.resource://" + getPackageName() + "/" + R.raw.gold_flower);
         }
         mPlayerContainer.addView(videoView);
     }
