@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/blackText">
+
+    <com.yc.video.player.VideoPlayer
+        android:id="@+id/video_player"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+       />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:scrollbarStyle="insideInset"
+
+        >
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+
+        <Button
+            android:id="@+id/btn_scale_normal"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:background="@color/colorTransparent"
+            android:textColor="@color/colorWhite"
+            android:text="正常的" />
+
+        <Button
+            android:id="@+id/btn_scale_169"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:background="@color/colorTransparent"
+            android:textColor="@color/colorWhite"
+            android:text="16:9" />
+
+        <Button
+            android:id="@+id/btn_scale_43"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:background="@color/colorTransparent"
+            android:textColor="@color/colorWhite"
+            android:text="4:3" />
+
+        <Button
+            android:id="@+id/btn_scale_full"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:background="@color/colorTransparent"
+            android:textColor="@color/colorWhite"
+            android:text="充满整个控件" />
+
+        <Button
+            android:id="@+id/btn_scale_original"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:background="@color/colorTransparent"
+            android:textColor="@color/colorWhite"
+            android:text="原始类型" />
+
+        <Button
+            android:id="@+id/btn_scale_crop"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:background="@color/colorTransparent"
+            android:textColor="@color/colorWhite"
+            android:text="剧中裁剪类型" />
+
+        <Button
+            android:id="@+id/btn_crop"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:background="@color/colorTransparent"
+            android:textColor="@color/colorWhite"
+            android:text="视频截图" />
+
+        <Button
+            android:id="@+id/btn_gif"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:background="@color/colorTransparent"
+            android:textColor="@color/colorWhite"
+            android:text="视频截图gif" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </HorizontalScrollView>
+
+
+
+</RelativeLayout>
