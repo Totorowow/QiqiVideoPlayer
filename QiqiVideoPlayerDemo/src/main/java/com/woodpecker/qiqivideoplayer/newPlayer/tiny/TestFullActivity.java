@@ -78,7 +78,7 @@ public class TestFullActivity extends BaseActivity implements View.OnClickListen
         //设置控制器
         mVideoPlayer.setController(controller);
         //mVideoPlayer.setUrl(ConstantVideo.VideoPlayerList[0]);
-        mVideoPlayer.setUrl("android.resource://" + getPackageName() + "/" + R.raw.xiaoyu);
+        mVideoPlayer.setUrl("android.resource://" + getPackageName() + "/" + R.raw.flower);
         mVideoPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_ORIGINAL);
         mVideoPlayer.start();
     }
