@@ -53,26 +53,6 @@
 
 
 
-#### 3.4 播放器达到的目的
-- 需要达到的目的和效果
-    - 基础封装视频播放器player，可以在ExoPlayer、MediaPlayer，声网RTC视频播放器内核，原生MediaPlayer可以自由切换
-    - 对于视图状态切换和后期维护拓展，避免功能和业务出现耦合。比如需要支持播放器UI高度定制，而不是该lib库中UI代码
-    - 针对视频播放，视频投屏，音频播放，播放回放，以及视频直播的功能
-- 播放器内核
-    - 可以切换ExoPlayer、MediaPlayer，IjkPlayer，声网视频播放器，这里使用工厂模式Factory + AbstractVideoPlayer + 各个实现AbstractVideoPlayer抽象类的播放器类
-    - 定义抽象的播放器，主要包含视频初始化，设置，状态设置，以及播放监听。由于每个内核播放器api可能不一样，所以这里需要实现AbstractVideoPlayer抽象类的播放器类，方便后期统一调用
-    - 为了方便创建不同内核player，所以需要创建一个PlayerFactory，定义一个createPlayer创建播放器的抽象方法，然后各个内核都实现它，各自创建自己的播放器
-- VideoPlayer播放器
-    - 可以自由切换视频内核，Player+Controller。player负责播放的逻辑，Controller负责视图相关的逻辑，两者之间用接口进行通信
-    - 针对Controller，需要定义一个接口，主要负责视图UI处理逻辑，支持添加各种自定义视图View【统一实现自定义接口Control】，每个view尽量保证功能单一性，最后通过addView形式添加进来
-    - 针对Player，需要定义一个接口，主要负责视频播放处理逻辑，比如视频播放，暂停，设置播放进度，设置视频链接，切换播放模式等操作。需要注意把Controller设置到Player里面，两者之间通过接口交互
-- UI控制器视图
-    - 定义一个BaseVideoController类，这个主要是集成各种事件的处理逻辑，比如播放器状态改变，控制视图隐藏和显示，播放进度改变，锁定状态改变，设备方向监听等等操作
-    - 定义一个view的接口InterControlView，在这里类里定义绑定视图，视图隐藏和显示，播放状态，播放模式，播放进度，锁屏等操作。这个每个实现类则都可以拿到这些属性呢
-    - 在BaseVideoController中使用LinkedHashMap保存每个自定义view视图，添加则put进来后然后通过addView将视图添加到该控制器中，这样非常方便添加自定义视图
-        - 播放器切换状态需要改变Controller视图，比如视频异常则需要显示异常视图view，则它们之间的交互是通过ControlWrapper(同时实现Controller接口和Player接口)实现
-
-
 ### 04.视频播放器如何使用
 #### 4.1 关于gradle引用说明
 - 如下所示
@@ -141,38 +121,6 @@
     - 采用二级缓存，内存缓存和磁盘缓存。关于磁盘缓存，刚开始想着使用sql或者greenDao或者realm数据库，考虑到做成封装库，故要求体积小，尽量不依赖三方库还要效率高，因此磁盘缓存采用DiskLruCache。具体使用看api文档……
 
 
-
-### 05.播放器详细Api文档
-- 01.最简单的播放
-- 02.如何切换视频内核
-- 03.切换视频模式
-- 04.切换视频清晰度
-- 05.视频播放监听
-- 06.列表中播放处理
-- 07.悬浮窗口播放
-- 08.其他重要功能Api
-- 09.播放多个视频
-- 10.VideoPlayer相关Api
-- 11.Controller相关Api
-- 12.仿快手播放视频
-- 具体看这篇文档：[视频播放器Api说明](https://github.com/yangchong211/YCVideoPlayer/blob/master/read/03.%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%E5%99%A8Api%E8%AF%B4%E6%98%8E.md)
-
-
-
-### 06.播放器封装思路
-#### 6.1视频层级示例图
-![image](https://img-blog.csdnimg.cn/20201012215233584.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3NzAwMjc1,size_16,color_FFFFFF,t_70#pic_center)
-
-
-
-
-### 08.添加自定义视图
-- 如何兼容不同内核播放器
-    - 具体看这篇文章：[06.播放器UI抽取封装](https://juejin.im/post/6884028627697500167#heading-9)
-
-
-
-
 ### 10.播放器问题记录说明
 - 关于如何调整视频的播放填充类型。在该库中提供了6中不同类型供你选择，即正常默认类型；16：9类型，4：3类型；充满整个控件视图；剧中裁剪类型等类型，就是模仿了图片设置缩放的方式。其实这个就是设置SurfaceView的宽高……
     - 这里播放正常视频建议选择16：9类型的，缩放后会有留黑；针对类似快手抖音视频，一个页面一个视频建议选择充满整个控件视图，会裁剪但是会铺满视频。
@@ -211,7 +159,6 @@
 
 #### 17.2 关于LICENSE
 ```
-Copyright 2017 yangchong211（github.com/yangchong211）
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
