@@ -9,9 +9,9 @@ public class ConstantVideo {
 
 
     public static String[] VideoPlayerList = {
-            "https://v.douyin.com/r3cLVF5/",
-            "http://jzvd.nathen.cn/c494b340ff704015bb6682ffde3cd302/64929c369124497593205a4190d7d128-5287d2089db37e62345123a1be272f8b.mp4",
-            "http://jzvd.nathen.cn/63f3f73712544394be981d9e4f56b612/69c5767bb9e54156b5b60a1b6edeb3b5-5287d2089db37e62345123a1be272f8b.mp4",
+            "android.resource://" + BaseApplication.getInstance().getPackageName() + "/" + R.raw.flower,
+            "android.resource://" + BaseApplication.getInstance().getPackageName() + "/" + R.raw.gold_flower,
+            "android.resource://" + BaseApplication.getInstance().getPackageName() + "/" + R.raw.tulip,
             "http://jzvd.nathen.cn/b201be3093814908bf987320361c5a73/2f6d913ea25941ffa78cc53a59025383-5287d2089db37e62345123a1be272f8b.mp4",
             "http://jzvd.nathen.cn/d2438fd1c37c4618a704513ad38d68c5/68626a9d53ca421c896ac8010f172b68-5287d2089db37e62345123a1be272f8b.mp4",
             "http://jzvd.nathen.cn/25a8d119cfa94b49a7a4117257d8ebd7/f733e65a22394abeab963908f3c336db-5287d2089db37e62345123a1be272f8b.mp4",
@@ -38,15 +38,15 @@ public class ConstantVideo {
         List<VideoInfoBean> videoList = new ArrayList<>();
         videoList.add(new VideoInfoBean("大家好，我是潇湘剑雨",
                 "https://img-blog.csdnimg.cn/20201012215233584.png",
-                "http://vfx.mtime.cn/Video/2019/02/04/mp4/190204084208765161.mp4"));
+                "android.resource://" + BaseApplication.getInstance().getPackageName() + "/" + R.raw.flower));
 
         videoList.add(new VideoInfoBean("如果项目可以，可以给个star",
                 "https://img-blog.csdnimg.cn/20201013092150588.png",
-                "http://vfx.mtime.cn/Video/2019/03/21/mp4/190321153853126488.mp4"));
+                "android.resource://" + BaseApplication.getInstance().getPackageName() + "/" + R.raw.gold_flower));
 
         videoList.add(new VideoInfoBean("把本地项目代码复制到拷贝的仓库",
                 "https://img-blog.csdnimg.cn/2020101309293329.png",
-                "http://vfx.mtime.cn/Video/2019/03/19/mp4/190319222227698228.mp4"));
+                "android.resource://" + BaseApplication.getInstance().getPackageName() + "/" + R.raw.tulip));
 
         videoList.add(new VideoInfoBean("有bug，可以直接提出来，欢迎一起探讨",
                 "https://img-blog.csdnimg.cn/20201013094115174.png",

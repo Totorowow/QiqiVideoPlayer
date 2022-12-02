@@ -19,7 +19,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="n">
-        <activity android:name="com.woodpecker.qiqivideoplayer.newPlayer.activity.TypeActivity"
+        <activity android:name="com.woodpecker.qiqivideoplayer.newPlayer.activity.MainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="fullSensor">
             <intent-filter>
@@ -28,7 +28,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--<activity android:name="com.yc.ycvideoplayer.MainActivity"
+        <!--<activity android:name="com.yc.ycvideoplayer.CoreDependencyActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -37,7 +37,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.yc.ycvideoplayer.newPlayer.activity.TypeActivity"/>-->
+        <activity android:name="com.yc.ycvideoplayer.newPlayer.activity.MainActivity"/>-->
         <activity android:name="com.woodpecker.qiqivideoplayer.oldPlayer.TestTinyActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="fullSensor"/>
@@ -71,7 +71,7 @@
         <activity android:name="com.woodpecker.qiqivideoplayer.newPlayer.surface.TestSurfaceActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"/>
-<!--        <activity android:name="com.yc.ycvideoplayer.newPlayer.activity.TypeActivity"-->
+<!--        <activity android:name="com.yc.ycvideoplayer.newPlayer.activity.MainActivity"-->
 <!--            android:configChanges="orientation|keyboardHidden|screenSize"-->
 <!--            android:screenOrientation="portrait"/>-->
         <activity android:name="com.woodpecker.qiqivideoplayer.newPlayer.activity.NormalActivity"
@@ -113,7 +113,7 @@
         <activity android:name="com.woodpecker.qiqivideoplayer.newPlayer.pip.PipListActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"/>
-        <activity android:name="com.woodpecker.qiqivideoplayer.activity.MainActivity"/>
+        <activity android:name="com.woodpecker.qiqivideoplayer.activity.CoreDependencyActivity"/>
         <activity android:name="com.woodpecker.qiqivideoplayer.activity.IjkActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"/>
