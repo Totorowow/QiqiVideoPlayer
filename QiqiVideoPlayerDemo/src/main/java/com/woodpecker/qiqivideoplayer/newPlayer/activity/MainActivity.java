@@ -42,12 +42,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private Toolbar mToolbar;
     private TextView mTvTitle;
-    private TextView mTv11;
-    private TextView mTv12;
-    private TextView mTv13;
-    private TextView mTv21;
-    private TextView mTv22;
-    private TextView mTv23;
     private TextView mTv31;
     private TextView mTv32;
     private TextView mTv33;
