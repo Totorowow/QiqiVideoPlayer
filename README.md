@@ -53,29 +53,7 @@
 
 
 
-### 04.视频播放器如何使用
-#### 4.1 关于gradle引用说明
-- 如下所示
-    ```
-    //视频UI层，必须要有
-    implementation 'cn.yc:VideoPlayer:3.1.0'
-    //视频缓存，如果不需要则可以不依赖
-    implementation 'cn.yc:VideoCache:3.0.5'
-    //视频内核层，必须有
-    implementation 'cn.yc:VideoKernel:3.0.6'
-    //视频播放器播放位置记录，选择性添加
-    implementation 'cn.yc:VideoSqlLite:1.0.2'
-    ```
 
-#### 4.2 在xml中添加布局
-- 注意，在实际开发中，由于Android手机碎片化比较严重，分辨率太多了，建议灵活设置布局的宽高比为4：3或者16：9或者你认为合适的，可以用代码设置。
-- 如果宽高比变形，则会有黑边
-    ```
-    <org.yczbj.ycvideoplayerlib.player.VideoPlayer
-        android:id="@+id/video_player"
-        android:layout_width="match_parent"
-        android:layout_height="240dp"/>
-    ```
 
 #### 4.3 最简单的视频播放器参数设定
 - 如下所示
@@ -131,19 +109,9 @@
 
 
 
-### 11.性能优化和库大小
-
-
-
-### 13.查看视频播放器日志
-- 统一管理视频播放器封装库日志，方便后期排查问题
-    - 比如，视频内核，日志过滤则是：aaa
-    - 比如，视频player，日志过滤则是：bbb
-    - 比如，缓存模块，日志过滤则是：VideoCache
-
-
-
 #### 17.2 感谢参考案例和博客
+- yc播放器
+-   - https://github.com/yangchong211/YCVideoPlayer
 - exo播放器
     - https://github.com/google/ExoPlayer
 - ijk播放器
