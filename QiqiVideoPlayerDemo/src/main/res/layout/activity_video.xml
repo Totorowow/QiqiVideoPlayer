@@ -7,7 +7,7 @@
     android:fitsSystemWindows="true"
     android:background="@color/blackText">
 
-    <com.yc.video.player.VideoPlayer
+    <com.woodpecker.video.player.VideoPlayer
         android:id="@+id/video_player"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

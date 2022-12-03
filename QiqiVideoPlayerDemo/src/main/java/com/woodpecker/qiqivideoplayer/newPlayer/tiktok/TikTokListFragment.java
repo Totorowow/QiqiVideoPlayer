@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.woodpecker.qiqivideoplayer.ConstantVideo;
 
 
-import com.yc.video.config.VideoInfoBean;
+import com.woodpecker.video.config.VideoInfoBean;
 
 import com.woodpecker.qiqivideoplayer.R;
 

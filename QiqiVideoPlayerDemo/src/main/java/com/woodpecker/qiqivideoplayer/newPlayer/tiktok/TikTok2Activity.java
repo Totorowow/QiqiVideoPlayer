@@ -9,20 +9,20 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
-import com.yc.kernel.utils.VideoLogUtils;
+import com.woodpecker.kernel.utils.VideoLogUtils;
 
 import com.woodpecker.qiqivideoplayer.ConstantVideo;
 
 
 import com.yc.pagerlib.pager.VerticalViewPager;
-import com.yc.videocache.cache.PreloadManager;
-import com.yc.videocache.cache.ProxyVideoCacheManager;
+import com.woodpecker.videocache.cache.PreloadManager;
+import com.woodpecker.videocache.cache.ProxyVideoCacheManager;
 
-import com.yc.video.config.ConstantKeys;
-import com.yc.video.config.VideoInfoBean;
-import com.yc.video.player.VideoPlayer;
-import com.yc.video.tool.PlayerUtils;
-import com.yc.video.ui.view.BasisVideoController;
+import com.woodpecker.video.config.ConstantKeys;
+import com.woodpecker.video.config.VideoInfoBean;
+import com.woodpecker.video.player.VideoPlayer;
+import com.woodpecker.video.tool.PlayerUtils;
+import com.woodpecker.video.ui.view.BasisVideoController;
 
 import com.woodpecker.qiqivideoplayer.R;
 

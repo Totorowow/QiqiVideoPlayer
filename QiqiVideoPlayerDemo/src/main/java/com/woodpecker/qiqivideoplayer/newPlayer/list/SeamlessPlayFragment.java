@@ -13,10 +13,10 @@ import androidx.core.app.ActivityOptionsCompat;
 
 import com.woodpecker.qiqivideoplayer.newPlayer.activity.DetailActivity;
 import com.woodpecker.qiqivideoplayer.newPlayer.activity.IntentKeys;
-import com.yc.video.config.ConstantKeys;
-import com.yc.video.config.VideoInfoBean;
-import com.yc.video.player.VideoViewManager;
-import com.yc.video.tool.PlayerUtils;
+import com.woodpecker.video.config.ConstantKeys;
+import com.woodpecker.video.config.VideoInfoBean;
+import com.woodpecker.video.player.VideoViewManager;
+import com.woodpecker.video.tool.PlayerUtils;
 
 import com.woodpecker.qiqivideoplayer.R;
 

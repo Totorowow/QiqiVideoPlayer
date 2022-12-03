@@ -7,11 +7,11 @@ import com.bumptech.glide.Glide;
 import com.woodpecker.qiqivideoplayer.BaseActivity;
 
 
-import com.yc.video.config.VideoInfoBean;
-import com.yc.video.config.ConstantKeys;
-import com.yc.video.old.controller.VideoPlayerController;
-import com.yc.video.old.other.VideoPlayerManager;
-import com.yc.video.old.player.OldVideoPlayer;
+import com.woodpecker.video.config.VideoInfoBean;
+import com.woodpecker.video.config.ConstantKeys;
+import com.woodpecker.video.old.controller.VideoPlayerController;
+import com.woodpecker.video.old.other.VideoPlayerManager;
+import com.woodpecker.video.old.player.OldVideoPlayer;
 
 import com.woodpecker.qiqivideoplayer.R;
 

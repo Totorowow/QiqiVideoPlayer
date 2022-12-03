@@ -2,9 +2,9 @@ package com.woodpecker.qiqivideoplayer.newPlayer.tiktok;
 
 import android.content.Context;
 
-import com.yc.video.surface.InterSurfaceView;
-import com.yc.video.surface.SurfaceFactory;
-import com.yc.video.surface.RenderTextureView;
+import com.woodpecker.video.surface.InterSurfaceView;
+import com.woodpecker.video.surface.SurfaceFactory;
+import com.woodpecker.video.surface.RenderTextureView;
 
 
 public class TikTokRenderViewFactory extends SurfaceFactory {

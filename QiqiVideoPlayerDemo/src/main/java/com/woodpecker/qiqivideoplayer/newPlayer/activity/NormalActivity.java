@@ -11,19 +11,19 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
-import com.yc.kernel.factory.PlayerFactory;
-import com.yc.kernel.utils.PlayerConstant;
-import com.yc.kernel.utils.PlayerFactoryUtils;
+import com.woodpecker.kernel.factory.PlayerFactory;
+import com.woodpecker.kernel.utils.PlayerConstant;
+import com.woodpecker.kernel.utils.PlayerFactoryUtils;
 import com.woodpecker.qiqivideoplayer.BuriedPointEventImpl;
 
-import com.yc.video.config.ConstantKeys;
-import com.yc.video.config.VideoPlayerConfig;
-import com.yc.video.player.OnVideoStateListener;
-import com.yc.video.player.VideoPlayer;
-import com.yc.video.player.VideoPlayerBuilder;
-import com.yc.video.player.VideoViewManager;
-import com.yc.video.ui.view.BasisVideoController;
-import com.yc.video.ui.view.CustomErrorView;
+import com.woodpecker.video.config.ConstantKeys;
+import com.woodpecker.video.config.VideoPlayerConfig;
+import com.woodpecker.video.player.OnVideoStateListener;
+import com.woodpecker.video.player.VideoPlayer;
+import com.woodpecker.video.player.VideoPlayerBuilder;
+import com.woodpecker.video.player.VideoViewManager;
+import com.woodpecker.video.ui.view.BasisVideoController;
+import com.woodpecker.video.ui.view.CustomErrorView;
 
 import com.woodpecker.qiqivideoplayer.R;
 
@@ -105,6 +105,10 @@ public class NormalActivity extends AppCompatActivity implements View.OnClickLis
         }
         //创建基础视频播放器，一般播放器的功能
         controller = new BasisVideoController(this);
+
+
+        //添加自定义视图。每添加一个视图，都是方式层级树的最上层
+
         //设置控制器
         mVideoPlayer.setController(controller);
         //设置视频播放链接地址

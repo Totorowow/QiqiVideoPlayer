@@ -19,13 +19,13 @@ import com.woodpecker.qiqivideoplayer.ConstantVideo;
 import com.woodpecker.qiqivideoplayer.newPlayer.list.OnItemChildClickListener;
 import com.woodpecker.qiqivideoplayer.newPlayer.list.VideoRecyclerViewAdapter;
 
-import com.yc.video.config.ConstantKeys;
-import com.yc.video.config.VideoInfoBean;
-import com.yc.video.player.SimpleStateListener;
-import com.yc.video.player.VideoPlayer;
-import com.yc.video.player.VideoViewManager;
-import com.yc.video.tool.PlayerUtils;
-import com.yc.video.ui.view.BasisVideoController;
+import com.woodpecker.video.config.ConstantKeys;
+import com.woodpecker.video.config.VideoInfoBean;
+import com.woodpecker.video.player.SimpleStateListener;
+import com.woodpecker.video.player.VideoPlayer;
+import com.woodpecker.video.player.VideoViewManager;
+import com.woodpecker.video.tool.PlayerUtils;
+import com.woodpecker.video.ui.view.BasisVideoController;
 
 import com.woodpecker.qiqivideoplayer.R;
 

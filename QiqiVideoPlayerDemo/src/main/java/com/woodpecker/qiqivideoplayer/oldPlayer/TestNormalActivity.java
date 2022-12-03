@@ -6,11 +6,11 @@ import com.woodpecker.qiqivideoplayer.BaseActivity;
 import com.woodpecker.qiqivideoplayer.ConstantVideo;
 
 import com.woodpecker.qiqivideoplayer.R;
-import com.yc.video.config.ConstantKeys;
-import com.yc.video.old.controller.VideoPlayerController;
-import com.yc.video.old.listener.OnVideoControlListener;
-import com.yc.video.old.other.VideoPlayerManager;
-import com.yc.video.old.player.OldVideoPlayer;
+import com.woodpecker.video.config.ConstantKeys;
+import com.woodpecker.video.old.controller.VideoPlayerController;
+import com.woodpecker.video.old.listener.OnVideoControlListener;
+import com.woodpecker.video.old.other.VideoPlayerManager;
+import com.woodpecker.video.old.player.OldVideoPlayer;
 
 import cn.ycbjie.ycstatusbarlib.bar.StateAppBar;
 

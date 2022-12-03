@@ -5,10 +5,10 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 
-import com.yc.kernel.inter.AbstractVideoPlayer;
+import com.woodpecker.kernel.inter.AbstractVideoPlayer;
 
-import com.yc.video.config.ConstantKeys;
-import com.yc.video.surface.InterSurfaceView;
+import com.woodpecker.video.config.ConstantKeys;
+import com.woodpecker.video.surface.InterSurfaceView;
 
 
 /**

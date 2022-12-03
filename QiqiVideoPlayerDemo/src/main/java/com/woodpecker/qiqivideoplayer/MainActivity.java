@@ -15,10 +15,10 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.woodpecker.qiqivideoplayer.activity.CoreDependencyActivity;
-import com.yc.kernel.utils.VideoLogUtils;
-import com.yc.music.model.AudioBean;
-import com.yc.music.service.PlayService;
-import com.yc.music.tool.BaseAppHelper;
+import com.woodpecker.kernel.utils.VideoLogUtils;
+import com.woodpecker.music.model.AudioBean;
+import com.woodpecker.music.service.PlayService;
+import com.woodpecker.music.tool.BaseAppHelper;
 import com.woodpecker.qiqivideoplayer.m3u8.M3u8Activity;
 import com.woodpecker.qiqivideoplayer.music.MusicPlayerActivity;
 import com.woodpecker.qiqivideoplayer.oldPlayer.OldActivity;

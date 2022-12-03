@@ -9,11 +9,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 
-import com.yc.video.config.ConstantKeys;
-import com.yc.video.config.VideoInfoBean;
-import com.yc.video.player.VideoPlayer;
-import com.yc.video.ui.view.BasisVideoController;
-import com.yc.video.ui.view.CustomBottomView;
+import com.woodpecker.video.config.ConstantKeys;
+import com.woodpecker.video.config.VideoInfoBean;
+import com.woodpecker.video.player.VideoPlayer;
+import com.woodpecker.video.ui.view.BasisVideoController;
+import com.woodpecker.video.ui.view.CustomBottomView;
 
 import com.woodpecker.qiqivideoplayer.R;
 

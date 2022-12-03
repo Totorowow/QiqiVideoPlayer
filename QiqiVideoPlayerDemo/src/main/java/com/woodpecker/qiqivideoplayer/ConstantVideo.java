@@ -1,6 +1,6 @@
 package com.woodpecker.qiqivideoplayer;
 
-import com.yc.video.config.VideoInfoBean;
+import com.woodpecker.video.config.VideoInfoBean;
 
 import java.util.ArrayList;
 import java.util.List;

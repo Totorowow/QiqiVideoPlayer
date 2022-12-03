@@ -13,7 +13,7 @@ import androidx.appcompat.widget.Toolbar;
 import com.woodpecker.qiqivideoplayer.newPlayer.list.TestListActivity;
 import com.woodpecker.qiqivideoplayer.newPlayer.surface.TestSurfaceActivity;
 
-import com.yc.video.old.other.VideoPlayerManager;
+import com.woodpecker.video.old.other.VideoPlayerManager;
 
 import com.woodpecker.qiqivideoplayer.R;
 

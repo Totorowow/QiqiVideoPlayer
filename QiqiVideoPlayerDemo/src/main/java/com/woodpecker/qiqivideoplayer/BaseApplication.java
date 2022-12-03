@@ -6,15 +6,15 @@ import android.content.res.Configuration;
 import android.util.Log;
 
 
-import com.yc.kernel.factory.PlayerFactory;
-import com.yc.kernel.utils.PlayerConstant;
-import com.yc.kernel.utils.PlayerFactoryUtils;
+import com.woodpecker.kernel.factory.PlayerFactory;
+import com.woodpecker.kernel.utils.PlayerConstant;
+import com.woodpecker.kernel.utils.PlayerFactoryUtils;
 
-import com.yc.music.utils.MusicSpUtils;
-import com.yc.video.config.VideoPlayerConfig;
-import com.yc.video.player.VideoViewManager;
-import com.yc.videosqllite.manager.CacheConfig;
-import com.yc.videosqllite.manager.LocationManager;
+import com.woodpecker.music.utils.MusicSpUtils;
+import com.woodpecker.video.config.VideoPlayerConfig;
+import com.woodpecker.video.player.VideoViewManager;
+import com.woodpecker.videosqllite.manager.CacheConfig;
+import com.woodpecker.videosqllite.manager.LocationManager;
 
 /**
  * ================================================

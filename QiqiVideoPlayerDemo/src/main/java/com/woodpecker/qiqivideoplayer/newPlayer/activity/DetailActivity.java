@@ -11,10 +11,10 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.ViewCompat;
 
-import com.yc.video.player.VideoViewManager;
-import com.yc.video.player.VideoPlayer;
-import com.yc.video.tool.PlayerUtils;
-import com.yc.video.ui.view.BasisVideoController;
+import com.woodpecker.video.player.VideoViewManager;
+import com.woodpecker.video.player.VideoPlayer;
+import com.woodpecker.video.tool.PlayerUtils;
+import com.woodpecker.video.ui.view.BasisVideoController;
 
 import com.woodpecker.qiqivideoplayer.R;
 

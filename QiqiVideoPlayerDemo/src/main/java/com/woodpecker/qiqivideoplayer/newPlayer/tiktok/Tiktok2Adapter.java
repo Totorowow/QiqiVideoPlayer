@@ -15,8 +15,8 @@ import androidx.viewpager.widget.PagerAdapter;
 import com.bumptech.glide.Glide;
 
 
-import com.yc.videocache.cache.PreloadManager;
-import com.yc.video.config.VideoInfoBean;
+import com.woodpecker.videocache.cache.PreloadManager;
+import com.woodpecker.video.config.VideoInfoBean;
 
 import com.woodpecker.qiqivideoplayer.R;
 

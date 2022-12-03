@@ -9,15 +9,15 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.yc.kernel.utils.VideoLogUtils;
-import com.yc.m3u8.bean.M3u8;
-import com.yc.m3u8.inter.OnDownloadListener;
-import com.yc.m3u8.inter.OnM3u8InfoListener;
-import com.yc.m3u8.manager.M3u8InfoManger;
-import com.yc.m3u8.manager.M3u8LiveManger;
-import com.yc.m3u8.task.M3u8DownloadTask;
-import com.yc.m3u8.utils.M3u8FileUtils;
-import com.yc.m3u8.utils.NetSpeedUtils;
+import com.woodpecker.kernel.utils.VideoLogUtils;
+import com.woodpecker.m3u8.bean.M3u8;
+import com.woodpecker.m3u8.inter.OnDownloadListener;
+import com.woodpecker.m3u8.inter.OnM3u8InfoListener;
+import com.woodpecker.m3u8.manager.M3u8InfoManger;
+import com.woodpecker.m3u8.manager.M3u8LiveManger;
+import com.woodpecker.m3u8.task.M3u8DownloadTask;
+import com.woodpecker.m3u8.utils.M3u8FileUtils;
+import com.woodpecker.m3u8.utils.NetSpeedUtils;
 import com.woodpecker.qiqivideoplayer.newPlayer.activity.NormalActivity;
 
 

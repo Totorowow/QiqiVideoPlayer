@@ -8,8 +8,8 @@ import com.woodpecker.qiqivideoplayer.BaseActivity;
 import com.woodpecker.qiqivideoplayer.ConstantVideo;
 
 import com.woodpecker.qiqivideoplayer.R;
-import com.yc.video.old.other.VideoPlayerManager;
-import com.yc.video.old.player.OldVideoPlayer;
+import com.woodpecker.video.old.other.VideoPlayerManager;
+import com.woodpecker.video.old.player.OldVideoPlayer;
 
 import java.util.ArrayList;
 import java.util.List;

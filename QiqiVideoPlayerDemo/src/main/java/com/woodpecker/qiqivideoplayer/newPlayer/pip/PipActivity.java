@@ -9,12 +9,11 @@ import android.widget.ImageView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import com.bumptech.glide.Glide;
-import com.woodpecker.qiqivideoplayer.ConstantVideo;
 
-import com.yc.video.player.VideoPlayer;
-import com.yc.video.player.VideoViewManager;
-import com.yc.video.ui.pip.FloatVideoManager;
-import com.yc.video.ui.view.BasisVideoController;
+import com.woodpecker.video.player.VideoPlayer;
+import com.woodpecker.video.player.VideoViewManager;
+import com.woodpecker.video.ui.pip.FloatVideoManager;
+import com.woodpecker.video.ui.view.BasisVideoController;
 
 import com.woodpecker.qiqivideoplayer.R;
 

@@ -5,11 +5,9 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.woodpecker.qiqivideoplayer.ConstantVideo;
-
-import com.yc.video.player.VideoPlayer;
-import com.yc.video.player.VideoPlayerBuilder;
-import com.yc.video.ui.view.BasisVideoController;
+import com.woodpecker.video.player.VideoPlayer;
+import com.woodpecker.video.player.VideoPlayerBuilder;
+import com.woodpecker.video.ui.view.BasisVideoController;
 
 import com.woodpecker.qiqivideoplayer.R;
 

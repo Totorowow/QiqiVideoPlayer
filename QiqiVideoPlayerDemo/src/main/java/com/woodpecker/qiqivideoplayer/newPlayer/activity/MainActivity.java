@@ -20,19 +20,19 @@ import com.woodpecker.qiqivideoplayer.newPlayer.pip.PipListActivity;
 import com.woodpecker.qiqivideoplayer.newPlayer.surface.TestSurfaceActivity;
 import com.woodpecker.qiqivideoplayer.newPlayer.tiny.TestFullActivity;
 import com.woodpecker.qiqivideoplayer.newPlayer.tiny.TinyScreenActivity;
-import com.yc.video.config.ConstantKeys;
+import com.woodpecker.video.config.ConstantKeys;
 
-import com.yc.kernel.impl.exo.ExoMediaPlayer;
-import com.yc.kernel.impl.exo.ExoPlayerFactory;
-import com.yc.kernel.impl.ijk.IjkPlayerFactory;
-import com.yc.kernel.impl.ijk.IjkVideoPlayer;
-import com.yc.kernel.impl.media.AndroidMediaPlayer;
-import com.yc.kernel.impl.media.MediaPlayerFactory;
-import com.yc.kernel.factory.PlayerFactory;
+import com.woodpecker.kernel.impl.exo.ExoMediaPlayer;
+import com.woodpecker.kernel.impl.exo.ExoPlayerFactory;
+import com.woodpecker.kernel.impl.ijk.IjkPlayerFactory;
+import com.woodpecker.kernel.impl.ijk.IjkVideoPlayer;
+import com.woodpecker.kernel.impl.media.AndroidMediaPlayer;
+import com.woodpecker.kernel.impl.media.MediaPlayerFactory;
+import com.woodpecker.kernel.factory.PlayerFactory;
 
-import com.yc.video.config.VideoPlayerConfig;
-import com.yc.video.player.VideoViewManager;
-import com.yc.video.tool.PlayerUtils;
+import com.woodpecker.video.config.VideoPlayerConfig;
+import com.woodpecker.video.player.VideoViewManager;
+import com.woodpecker.video.tool.PlayerUtils;
 
 import com.woodpecker.qiqivideoplayer.R;
 

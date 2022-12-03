@@ -3,7 +3,7 @@ package com.woodpecker.qiqivideoplayer.oldPlayer;
 import com.woodpecker.qiqivideoplayer.BaseActivity;
 
 import com.woodpecker.qiqivideoplayer.R;
-import com.yc.video.old.other.VideoPlayerManager;
+import com.woodpecker.video.old.other.VideoPlayerManager;
 
 
 /**

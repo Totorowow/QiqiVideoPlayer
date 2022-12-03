@@ -18,9 +18,9 @@ import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 
 import com.woodpecker.qiqivideoplayer.R;
-import com.yc.video.config.ConstantKeys;
-import com.yc.video.tool.PlayerUtils;
-import com.yc.video.ui.view.CustomBottomView;
+import com.woodpecker.video.config.ConstantKeys;
+import com.woodpecker.video.tool.PlayerUtils;
+import com.woodpecker.video.ui.view.CustomBottomView;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;

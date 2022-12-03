@@ -4,18 +4,18 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
 
     <application>
-        <service android:name=".service.PlayService" />
-        <receiver android:name=".receiver.NotificationStatusBarReceiver">
+        <service android:name="com.woodpecker.music.service.PlayService" />
+        <receiver android:name="com.woodpecker.music.receiver.NotificationStatusBarReceiver">
             <intent-filter>
                 <action android:name="YC_ACTION_STATUS_BAR" />
             </intent-filter>
         </receiver>
-        <receiver android:name=".receiver.EarphoneControlReceiver">
+        <receiver android:name="com.woodpecker.music.receiver.EarphoneControlReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.MEDIA_BUTTON" />
             </intent-filter>
         </receiver>
-        <receiver android:name=".receiver.AudioBroadcastReceiver">
+        <receiver android:name="com.woodpecker.music.receiver.AudioBroadcastReceiver">
             <intent-filter>
                 <action android:name="cn.ycbjie.lock" />
             </intent-filter>

@@ -21,14 +21,14 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 
-import com.yc.music.config.MusicConstant;
-import com.yc.music.config.PlayModeEnum;
-import com.yc.music.inter.OnPlayerEventListener;
-import com.yc.music.model.AudioBean;
-import com.yc.music.tool.BaseAppHelper;
-import com.yc.music.utils.MusicLogUtils;
-import com.yc.music.utils.MusicSpUtils;
-import com.yc.video.tool.PlayerUtils;
+import com.woodpecker.music.config.MusicConstant;
+import com.woodpecker.music.config.PlayModeEnum;
+import com.woodpecker.music.inter.OnPlayerEventListener;
+import com.woodpecker.music.model.AudioBean;
+import com.woodpecker.music.tool.BaseAppHelper;
+import com.woodpecker.music.utils.MusicLogUtils;
+import com.woodpecker.music.utils.MusicSpUtils;
+import com.woodpecker.video.tool.PlayerUtils;
 
 
 import com.woodpecker.qiqivideoplayer.R;

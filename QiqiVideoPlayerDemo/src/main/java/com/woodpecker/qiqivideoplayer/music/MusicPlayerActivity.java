@@ -12,9 +12,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.yc.music.inter.OnPlayerEventListener;
-import com.yc.music.model.AudioBean;
-import com.yc.music.tool.BaseAppHelper;
+import com.woodpecker.music.inter.OnPlayerEventListener;
+import com.woodpecker.music.model.AudioBean;
+import com.woodpecker.music.tool.BaseAppHelper;
 
 import com.woodpecker.qiqivideoplayer.R;
 

@@ -1,10 +1,10 @@
 package com.woodpecker.qiqivideoplayer;
 
-import com.yc.kernel.utils.VideoLogUtils;
+import com.woodpecker.kernel.utils.VideoLogUtils;
 
-import com.yc.video.config.BuriedPointEvent;
-import com.yc.videosqllite.manager.LocationManager;
-import com.yc.videosqllite.model.VideoLocation;
+import com.woodpecker.video.config.BuriedPointEvent;
+import com.woodpecker.videosqllite.manager.LocationManager;
+import com.woodpecker.videosqllite.model.VideoLocation;
 
 public class BuriedPointEventImpl implements BuriedPointEvent {
 

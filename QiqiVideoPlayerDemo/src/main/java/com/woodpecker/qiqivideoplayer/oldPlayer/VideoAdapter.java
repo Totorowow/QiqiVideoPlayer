@@ -10,9 +10,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.woodpecker.qiqivideoplayer.ImageUtil;
 
 import com.woodpecker.qiqivideoplayer.R;
-import com.yc.video.config.ConstantKeys;
-import com.yc.video.old.controller.VideoPlayerController;
-import com.yc.video.old.player.OldVideoPlayer;
+import com.woodpecker.video.config.ConstantKeys;
+import com.woodpecker.video.old.controller.VideoPlayerController;
+import com.woodpecker.video.old.player.OldVideoPlayer;
 
 import java.util.List;
 

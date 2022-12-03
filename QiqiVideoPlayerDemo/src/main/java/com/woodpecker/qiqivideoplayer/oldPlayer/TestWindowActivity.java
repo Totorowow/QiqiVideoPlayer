@@ -10,16 +10,16 @@ import android.widget.Button;
 
 import androidx.annotation.RequiresApi;
 
-import com.yc.videoview.FloatWindow;
-import com.yc.videoview.MoveType;
-import com.yc.videoview.WindowScreen;
-import com.yc.videoview.WindowUtil;
+import com.woodpecker.videoview.FloatWindow;
+import com.woodpecker.videoview.MoveType;
+import com.woodpecker.videoview.WindowScreen;
+import com.woodpecker.videoview.WindowUtil;
 import com.woodpecker.qiqivideoplayer.BaseActivity;
 import com.woodpecker.qiqivideoplayer.newPlayer.tiny.TestFullActivity;
 
 import com.woodpecker.qiqivideoplayer.R;
-import com.yc.video.old.other.VideoPlayerManager;
-import com.yc.video.old.player.OldVideoPlayer;
+import com.woodpecker.video.old.other.VideoPlayerManager;
+import com.woodpecker.video.old.player.OldVideoPlayer;
 
 
 /**

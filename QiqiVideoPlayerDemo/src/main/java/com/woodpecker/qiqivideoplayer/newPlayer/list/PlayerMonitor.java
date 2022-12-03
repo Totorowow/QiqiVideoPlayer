@@ -5,11 +5,11 @@ import android.view.animation.Animation;
 
 import androidx.annotation.NonNull;
 
-import com.yc.kernel.utils.VideoLogUtils;
+import com.woodpecker.kernel.utils.VideoLogUtils;
 
-import com.yc.video.bridge.ControlWrapper;
-import com.yc.video.ui.view.InterControlView;
-import com.yc.video.tool.PlayerUtils;
+import com.woodpecker.video.bridge.ControlWrapper;
+import com.woodpecker.video.ui.view.InterControlView;
+import com.woodpecker.video.tool.PlayerUtils;
 
 
 public class PlayerMonitor implements InterControlView {

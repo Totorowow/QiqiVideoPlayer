@@ -8,16 +8,16 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
-import com.yc.videocache.HttpProxyCacheServer;
+import com.woodpecker.videocache.HttpProxyCacheServer;
 
 import com.woodpecker.qiqivideoplayer.ConstantVideo;
-import com.yc.videocache.cache.ProxyVideoCacheManager;
+import com.woodpecker.videocache.cache.ProxyVideoCacheManager;
 
-import com.yc.video.config.ConstantKeys;
-import com.yc.video.player.SimpleStateListener;
-import com.yc.video.player.VideoPlayer;
-import com.yc.video.tool.BaseToast;
-import com.yc.video.ui.view.BasisVideoController;
+import com.woodpecker.video.config.ConstantKeys;
+import com.woodpecker.video.player.SimpleStateListener;
+import com.woodpecker.video.player.VideoPlayer;
+import com.woodpecker.video.tool.BaseToast;
+import com.woodpecker.video.ui.view.BasisVideoController;
 
 import com.woodpecker.qiqivideoplayer.R;
 

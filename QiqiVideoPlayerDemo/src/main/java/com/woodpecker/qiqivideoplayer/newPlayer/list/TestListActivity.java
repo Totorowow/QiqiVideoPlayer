@@ -4,7 +4,7 @@ import com.woodpecker.qiqivideoplayer.BaseActivity;
 
 import com.woodpecker.qiqivideoplayer.newPlayer.tiktok.TikTok1ListFragment;
 import com.woodpecker.qiqivideoplayer.newPlayer.tiktok.TikTokListFragment;
-import com.yc.video.old.other.VideoPlayerManager;
+import com.woodpecker.video.old.other.VideoPlayerManager;
 
 import com.woodpecker.qiqivideoplayer.R;
 

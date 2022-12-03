@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 
 
-import com.yc.video.config.VideoInfoBean;
+import com.woodpecker.video.config.VideoInfoBean;
 
 import com.woodpecker.qiqivideoplayer.R;
 
