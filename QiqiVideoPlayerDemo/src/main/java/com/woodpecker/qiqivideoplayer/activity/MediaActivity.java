@@ -13,9 +13,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.woodpecker.qiqivideoplayer.ConstantVideo;
 
-import com.woodpecker.video.tool.BaseToast;
+
 
 import com.woodpecker.qiqivideoplayer.R;
+import com.woodpecker.video.tool.BaseToast;
 
 public class MediaActivity extends AppCompatActivity {
 

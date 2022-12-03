@@ -73,27 +73,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_new);
         initFindViewById();
         initListener();
-
-        //检测当前是用的哪个播放器
-        Object factory = PlayerUtils.getCurrentPlayerFactory();
-        if (factory instanceof ExoPlayerFactory) {
-            mTvTitle.setText("视频内核：" + " (ExoPlayer)");
-            setTitle(getResources().getString(R.string.app_name) + " (ExoPlayer)");
-        } else if (factory instanceof IjkPlayerFactory) {
-            mTvTitle.setText("视频内核：" + " (IjkPlayer)");
-        } else if (factory instanceof MediaPlayerFactory) {
-            mTvTitle.setText("视频内核：" + " (MediaPlayer)");
-        } else {
-            mTvTitle.setText("视频内核：" + " (unknown)");
-        }
+        mTvTitle.setText(getResources().getString(R.string.app_name));
+        setTitle(getResources().getString(R.string.app_name));
     }
+
 
     private void initFindViewById() {
         mToolbar = findViewById(R.id.toolbar);
         mTvTitle = findViewById(R.id.tv_title);
-        mTv11 = findViewById(R.id.tv_1_1);
-        mTv12 = findViewById(R.id.tv_1_2);
-        mTv13 = findViewById(R.id.tv_1_3);
         mTv31 = findViewById(R.id.tv_3_1);
         mTv32 = findViewById(R.id.tv_3_2);
         mTv33 = findViewById(R.id.tv_3_3);
@@ -114,9 +101,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initListener() {
-        mTv11.setOnClickListener(this);
-        mTv12.setOnClickListener(this);
-        mTv13.setOnClickListener(this);
+
         mTv31.setOnClickListener(this);
         mTv32.setOnClickListener(this);
         mTv33.setOnClickListener(this);
@@ -138,16 +123,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        if (v == mTv11){
-            //切换ijk
-            setChangeVideoType(ConstantKeys.VideoPlayerType.TYPE_IJK);
-        } else if (v == mTv12){
-            //切换exo
-            setChangeVideoType(ConstantKeys.VideoPlayerType.TYPE_EXO);
-        } else if (v == mTv13){
-            //切换原生
-            setChangeVideoType(ConstantKeys.VideoPlayerType.TYPE_NATIVE);
-        }  else if (v == mTv31){
+        if (v == mTv31){
             startActivity(new Intent(this,NormalActivity.class));
         } else if (v == mTv32){
             startActivity(new Intent(this, TestFullActivity.class));
@@ -196,36 +172,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    @SuppressLint("SetTextI18n")
-    private void setChangeVideoType(@ConstantKeys.PlayerType int type){
-        //切换播放核心，不推荐这么做，我这么写只是为了方便测试
-        VideoPlayerConfig config = VideoViewManager.getConfig();
-        try {
-            Field mPlayerFactoryField = config.getClass().getDeclaredField("mPlayerFactory");
-            mPlayerFactoryField.setAccessible(true);
-            PlayerFactory playerFactory = null;
-            switch (type) {
-                case ConstantKeys.VideoPlayerType.TYPE_IJK:
-                    playerFactory = IjkPlayerFactory.create();
-                    IjkVideoPlayer ijkVideoPlayer = (IjkVideoPlayer) playerFactory.createPlayer(this);
-                    mTvTitle.setText("视频内核：" + " (IjkPlayer)");
-                    break;
-                case ConstantKeys.VideoPlayerType.TYPE_EXO:
-                    playerFactory = ExoPlayerFactory.create();
-                    ExoMediaPlayer exoMediaPlayer = (ExoMediaPlayer) playerFactory.createPlayer(this);
-                    mTvTitle.setText("视频内核：" + " (ExoPlayer)");
-                    break;
-                case ConstantKeys.VideoPlayerType.TYPE_NATIVE:
-                    playerFactory = MediaPlayerFactory.create();
-                    AndroidMediaPlayer androidMediaPlayer = (AndroidMediaPlayer) playerFactory.createPlayer(this);
-                    mTvTitle.setText("视频内核：" + " (MediaPlayer)");
-                    break;
-                case ConstantKeys.VideoPlayerType.TYPE_RTC:
-                    break;
-            }
-            mPlayerFactoryField.set(config, playerFactory);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 }

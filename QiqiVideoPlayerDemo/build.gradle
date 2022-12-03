@@ -12,7 +12,6 @@ android {
         // dex突破65535的限制
         multiDexEnabled true
         ndk {
-            //设置支持的SO库架构
             abiFilters 'armeabi', 'armeabi-v7a'
         }
 
@@ -25,7 +24,6 @@ android {
     }
 
 
-    //jdk1.8
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -46,15 +44,15 @@ dependencies {
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
 
-    //其他库
-    implementation 'com.github.bumptech.glide:glide:4.9.0'                 //谷歌图片加载库
+
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
     implementation 'jp.wasabeef:glide-transformations:2.0.1'
 
-    //exo的UI库
+
     implementation 'com.google.android.exoplayer:exoplayer-ui:2.11.3'
     implementation 'com.google.android.exoplayer:exoplayer-core:2.11.3'
 
-    //弹幕
+
     implementation 'com.github.ctiao:DanmakuFlameMaster:0.9.25'
     implementation 'com.github.ctiao:ndkbitmap-armv7a:0.9.21'
 
@@ -67,17 +65,21 @@ dependencies {
     implementation project(path: ':VideoM3u8')
     implementation project(path: ':VideoSqlLite')
 
-   // implementation 'cn.yc:MusicPlayer:1.0.2'
-    //implementation 'cn.yc:VideoPlayer:3.1.0'
-    //implementation 'cn.yc:VideoCache:3.0.5'
-    //implementation 'cn.yc:VideoKernel:3.0.6'
-    //implementation 'cn.yc:VideoView:3.0.5'
-    //implementation 'cn.yc:VideoM3u8:1.0.0'
-    //implementation 'cn.yc:VideoSqlLite:1.0.2'
 
-    //自己封装的库，都有对应的案例项目【欢迎star】：https://github.com/yangchong211
+
+    //The following dependencies are not temporarily available
+    //implementation 'com.woodpecker:MusicPlayer:1.0'
+    //implementation 'com.woodpecker:VideoPlayer:1.0'
+    //implementation 'com.woodpecker:VideoCache:1.0'
+    //implementation 'com.woodpecker:VideoKernel:1.0'
+    //implementation 'com.woodpecker:VideoView:1.0'
+    //implementation 'com.woodpecker:VideoM3u8:1.0'
+    //implementation 'com.woodpecker:VideoSqlLite:1.0'
+
+
     implementation 'cn.yc:YCStatusBarLib:1.5.0'
     implementation 'com.yc:PagerLib:1.0.4'
     implementation 'cn.yc:YCStateLib:1.2.2'
+
 
 }
