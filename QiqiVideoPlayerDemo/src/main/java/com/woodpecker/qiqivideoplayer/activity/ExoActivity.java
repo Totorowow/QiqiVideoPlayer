@@ -53,7 +53,7 @@ public class ExoActivity extends AppCompatActivity {
                 new DefaultTrackSelector(),new DefaultLoadControl());
         player.setPlayWhenReady(true);
         mVideoView.setPlayer(player);
-        Uri uri = Uri.parse(ConstantVideo.VideoPlayerList[0]);
+        Uri uri = Uri.parse(ConstantVideo.VideoPlayerList[4]);
         DefaultHttpDataSourceFactory dataSourceFactory = new DefaultHttpDataSourceFactory("user-agent");
         ProgressiveMediaSource mediaSource = new ProgressiveMediaSource.Factory(
                 dataSourceFactory).createMediaSource(uri);

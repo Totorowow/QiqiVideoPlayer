@@ -688,11 +688,7 @@ public class VideoPlayer<P extends AbstractVideoPlayer> extends FrameLayout
         VideoPlayerConfig config = VideoViewManager.getConfig();
         if (config!=null && config.mBuriedPointEvent!=null){
             //相当于进入了视频页面
-            if (PlayerUtils.isConnected(mContext)){
-                config.mBuriedPointEvent.onError(mUrl,false);
-            } else {
-                config.mBuriedPointEvent.onError(mUrl,true);
-            }
+            config.mBuriedPointEvent.onError(mUrl, !PlayerUtils.isConnected(mContext));
         }
     }
 

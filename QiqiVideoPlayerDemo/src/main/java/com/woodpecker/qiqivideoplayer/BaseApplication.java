@@ -52,7 +52,6 @@ public class BaseApplication extends Application {
      */
     @Override
     public void onCreate() {
-        Log.d("Application", "onCreate");
         super.onCreate();
         instance = this;
         ScreenDensityUtils.setup(this);

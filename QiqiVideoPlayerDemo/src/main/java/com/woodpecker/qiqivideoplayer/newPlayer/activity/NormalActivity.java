@@ -16,6 +16,7 @@ import com.woodpecker.kernel.utils.PlayerConstant;
 import com.woodpecker.kernel.utils.PlayerFactoryUtils;
 import com.woodpecker.qiqivideoplayer.BuriedPointEventImpl;
 
+import com.woodpecker.qiqivideoplayer.ConstantVideo;
 import com.woodpecker.video.config.ConstantKeys;
 import com.woodpecker.video.config.VideoPlayerConfig;
 import com.woodpecker.video.player.OnVideoStateListener;
@@ -100,8 +101,8 @@ public class NormalActivity extends AppCompatActivity implements View.OnClickLis
     private void initVideoPlayer() {
         String url = getIntent().getStringExtra(IntentKeys.URL);
         if (url==null || url.length()==0){
-            //url = ConstantVideo.VideoPlayerList[0];
-            url ="android.resource://" + getPackageName() + "/" + R.raw.gold_flower;
+            url = ConstantVideo.VideoPlayerList[1];
+            //url ="android.resource://" + getPackageName() + "/" + R.raw.gold_flower;
         }
         //创建基础视频播放器，一般播放器的功能
         controller = new BasisVideoController(this);
@@ -111,8 +112,11 @@ public class NormalActivity extends AppCompatActivity implements View.OnClickLis
 
         //设置控制器
         mVideoPlayer.setController(controller);
+
+
         //设置视频播放链接地址
         mVideoPlayer.setUrl(url);
+
         //开始播放
         mVideoPlayer.start();
         mVideoPlayer.postDelayed(new Runnable() {
@@ -122,6 +126,7 @@ public class NormalActivity extends AppCompatActivity implements View.OnClickLis
             }
         },300);
         //设置视频背景图
+
         Glide.with(this).load(R.drawable.image_default).into(controller.getThumb());
     }
 

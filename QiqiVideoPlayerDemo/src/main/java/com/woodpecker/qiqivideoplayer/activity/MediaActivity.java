@@ -38,7 +38,7 @@ public class MediaActivity extends AppCompatActivity {
         mBtnStart = findViewById(R.id.btn_start);
         mBtnPause = findViewById(R.id.btn_pause);
 
-        Uri uri = Uri.parse(ConstantVideo.VideoPlayerList[2]);
+        Uri uri = Uri.parse(ConstantVideo.VideoPlayerList[4]);
         mVideo.setVideoURI(uri);
         mMediaController = new MediaController(this);
         mVideo.setMediaController(mMediaController);
