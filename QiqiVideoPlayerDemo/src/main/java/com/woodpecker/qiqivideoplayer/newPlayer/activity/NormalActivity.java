@@ -11,12 +11,18 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
+import com.luck.picture.lib.basic.PictureSelector;
+import com.luck.picture.lib.config.SelectMimeType;
+import com.luck.picture.lib.entity.LocalMedia;
+import com.luck.picture.lib.interfaces.OnResultCallbackListener;
 import com.woodpecker.kernel.factory.PlayerFactory;
 import com.woodpecker.kernel.utils.PlayerConstant;
 import com.woodpecker.kernel.utils.PlayerFactoryUtils;
 import com.woodpecker.qiqivideoplayer.BuriedPointEventImpl;
 
 import com.woodpecker.qiqivideoplayer.ConstantVideo;
+import com.woodpecker.qiqivideoplayer.oldPlayer.Video;
+import com.woodpecker.qiqivideoplayer.util.GlideEngine;
 import com.woodpecker.video.config.ConstantKeys;
 import com.woodpecker.video.config.VideoPlayerConfig;
 import com.woodpecker.video.player.OnVideoStateListener;
@@ -27,6 +33,8 @@ import com.woodpecker.video.ui.view.BasisVideoController;
 import com.woodpecker.video.ui.view.CustomErrorView;
 
 import com.woodpecker.qiqivideoplayer.R;
+
+import java.util.ArrayList;
 
 public class NormalActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -39,7 +47,9 @@ public class NormalActivity extends AppCompatActivity implements View.OnClickLis
     private Button mBtnScaleCrop;
     private Button mBtnCrop;
     private Button mBtnGif;
+    private ImageView selectVideo;
     private BasisVideoController controller;
+    private String videoPath;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -54,7 +64,6 @@ public class NormalActivity extends AppCompatActivity implements View.OnClickLis
     protected void onResume() {
         super.onResume();
         if (mVideoPlayer != null) {
-            //从后台切换到前台，当视频暂停时或者缓冲暂停时，调用该方法重新开启视频播放
             mVideoPlayer.resume();
         }
     }
@@ -64,7 +73,6 @@ public class NormalActivity extends AppCompatActivity implements View.OnClickLis
     protected void onPause() {
         super.onPause();
         if (mVideoPlayer != null) {
-            //从前台切到后台，当视频正在播放或者正在缓冲时，调用该方法暂停视频
             mVideoPlayer.pause();
         }
     }
@@ -73,14 +81,13 @@ public class NormalActivity extends AppCompatActivity implements View.OnClickLis
     protected void onDestroy() {
         super.onDestroy();
         if (mVideoPlayer != null) {
-            //销毁页面，释放，内部的播放器被释放掉，同时如果在全屏、小窗口模式下都会退出
+
             mVideoPlayer.release();
         }
     }
 
     @Override
     public void onBackPressed() {
-        //处理返回键逻辑；如果是全屏，则退出全屏；如果是小窗口，则退出小窗口
         if (mVideoPlayer == null || !mVideoPlayer.onBackPressed()) {
             super.onBackPressed();
         }
@@ -96,28 +103,17 @@ public class NormalActivity extends AppCompatActivity implements View.OnClickLis
         mBtnScaleCrop = findViewById(R.id.btn_scale_crop);
         mBtnCrop = findViewById(R.id.btn_crop);
         mBtnGif = findViewById(R.id.btn_gif);
+        selectVideo=findViewById(R.id.select_video);
     }
 
     private void initVideoPlayer() {
-        String url = getIntent().getStringExtra(IntentKeys.URL);
-        if (url==null || url.length()==0){
-            url = ConstantVideo.VideoPlayerList[1];
+        if (videoPath==null || videoPath.length()==0){
+            videoPath = ConstantVideo.VideoPlayerList[1];
             //url ="android.resource://" + getPackageName() + "/" + R.raw.gold_flower;
         }
-        //创建基础视频播放器，一般播放器的功能
         controller = new BasisVideoController(this);
-
-
-        //添加自定义视图。每添加一个视图，都是方式层级树的最上层
-
-        //设置控制器
         mVideoPlayer.setController(controller);
-
-
-        //设置视频播放链接地址
-        mVideoPlayer.setUrl(url);
-
-        //开始播放
+        mVideoPlayer.setUrl(videoPath);
         mVideoPlayer.start();
         mVideoPlayer.postDelayed(new Runnable() {
             @Override
@@ -139,6 +135,7 @@ public class NormalActivity extends AppCompatActivity implements View.OnClickLis
         mBtnScaleCrop.setOnClickListener(this);
         mBtnCrop.setOnClickListener(this);
         mBtnGif.setOnClickListener(this);
+        selectVideo.setOnClickListener(this);
     }
 
 
@@ -156,13 +153,44 @@ public class NormalActivity extends AppCompatActivity implements View.OnClickLis
             mVideoPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_ORIGINAL);
         }else if (v == mBtnScaleCrop){
             mVideoPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_CENTER_CROP);
-        }else if (v == mBtnCrop){
-
+        }else if (v==selectVideo){
+            selectLocalVideo();
+        } else if (v == mBtnCrop){
 
         } else if (v == mBtnGif){
 
         }
     }
+
+    private void selectLocalVideo(){
+
+        PictureSelector.create(this)
+                .openGallery(SelectMimeType.ofVideo())
+                .setImageEngine(GlideEngine.createGlideEngine())
+                .setMaxSelectNum(1)
+                .setMinSelectNum(1)
+                .isPreviewVideo(true)
+                .forResult(new OnResultCallbackListener<LocalMedia>() {
+                    @Override
+                    public void onResult(ArrayList<LocalMedia> result) {
+                        for (LocalMedia media : result){
+                            if (mVideoPlayer != null) {
+                                mVideoPlayer.release();
+                            }
+                            videoPath=media.getPath();
+                            initVideoPlayer();
+                        }
+                    }
+
+                    @Override
+                    public void onCancel() {
+
+                    }
+                });
+    }
+
+
+
 
     private void test(){
         //VideoPlayer相关
