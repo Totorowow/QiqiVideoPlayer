@@ -71,6 +71,9 @@
     - https://github.com/CarGuo/GSYVideoPlayer
 - 饺子播放器
     - https://github.com/lipangit/JiaoZiVideoPlayer
+- PictureSelector
+    - https://github.com/LuckSiege/PictureSelector
+
 
 
 
