@@ -16,6 +16,16 @@
         >
 
         <ImageView
+            android:id="@+id/close_current_page"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/ic_close_white"
+            />
+
+        <ImageView
             android:id="@+id/select_video"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
@@ -57,7 +67,7 @@
             android:layout_height="40dp"
             android:background="@color/colorTransparent"
             android:textColor="@color/colorWhite"
-            android:text="正常的" />
+            android:text="原始" />
 
         <Button
             android:id="@+id/btn_scale_169"
@@ -97,7 +107,7 @@
             android:layout_height="40dp"
             android:background="@color/colorTransparent"
             android:textColor="@color/colorWhite"
-            android:text="剧中裁剪类型" />
+            android:text="居中裁剪类型" />
 
         <Button
             android:id="@+id/btn_crop"

@@ -3,6 +3,7 @@ package com.woodpecker.qiqivideoplayer.newPlayer.activity;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.FileUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -48,6 +49,7 @@ public class NormalActivity extends AppCompatActivity implements View.OnClickLis
     private Button mBtnCrop;
     private Button mBtnGif;
     private ImageView selectVideo;
+    private ImageView closeCurrentPage;
     private BasisVideoController controller;
     private String videoPath;
 
@@ -104,6 +106,7 @@ public class NormalActivity extends AppCompatActivity implements View.OnClickLis
         mBtnCrop = findViewById(R.id.btn_crop);
         mBtnGif = findViewById(R.id.btn_gif);
         selectVideo=findViewById(R.id.select_video);
+        closeCurrentPage=findViewById(R.id.close_current_page);
     }
 
     private void initVideoPlayer() {
@@ -136,6 +139,7 @@ public class NormalActivity extends AppCompatActivity implements View.OnClickLis
         mBtnCrop.setOnClickListener(this);
         mBtnGif.setOnClickListener(this);
         selectVideo.setOnClickListener(this);
+        closeCurrentPage.setOnClickListener(this);
     }
 
 
@@ -155,12 +159,20 @@ public class NormalActivity extends AppCompatActivity implements View.OnClickLis
             mVideoPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_CENTER_CROP);
         }else if (v==selectVideo){
             selectLocalVideo();
-        } else if (v == mBtnCrop){
+        }else if (v==closeCurrentPage){
+            finish();
+        }
+        else if (v == mBtnCrop){
+
 
         } else if (v == mBtnGif){
 
         }
     }
+
+    /**
+     * load local video
+     */
 
     private void selectLocalVideo(){
 
@@ -188,6 +200,8 @@ public class NormalActivity extends AppCompatActivity implements View.OnClickLis
                     }
                 });
     }
+
+
 
 
 
