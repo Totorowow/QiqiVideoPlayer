@@ -54,7 +54,7 @@ import java.util.Map;
  *     @author yangchong
  *     blog  : https://github.com/yangchong211
  *     time  : 2018/11/9
- *     desc  : 播放器具体实现类
+ *     desc  : some content was delected by Totorowow
  *     revise:
  * </pre>
  */
@@ -62,53 +62,22 @@ public class VideoPlayer<P extends AbstractVideoPlayer> extends FrameLayout
         implements InterVideoPlayer, VideoPlayerListener {
 
     private Context mContext;
-    /**
-     * 播放器
-     */
     protected P mMediaPlayer;
-    /**
-     * 实例化播放核心
-     */
     protected PlayerFactory<P> mPlayerFactory;
-    /**
-     * 控制器
-     */
     @Nullable
     protected BaseVideoController mVideoController;
-    /**
-     * 真正承载播放器视图的容器
-     */
     protected FrameLayout mPlayerContainer;
 
     protected InterSurfaceView mRenderView;
     protected SurfaceFactory mRenderViewFactory;
     protected int mCurrentScreenScaleType;
     protected int[] mVideoSize = {0, 0};
-    /**
-     * 是否静音
-     */
     protected boolean mIsMute;
 
-    /**
-     * 当前播放视频的地址
-     */
     protected String mUrl;
-    /**
-     * 当前视频地址的请求头
-     */
     protected Map<String, String> mHeaders;
-    /**
-     * assets文件
-     */
     protected AssetFileDescriptor mAssetFileDescriptor;
-    /**
-     * 当前正在播放视频的位置
-     */
     protected long mCurrentPosition;
-    /**
-     * 当前播放器的状态
-     * 比如：错误，开始播放，暂停播放，缓存中等等状态
-     */
     protected int mCurrentPlayState = ConstantKeys.CurrentState.STATE_IDLE;
     /**
      * 播放模式，普通模式，小窗口模式，正常模式等等
@@ -168,9 +137,8 @@ public class VideoPlayer<P extends AbstractVideoPlayer> extends FrameLayout
 
     private void init(AttributeSet attrs) {
         BaseToast.init(mContext.getApplicationContext());
-        //读取全局配置
+
         initConfig();
-        //读取xml中的配置，并综合全局配置
         initAttrs(attrs);
         initView();
     }
@@ -182,7 +150,6 @@ public class VideoPlayer<P extends AbstractVideoPlayer> extends FrameLayout
         mPlayerFactory = config.mPlayerFactory;
         mCurrentScreenScaleType = config.mScreenScaleType;
         mRenderViewFactory = config.mRenderViewFactory;
-        //设置是否打印日志
         VideoLogUtils.setIsLog(config.mIsEnableLog);
     }
 
