@@ -46,6 +46,7 @@ public class MultipleActivity extends AppCompatActivity {
         VideoPlayerBuilder videoPlayerBuilder = new VideoPlayerBuilder(builder);
         player1.setVideoBuilder(videoPlayerBuilder);
         BasisVideoController controller1 = new BasisVideoController(this);
+
         player1.setController(controller1);
         mVideoViews.add(player1);
 

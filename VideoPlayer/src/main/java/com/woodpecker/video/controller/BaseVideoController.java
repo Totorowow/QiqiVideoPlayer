@@ -53,15 +53,7 @@ import java.util.Map;
  *     @author yangchong
  *     blog  : https://github.com/yangchong211
  *     time  : 2018/11/9
- *     desc  : 控制器基类
- *     revise: 此类集成各种事件的处理逻辑，包括
- *             1.播放器状态改变: {@link #handlePlayerStateChanged(int)}
- *             2.播放状态改变: {@link #handlePlayStateChanged(int)}
- *             3.控制视图的显示和隐藏: {@link #handleVisibilityChanged(boolean, Animation)}
- *             4.播放进度改变: {@link #handleSetProgress(int, int)}
- *             5.锁定状态改变: {@link #handleLockStateChanged(boolean)}
- *             6.设备方向监听: {@link #onOrientationChanged(int)}
- *
+ *     desc  : some content was deleted by Totorowow
  * </pre>
  */
 public abstract class BaseVideoController extends FrameLayout implements InterVideoController,
@@ -533,12 +525,9 @@ public abstract class BaseVideoController extends FrameLayout implements InterVi
     public void onOrientationChanged(int orientation) {
         if (mActivity == null || mActivity.isFinishing()) return;
 
-        //记录用户手机上一次放置的位置
         int lastOrientation = mOrientation;
 
         if (orientation == OrientationEventListener.ORIENTATION_UNKNOWN) {
-            //手机平放时，检测不到有效的角度
-            //重置为原始位置 -1
             mOrientation = -1;
             return;
         }
@@ -608,7 +597,7 @@ public abstract class BaseVideoController extends FrameLayout implements InterVi
         }
     }
 
-    //------------------------ start handle event change ------------------------//
+
 
     private void handleVisibilityChanged(boolean isVisible, Animation anim) {
         if (!mIsLocked) {
@@ -639,9 +628,7 @@ public abstract class BaseVideoController extends FrameLayout implements InterVi
         onPlayStateChanged(playState);
     }
 
-    /**
-     * 子类重写此方法并在其中更新控制器在不同播放状态下的ui
-     */
+
     @CallSuper
     protected void onPlayStateChanged(int playState) {
         switch (playState) {
@@ -674,13 +661,7 @@ public abstract class BaseVideoController extends FrameLayout implements InterVi
         onPlayerStateChanged(playerState);
     }
 
-    /**
-     * 子类重写此方法并在其中更新控制器在不同播放器状态下的ui
-     * 普通模式，小窗口模式，正常模式三种其中一种
-     * MODE_NORMAL              普通模式
-     * MODE_FULL_SCREEN         全屏模式
-     * MODE_TINY_WINDOW         小屏模式
-     */
+
     @CallSuper
     protected void onPlayerStateChanged(@ConstantKeys.PlayMode int playerState) {
         switch (playerState) {
@@ -719,12 +700,7 @@ public abstract class BaseVideoController extends FrameLayout implements InterVi
         setProgress(duration, position);
     }
 
-    /**
-     * 刷新进度回调，子类可在此方法监听进度刷新，然后更新ui
-     *
-     * @param duration 视频总时长
-     * @param position 视频当前时长
-     */
+
     protected void setProgress(int duration, int position) {
 
     }
@@ -744,5 +720,4 @@ public abstract class BaseVideoController extends FrameLayout implements InterVi
 
     }
 
-    //------------------------ end handle event change ------------------------//
 }

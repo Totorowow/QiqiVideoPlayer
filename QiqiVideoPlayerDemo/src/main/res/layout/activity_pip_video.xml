@@ -11,15 +11,18 @@
         android:id="@+id/player_container"
         android:layout_width="match_parent"
         android:layout_gravity="center"
-        android:layout_height="400dp">
+        android:layout_weight="1"
+        android:layout_height="0dp">
 
     </FrameLayout>
 
     <Button
         android:id="@+id/btn_float"
         android:layout_marginTop="5dp"
+        android:background="@color/blackText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
+        android:textColor="@color/colorWhite"
         android:text="开启悬浮窗视频播放" />
 
 
