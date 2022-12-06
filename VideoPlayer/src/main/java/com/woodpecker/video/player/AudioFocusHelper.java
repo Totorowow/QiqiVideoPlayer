@@ -36,13 +36,13 @@ import java.lang.ref.WeakReference;
 public final class AudioFocusHelper implements AudioManager.OnAudioFocusChangeListener {
 
     private Handler mHandler = new Handler(Looper.getMainLooper());
-    private WeakReference<VideoPlayer> mWeakVideoView;
+    private WeakReference<QiqiPlayer> mWeakVideoView;
     private AudioManager mAudioManager;
     private boolean mStartRequested = false;
     private boolean mPausedForLoss = false;
     private int mCurrentFocus = 0;
 
-    public AudioFocusHelper(@NonNull VideoPlayer videoView) {
+    public AudioFocusHelper(@NonNull QiqiPlayer videoView) {
         mWeakVideoView = new WeakReference<>(videoView);
         mAudioManager = (AudioManager) videoView.getContext().getApplicationContext()
                 .getSystemService(Context.AUDIO_SERVICE);
@@ -67,7 +67,7 @@ public final class AudioFocusHelper implements AudioManager.OnAudioFocusChangeLi
     }
 
     private void handleAudioFocusChange(int focusChange) {
-        final VideoPlayer videoView = mWeakVideoView.get();
+        final QiqiPlayer videoView = mWeakVideoView.get();
         if (videoView == null) {
             return;
         }

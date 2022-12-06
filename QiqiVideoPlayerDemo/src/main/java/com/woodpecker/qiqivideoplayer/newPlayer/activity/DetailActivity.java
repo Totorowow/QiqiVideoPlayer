@@ -11,8 +11,8 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.ViewCompat;
 
+import com.woodpecker.video.player.QiqiPlayer;
 import com.woodpecker.video.player.VideoViewManager;
-import com.woodpecker.video.player.VideoPlayer;
 import com.woodpecker.video.tool.PlayerUtils;
 import com.woodpecker.video.ui.view.BasisVideoController;
 
@@ -21,7 +21,7 @@ import com.woodpecker.qiqivideoplayer.R;
 public class DetailActivity extends AppCompatActivity {
 
     private FrameLayout mPlayerContainer;
-    private VideoPlayer mVideoView;
+    private QiqiPlayer mVideoView;
     public static final String VIEW_NAME_PLAYER_CONTAINER = "player_container";
 
     @Override
@@ -42,7 +42,7 @@ public class DetailActivity extends AppCompatActivity {
 
     private void initVideoView() {
         //拿到VideoView实例
-        VideoPlayer mVideoView = VideoViewManager.instance().get("seamless");
+        QiqiPlayer mVideoView = VideoViewManager.instance().get("seamless");
         //如果已经添加到某个父容器，就将其移除
         PlayerUtils.removeViewFormParent(mVideoView);
         //把播放器添加到页面的容器中

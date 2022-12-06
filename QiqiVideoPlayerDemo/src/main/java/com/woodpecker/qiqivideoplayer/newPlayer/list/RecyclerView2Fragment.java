@@ -15,13 +15,13 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.woodpecker.video.player.QiqiPlayer;
 import com.yc.pagerlib.recycler.ScrollPageHelper;
 import com.woodpecker.qiqivideoplayer.ConstantVideo;
 
 import com.woodpecker.video.config.ConstantKeys;
 import com.woodpecker.video.config.VideoInfoBean;
 import com.woodpecker.video.player.SimpleStateListener;
-import com.woodpecker.video.player.VideoPlayer;
 import com.woodpecker.video.player.VideoViewManager;
 import com.woodpecker.video.tool.PlayerUtils;
 import com.woodpecker.video.ui.view.BasisVideoController;
@@ -39,7 +39,7 @@ public class RecyclerView2Fragment extends Fragment {
     protected RecyclerView mRecyclerView;
     protected LinearLayoutManager mLinearLayoutManager;
 
-    protected VideoPlayer mVideoView;
+    protected QiqiPlayer mVideoView;
     protected BasisVideoController mController;
 
     /**
@@ -103,7 +103,7 @@ public class RecyclerView2Fragment extends Fragment {
     }
 
     protected void initVideoView() {
-        mVideoView = new VideoPlayer(context);
+        mVideoView = new QiqiPlayer(context);
         mVideoView.setOnStateChangeListener(new SimpleStateListener() {
             @Override
             public void onPlayStateChanged(int playState) {

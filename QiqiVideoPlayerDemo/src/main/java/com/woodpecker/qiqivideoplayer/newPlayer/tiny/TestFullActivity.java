@@ -10,7 +10,7 @@ import com.woodpecker.qiqivideoplayer.BaseActivity;
 
 
 import com.woodpecker.video.config.ConstantKeys;
-import com.woodpecker.video.player.VideoPlayer;
+import com.woodpecker.video.player.QiqiPlayer;
 import com.woodpecker.video.ui.view.BasisVideoController;
 
 import com.woodpecker.qiqivideoplayer.R;
@@ -23,15 +23,15 @@ import cn.ycbjie.ycstatusbarlib.bar.StateAppBar;
  */
 public class TestFullActivity extends BaseActivity implements View.OnClickListener {
 
-    private VideoPlayer mVideoPlayer;
+    private QiqiPlayer mQiqiPlayer;
     private Button mBtnTiny1;
     private Button mBtnTiny2;
 
     @Override
     protected void onResume() {
         super.onResume();
-        if (mVideoPlayer != null) {
-            mVideoPlayer.resume();
+        if (mQiqiPlayer != null) {
+            mQiqiPlayer.resume();
         }
     }
 
@@ -39,22 +39,22 @@ public class TestFullActivity extends BaseActivity implements View.OnClickListen
     @Override
     protected void onPause() {
         super.onPause();
-        if (mVideoPlayer != null) {
-            mVideoPlayer.pause();
+        if (mQiqiPlayer != null) {
+            mQiqiPlayer.pause();
         }
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (mVideoPlayer != null) {
-            mVideoPlayer.release();
+        if (mQiqiPlayer != null) {
+            mQiqiPlayer.release();
         }
     }
 
     @Override
     public void onBackPressed() {
-        if (mVideoPlayer == null || !mVideoPlayer.onBackPressed()) {
+        if (mQiqiPlayer == null || !mQiqiPlayer.onBackPressed()) {
             super.onBackPressed();
         }
     }
@@ -68,7 +68,7 @@ public class TestFullActivity extends BaseActivity implements View.OnClickListen
     public void initView() {
         StateAppBar.translucentStatusBar(this, true);
         adaptCutoutAboveAndroidP();
-        mVideoPlayer = findViewById(R.id.video_player);
+        mQiqiPlayer = findViewById(R.id.video_player);
         mBtnTiny1 = (Button) findViewById(R.id.btn_tiny_1);
         mBtnTiny2 = (Button) findViewById(R.id.btn_tiny_2);
 
@@ -76,11 +76,11 @@ public class TestFullActivity extends BaseActivity implements View.OnClickListen
         //设置视频背景图
         Glide.with(this).load(R.drawable.image_default).into(controller.getThumb());
         //设置控制器
-        mVideoPlayer.setController(controller);
-        //mVideoPlayer.setUrl(ConstantVideo.VideoPlayerList[0]);
-        mVideoPlayer.setUrl("android.resource://" + getPackageName() + "/" + R.raw.flower);
-        mVideoPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_ORIGINAL);
-        mVideoPlayer.start();
+        mQiqiPlayer.setController(controller);
+        //mQiqiPlayer.setUrl(ConstantVideo.VideoPlayerList[0]);
+        mQiqiPlayer.setUrl("android.resource://" + getPackageName() + "/" + R.raw.flower);
+        mQiqiPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_ORIGINAL);
+        mQiqiPlayer.start();
     }
 
     @Override
@@ -98,10 +98,10 @@ public class TestFullActivity extends BaseActivity implements View.OnClickListen
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_tiny_1:
-                mVideoPlayer.startFullScreen();
+                mQiqiPlayer.startFullScreen();
                 break;
             case R.id.btn_tiny_2:
-                mVideoPlayer.startTinyScreen();
+                mQiqiPlayer.startTinyScreen();
                 break;
             default:
                 break;

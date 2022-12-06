@@ -32,7 +32,7 @@ public class VideoViewManager {
     /**
      * 保存VideoView的容器
      */
-    private LinkedHashMap<String, VideoPlayer> mVideoViews = new LinkedHashMap<>();
+    private LinkedHashMap<String, QiqiPlayer> mVideoViews = new LinkedHashMap<>();
 
     /**
      * 是否在移动网络下直接播放视频
@@ -103,12 +103,12 @@ public class VideoViewManager {
      * 添加VideoView
      * @param tag 相同tag的VideoView只会保存一个，如果tag相同则会release并移除前一个
      */
-    public void add(VideoPlayer videoView, String tag) {
+    public void add(QiqiPlayer videoView, String tag) {
         if (!(videoView.getContext() instanceof Application)) {
             VideoLogUtils.i("The Context of this VideoView is not an Application Context," +
                     "you must remove it after release,or it will lead to memory leek.");
         }
-        VideoPlayer old = get(tag);
+        QiqiPlayer old = get(tag);
         if (old != null) {
             old.release();
             remove(tag);
@@ -116,7 +116,7 @@ public class VideoViewManager {
         mVideoViews.put(tag, videoView);
     }
 
-    public VideoPlayer get(String tag) {
+    public QiqiPlayer get(String tag) {
         return mVideoViews.get(tag);
     }
 
@@ -136,7 +136,7 @@ public class VideoViewManager {
     }
 
     public void releaseByTag(String tag, boolean isRemove) {
-        VideoPlayer videoView = get(tag);
+        QiqiPlayer videoView = get(tag);
         if (videoView != null) {
             videoView.release();
             if (isRemove) {
@@ -146,7 +146,7 @@ public class VideoViewManager {
     }
 
     public boolean onBackPress(String tag) {
-        VideoPlayer videoView = get(tag);
+        QiqiPlayer videoView = get(tag);
         if (videoView == null) {
             return false;
         }

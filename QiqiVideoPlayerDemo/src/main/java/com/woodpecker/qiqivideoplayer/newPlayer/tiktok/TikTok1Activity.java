@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.OrientationHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.woodpecker.video.player.QiqiPlayer;
 import com.yc.pagerlib.recycler.OnPagerListener;
 import com.yc.pagerlib.recycler.PagerLayoutManager;
 import com.woodpecker.qiqivideoplayer.ConstantVideo;
@@ -22,7 +23,6 @@ import com.woodpecker.qiqivideoplayer.newPlayer.list.VideoRecyclerViewAdapter;
 import com.woodpecker.video.config.ConstantKeys;
 import com.woodpecker.video.config.VideoInfoBean;
 import com.woodpecker.video.player.SimpleStateListener;
-import com.woodpecker.video.player.VideoPlayer;
 import com.woodpecker.video.player.VideoViewManager;
 import com.woodpecker.video.tool.PlayerUtils;
 import com.woodpecker.video.ui.view.BasisVideoController;
@@ -44,7 +44,7 @@ public class TikTok1Activity extends AppCompatActivity {
     protected VideoRecyclerViewAdapter mAdapter;
     protected RecyclerView mRecyclerView;
     protected PagerLayoutManager mLinearLayoutManager;
-    protected VideoPlayer mVideoView;
+    protected QiqiPlayer mVideoView;
     protected BasisVideoController mController;
 
     /**
@@ -120,7 +120,7 @@ public class TikTok1Activity extends AppCompatActivity {
     }
 
     protected void initVideoView() {
-        mVideoView = new VideoPlayer(this);
+        mVideoView = new QiqiPlayer(this);
         mVideoView.setOnStateChangeListener(new SimpleStateListener() {
             @Override
             public void onPlayStateChanged(int playState) {

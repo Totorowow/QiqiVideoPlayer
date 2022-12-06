@@ -17,8 +17,8 @@ import com.woodpecker.qiqivideoplayer.newPlayer.list.VideoRecyclerViewAdapter;
 
 import com.woodpecker.video.config.ConstantKeys;
 import com.woodpecker.video.config.VideoInfoBean;
+import com.woodpecker.video.player.QiqiPlayer;
 import com.woodpecker.video.player.SimpleStateListener;
-import com.woodpecker.video.player.VideoPlayer;
 import com.woodpecker.video.tool.PlayerUtils;
 import com.woodpecker.video.ui.view.BasisVideoController;
 
@@ -34,7 +34,7 @@ public class TinyScreenActivity extends AppCompatActivity implements OnItemChild
     private BasisVideoController mController;
     private List<VideoInfoBean> mVideos;
     private LinearLayoutManager mLinearLayoutManager;
-    private VideoPlayer mVideoPlayer;
+    private QiqiPlayer mQiqiPlayer;
     private int mCurPos = -1;
 
     @Override
@@ -48,8 +48,8 @@ public class TinyScreenActivity extends AppCompatActivity implements OnItemChild
     @Override
     protected void onResume() {
         super.onResume();
-        if (mVideoPlayer != null) {
-            mVideoPlayer.resume();
+        if (mQiqiPlayer != null) {
+            mQiqiPlayer.resume();
         }
     }
 
@@ -57,35 +57,35 @@ public class TinyScreenActivity extends AppCompatActivity implements OnItemChild
     @Override
     protected void onPause() {
         super.onPause();
-        if (mVideoPlayer != null) {
-            mVideoPlayer.pause();
+        if (mQiqiPlayer != null) {
+            mQiqiPlayer.pause();
         }
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (mVideoPlayer != null) {
-            mVideoPlayer.release();
+        if (mQiqiPlayer != null) {
+            mQiqiPlayer.release();
         }
     }
 
     @Override
     public void onBackPressed() {
-        if (mVideoPlayer == null || !mVideoPlayer.onBackPressed()) {
+        if (mQiqiPlayer == null || !mQiqiPlayer.onBackPressed()) {
             super.onBackPressed();
         }
     }
 
 
     protected void initView() {
-        mVideoPlayer = new VideoPlayer(this);
-        mVideoPlayer.setOnStateChangeListener(new SimpleStateListener() {
+        mQiqiPlayer = new QiqiPlayer(this);
+        mQiqiPlayer.setOnStateChangeListener(new SimpleStateListener() {
             @Override
             public void onPlayStateChanged(int playState) {
                 if (playState == ConstantKeys.CurrentState.STATE_BUFFERING_PLAYING) {
-                    if (mVideoPlayer.isTinyScreen()) {
-                        mVideoPlayer.stopTinyScreen();
+                    if (mQiqiPlayer.isTinyScreen()) {
+                        mQiqiPlayer.stopTinyScreen();
                         releaseVideoView();
                     }
                 }
@@ -118,9 +118,9 @@ public class TinyScreenActivity extends AppCompatActivity implements OnItemChild
             public void onChildViewDetachedFromWindow(@NonNull View view) {
                 VideoRecyclerViewAdapter.VideoHolder holder = (VideoRecyclerViewAdapter.VideoHolder) view.getTag();
                 int position = holder.mPosition;
-                if (position == mCurPos && !mVideoPlayer.isFullScreen()) {
-                    mVideoPlayer.startTinyScreen();
-                    mVideoPlayer.setController(null);
+                if (position == mCurPos && !mQiqiPlayer.isFullScreen()) {
+                    mQiqiPlayer.startTinyScreen();
+                    mQiqiPlayer.setController(null);
                     mController.setPlayState(ConstantKeys.CurrentState.STATE_IDLE);
                 }
             }
@@ -138,32 +138,32 @@ public class TinyScreenActivity extends AppCompatActivity implements OnItemChild
      * @param position 列表位置
      */
     protected void startPlay(int position, boolean isRelease) {
-        if (mVideoPlayer.isTinyScreen())
-            mVideoPlayer.stopTinyScreen();
+        if (mQiqiPlayer.isTinyScreen())
+            mQiqiPlayer.stopTinyScreen();
         if (mCurPos != -1 && isRelease) {
             releaseVideoView();
         }
         VideoInfoBean videoBean = mVideos.get(position);
-        mVideoPlayer.setUrl(videoBean.getVideoUrl());
+        mQiqiPlayer.setUrl(videoBean.getVideoUrl());
         View itemView = mLinearLayoutManager.findViewByPosition(position);
         if (itemView == null) return;
         //注意：要先设置控制才能去设置控制器的状态。
-        mVideoPlayer.setController(mController);
-        mController.setPlayState(mVideoPlayer.getCurrentPlayState());
+        mQiqiPlayer.setController(mController);
+        mController.setPlayState(mQiqiPlayer.getCurrentPlayState());
 
         VideoRecyclerViewAdapter.VideoHolder viewHolder = (VideoRecyclerViewAdapter.VideoHolder) itemView.getTag();
         //把列表中预置的PrepareView添加到控制器中，注意isPrivate此处只能为true。
         mController.addControlComponent(viewHolder.mPrepareView, true);
-        PlayerUtils.removeViewFormParent(mVideoPlayer);
-        viewHolder.mPlayerContainer.addView(mVideoPlayer, 0);
-        mVideoPlayer.start();
+        PlayerUtils.removeViewFormParent(mQiqiPlayer);
+        viewHolder.mPlayerContainer.addView(mQiqiPlayer, 0);
+        mQiqiPlayer.start();
         mCurPos = position;
     }
 
     private void releaseVideoView() {
-        mVideoPlayer.release();
-        if (mVideoPlayer.isFullScreen()) {
-            mVideoPlayer.stopFullScreen();
+        mQiqiPlayer.release();
+        if (mQiqiPlayer.isFullScreen()) {
+            mQiqiPlayer.stopFullScreen();
         }
         if (getRequestedOrientation() != ActivityInfo.SCREEN_ORIENTATION_PORTRAIT) {
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);

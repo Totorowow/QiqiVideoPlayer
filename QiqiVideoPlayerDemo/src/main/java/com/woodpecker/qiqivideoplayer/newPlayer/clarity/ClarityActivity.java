@@ -11,7 +11,7 @@ import com.bumptech.glide.Glide;
 
 import com.woodpecker.video.config.ConstantKeys;
 import com.woodpecker.video.config.VideoInfoBean;
-import com.woodpecker.video.player.VideoPlayer;
+import com.woodpecker.video.player.QiqiPlayer;
 import com.woodpecker.video.ui.view.BasisVideoController;
 import com.woodpecker.video.ui.view.CustomBottomView;
 
@@ -23,7 +23,7 @@ import java.util.List;
 
 public class ClarityActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private VideoPlayer mVideoPlayer;
+    private QiqiPlayer mQiqiPlayer;
     private Button mBtnScaleNormal;
     private Button mBtnScale169;
     private Button mBtnScale43;
@@ -42,8 +42,8 @@ public class ClarityActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     protected void onResume() {
         super.onResume();
-        if (mVideoPlayer != null) {
-            mVideoPlayer.resume();
+        if (mQiqiPlayer != null) {
+            mQiqiPlayer.resume();
         }
     }
 
@@ -51,28 +51,28 @@ public class ClarityActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     protected void onPause() {
         super.onPause();
-        if (mVideoPlayer != null) {
-            mVideoPlayer.pause();
+        if (mQiqiPlayer != null) {
+            mQiqiPlayer.pause();
         }
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (mVideoPlayer != null) {
-            mVideoPlayer.release();
+        if (mQiqiPlayer != null) {
+            mQiqiPlayer.release();
         }
     }
 
     @Override
     public void onBackPressed() {
-        if (mVideoPlayer == null || !mVideoPlayer.onBackPressed()) {
+        if (mQiqiPlayer == null || !mQiqiPlayer.onBackPressed()) {
             super.onBackPressed();
         }
     }
 
     private void initFindViewById() {
-        mVideoPlayer = findViewById(R.id.video_player);
+        mQiqiPlayer = findViewById(R.id.video_player);
         mBtnScaleNormal = findViewById(R.id.btn_scale_normal);
         mBtnScale169 = findViewById(R.id.btn_scale_169);
         mBtnScale43 = findViewById(R.id.btn_scale_43);
@@ -90,8 +90,8 @@ public class ClarityActivity extends AppCompatActivity implements View.OnClickLi
         mDefinitionControlView.setOnRateSwitchListener(new DefinitionControlView.OnRateSwitchListener() {
             @Override
             public void onRateChange(String url) {
-                mVideoPlayer.setUrl(url);
-                mVideoPlayer.replay(false);
+                mQiqiPlayer.setUrl(url);
+                mQiqiPlayer.replay(false);
             }
         });
         List<VideoInfoBean> clarites = getClarites();
@@ -105,9 +105,9 @@ public class ClarityActivity extends AppCompatActivity implements View.OnClickLi
         //设置视频背景图
         Glide.with(this).load(R.drawable.image_default).into(controller.getThumb());
         //设置控制器
-        mVideoPlayer.setController(controller);
-        mVideoPlayer.setUrl(clarites.get(0).getVideoUrl());
-        mVideoPlayer.start();
+        mQiqiPlayer.setController(controller);
+        mQiqiPlayer.setUrl(clarites.get(0).getVideoUrl());
+        mQiqiPlayer.start();
     }
 
 
@@ -134,11 +134,11 @@ public class ClarityActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     public void onClick(View v) {
         if (v == mBtnScale169){
-            mVideoPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_16_9);
+            mQiqiPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_16_9);
         } else if (v == mBtnScaleNormal){
-            mVideoPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_DEFAULT);
+            mQiqiPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_DEFAULT);
         }else if (v == mBtnScale43){
-            mVideoPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_4_3);
+            mQiqiPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_4_3);
         } else if (v == mBtnCrop){
 
         } else if (v == mBtnGif){

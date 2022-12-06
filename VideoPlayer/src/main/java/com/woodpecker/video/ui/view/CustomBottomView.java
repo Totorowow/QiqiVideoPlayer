@@ -42,7 +42,7 @@ import com.woodpecker.video.bridge.ControlWrapper;
 import com.woodpecker.video.config.VideoPlayerConfig;
 import com.woodpecker.video.tool.PlayerUtils;
 
-import com.yc.video.R;
+import com.woodpecker.video.R;
 
 /**
  * <pre>

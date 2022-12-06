@@ -10,7 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import com.bumptech.glide.Glide;
 
-import com.woodpecker.video.player.VideoPlayer;
+import com.woodpecker.video.player.QiqiPlayer;
 import com.woodpecker.video.player.VideoViewManager;
 import com.woodpecker.video.ui.pip.FloatVideoManager;
 import com.woodpecker.video.ui.view.BasisVideoController;
@@ -66,7 +66,7 @@ public class PipActivity extends AppCompatActivity{
 
     private void initVideoPlayer() {
         mPIPManager = FloatVideoManager.getInstance(this);
-        VideoPlayer videoView = VideoViewManager.instance().get(FloatVideoManager.PIP);
+        QiqiPlayer videoView = VideoViewManager.instance().get(FloatVideoManager.PIP);
         BasisVideoController controller = new BasisVideoController(this);
         videoView.setController(controller);
         if (mPIPManager.isStartFloatWindow()) {

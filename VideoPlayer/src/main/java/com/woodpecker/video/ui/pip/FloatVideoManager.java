@@ -18,7 +18,7 @@ package com.woodpecker.video.ui.pip;
 import android.content.Context;
 import android.view.View;
 
-import com.woodpecker.video.player.VideoPlayer;
+import com.woodpecker.video.player.QiqiPlayer;
 import com.woodpecker.video.player.VideoViewManager;
 import com.woodpecker.video.tool.PlayerUtils;
 
@@ -37,7 +37,7 @@ public class FloatVideoManager {
     //画中画
     public static final String PIP = "pip";
     private static FloatVideoManager instance;
-    private VideoPlayer mVideoPlayer;
+    private QiqiPlayer mQiqiPlayer;
     private FloatVideoView mFloatView;
     private CustomFloatController mFloatController;
     private boolean mIsShowing;
@@ -46,8 +46,8 @@ public class FloatVideoManager {
 
 
     private FloatVideoManager(Context context) {
-        mVideoPlayer = new VideoPlayer(context);
-        VideoViewManager.instance().add(mVideoPlayer, PIP);
+        mQiqiPlayer = new QiqiPlayer(context);
+        VideoViewManager.instance().add(mQiqiPlayer, PIP);
         mFloatController = new CustomFloatController(context);
         mFloatView = new FloatVideoView(context, 0, 0);
     }
@@ -67,11 +67,11 @@ public class FloatVideoManager {
         if (mIsShowing) {
             return;
         }
-        PlayerUtils.removeViewFormParent(mVideoPlayer);
-        mVideoPlayer.setController(mFloatController);
-        mFloatController.setPlayState(mVideoPlayer.getCurrentPlayState());
-        mFloatController.setPlayerState(mVideoPlayer.getCurrentPlayerState());
-        mFloatView.addView(mVideoPlayer);
+        PlayerUtils.removeViewFormParent(mQiqiPlayer);
+        mQiqiPlayer.setController(mFloatController);
+        mFloatController.setPlayState(mQiqiPlayer.getCurrentPlayState());
+        mFloatController.setPlayerState(mQiqiPlayer.getCurrentPlayerState());
+        mFloatView.addView(mQiqiPlayer);
         mFloatView.addToWindow();
         mIsShowing = true;
     }
@@ -81,7 +81,7 @@ public class FloatVideoManager {
             return;
         }
         mFloatView.removeFromWindow();
-        PlayerUtils.removeViewFormParent(mVideoPlayer);
+        PlayerUtils.removeViewFormParent(mQiqiPlayer);
         mIsShowing = false;
     }
 
@@ -97,29 +97,29 @@ public class FloatVideoManager {
         if (mIsShowing) {
             return;
         }
-        mVideoPlayer.pause();
+        mQiqiPlayer.pause();
     }
 
     public void resume() {
         if (mIsShowing) {
             return;
         }
-        mVideoPlayer.resume();
+        mQiqiPlayer.resume();
     }
 
     public void reset() {
         if (mIsShowing){
             return;
         }
-        PlayerUtils.removeViewFormParent(mVideoPlayer);
-        mVideoPlayer.release();
-        mVideoPlayer.setController(null);
+        PlayerUtils.removeViewFormParent(mQiqiPlayer);
+        mQiqiPlayer.release();
+        mQiqiPlayer.setController(null);
         mPlayingPosition = -1;
         mActClass = null;
     }
 
     public boolean onBackPress() {
-        return !mIsShowing && mVideoPlayer.onBackPressed();
+        return !mIsShowing && mQiqiPlayer.onBackPressed();
     }
 
     public boolean isStartFloatWindow() {
@@ -131,7 +131,7 @@ public class FloatVideoManager {
      */
     public void setFloatViewVisible() {
         if (mIsShowing) {
-            mVideoPlayer.resume();
+            mQiqiPlayer.resume();
             mFloatView.setVisibility(View.VISIBLE);
         }
     }

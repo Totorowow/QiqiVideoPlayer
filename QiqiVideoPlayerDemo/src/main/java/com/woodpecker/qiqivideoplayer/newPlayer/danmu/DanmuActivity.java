@@ -10,8 +10,8 @@ import com.woodpecker.qiqivideoplayer.BaseActivity;
 import com.woodpecker.qiqivideoplayer.ConstantVideo;
 
 import com.woodpecker.video.config.ConstantKeys;
+import com.woodpecker.video.player.QiqiPlayer;
 import com.woodpecker.video.player.SimpleStateListener;
-import com.woodpecker.video.player.VideoPlayer;
 import com.woodpecker.video.ui.view.BasisVideoController;
 
 import com.woodpecker.qiqivideoplayer.R;
@@ -24,7 +24,7 @@ import cn.ycbjie.ycstatusbarlib.bar.StateAppBar;
  */
 public class DanmuActivity extends BaseActivity implements View.OnClickListener {
 
-    private VideoPlayer mVideoPlayer;
+    private QiqiPlayer mQiqiPlayer;
     private LinearLayout mLayout;
     private Button mBtnShow;
     private Button mBtnHide;
@@ -36,24 +36,24 @@ public class DanmuActivity extends BaseActivity implements View.OnClickListener 
     @Override
     protected void onResume() {
         super.onResume();
-        if (mVideoPlayer != null) {
-            mVideoPlayer.resume();
+        if (mQiqiPlayer != null) {
+            mQiqiPlayer.resume();
         }
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        if (mVideoPlayer != null) {
-            mVideoPlayer.pause();
+        if (mQiqiPlayer != null) {
+            mQiqiPlayer.pause();
         }
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (mVideoPlayer != null) {
-            mVideoPlayer.release();
+        if (mQiqiPlayer != null) {
+            mQiqiPlayer.release();
         }
         if (mHandler!=null){
             mHandler.removeCallbacksAndMessages(null);
@@ -63,7 +63,7 @@ public class DanmuActivity extends BaseActivity implements View.OnClickListener 
 
     @Override
     public void onBackPressed() {
-        if (mVideoPlayer == null || !mVideoPlayer.onBackPressed()) {
+        if (mQiqiPlayer == null || !mQiqiPlayer.onBackPressed()) {
             super.onBackPressed();
         }
     }
@@ -84,11 +84,11 @@ public class DanmuActivity extends BaseActivity implements View.OnClickListener 
         //设置视频背景图
         Glide.with(this).load(R.drawable.image_default).into(controller.getThumb());
         //设置控制器
-        mVideoPlayer.setController(controller);
-        mVideoPlayer.setUrl(ConstantVideo.VideoPlayerList[0]);
-        mVideoPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_16_9);
-        mVideoPlayer.start();
-        mVideoPlayer.addOnStateChangeListener(new SimpleStateListener() {
+        mQiqiPlayer.setController(controller);
+        mQiqiPlayer.setUrl(ConstantVideo.VideoPlayerList[0]);
+        mQiqiPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_16_9);
+        mQiqiPlayer.start();
+        mQiqiPlayer.addOnStateChangeListener(new SimpleStateListener() {
             @Override
             public void onPlayStateChanged(int playState) {
                 if (playState == ConstantKeys.CurrentState.STATE_PREPARED) {
@@ -101,7 +101,7 @@ public class DanmuActivity extends BaseActivity implements View.OnClickListener 
     }
 
     private void initFindViewById() {
-        mVideoPlayer = findViewById(R.id.video_player);
+        mQiqiPlayer = findViewById(R.id.video_player);
         mLayout = findViewById(R.id.layout);
         mBtnShow = findViewById(R.id.btn_show);
         mBtnHide = findViewById(R.id.btn_hide);

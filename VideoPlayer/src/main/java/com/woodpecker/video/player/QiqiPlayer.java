@@ -29,12 +29,12 @@ import android.view.Gravity;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
+import com.woodpecker.video.R;
 import com.woodpecker.video.config.ConstantKeys;
 import com.woodpecker.video.config.VideoPlayerConfig;
 import com.woodpecker.video.tool.BaseToast;
 import com.woodpecker.video.tool.PlayerUtils;
 import com.woodpecker.video.tool.VideoException;
-import com.yc.video.R;
 import com.woodpecker.video.controller.BaseVideoController;
 import com.woodpecker.kernel.inter.AbstractVideoPlayer;
 import com.woodpecker.kernel.factory.PlayerFactory;
@@ -52,13 +52,11 @@ import java.util.Map;
 /**
  * <pre>
  *     @author yangchong
- *     blog  : https://github.com/yangchong211
  *     time  : 2018/11/9
- *     desc  : some content was delected by Totorowow
- *     revise:
+ *     desc  : some content was delected by Totorowow,such as class name
  * </pre>
  */
-public class VideoPlayer<P extends AbstractVideoPlayer> extends FrameLayout
+public class QiqiPlayer<P extends AbstractVideoPlayer> extends FrameLayout
         implements InterVideoPlayer, VideoPlayerListener {
 
     private Context mContext;
@@ -121,15 +119,15 @@ public class VideoPlayer<P extends AbstractVideoPlayer> extends FrameLayout
      */
     private int mPlayerBackgroundColor;
 
-    public VideoPlayer(@NonNull Context context) {
+    public QiqiPlayer(@NonNull Context context) {
         this(context, null);
     }
 
-    public VideoPlayer(@NonNull Context context, @Nullable AttributeSet attrs) {
+    public QiqiPlayer(@NonNull Context context, @Nullable AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public VideoPlayer(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public QiqiPlayer(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         mContext = context;
         init(attrs);

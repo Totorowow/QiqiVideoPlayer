@@ -28,7 +28,7 @@ import androidx.annotation.NonNull;
 
 import com.woodpecker.video.tool.PlayerUtils;
 
-import com.yc.video.R;
+import com.woodpecker.video.R;
 
 /**
  * <pre>

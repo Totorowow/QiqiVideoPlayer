@@ -32,7 +32,7 @@ import androidx.annotation.Nullable;
 import com.woodpecker.video.config.ConstantKeys;
 import com.woodpecker.video.bridge.ControlWrapper;
 
-import com.yc.video.R;
+import com.woodpecker.video.R;
 
 import com.woodpecker.video.ui.view.InterControlView;
 

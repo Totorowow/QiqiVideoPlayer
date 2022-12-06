@@ -13,8 +13,8 @@ import com.woodpecker.qiqivideoplayer.ConstantVideo;
 
 import com.woodpecker.video.config.ConstantKeys;
 import com.woodpecker.video.config.VideoInfoBean;
+import com.woodpecker.video.player.QiqiPlayer;
 import com.woodpecker.video.player.SimpleStateListener;
-import com.woodpecker.video.player.VideoPlayer;
 import com.woodpecker.video.ui.view.BasisVideoController;
 
 import com.woodpecker.qiqivideoplayer.R;
@@ -27,7 +27,7 @@ import java.util.List;
  */
 public class ContinuousVideoActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private VideoPlayer mVideoPlayer;
+    private QiqiPlayer mQiqiPlayer;
     private Button mBtnScaleNormal;
     private Button mBtnScale169;
     private Button mBtnScale43;
@@ -47,8 +47,8 @@ public class ContinuousVideoActivity extends AppCompatActivity implements View.O
     @Override
     protected void onResume() {
         super.onResume();
-        if (mVideoPlayer != null) {
-            mVideoPlayer.resume();
+        if (mQiqiPlayer != null) {
+            mQiqiPlayer.resume();
         }
     }
 
@@ -56,28 +56,28 @@ public class ContinuousVideoActivity extends AppCompatActivity implements View.O
     @Override
     protected void onPause() {
         super.onPause();
-        if (mVideoPlayer != null) {
-            mVideoPlayer.pause();
+        if (mQiqiPlayer != null) {
+            mQiqiPlayer.pause();
         }
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (mVideoPlayer != null) {
-            mVideoPlayer.release();
+        if (mQiqiPlayer != null) {
+            mQiqiPlayer.release();
         }
     }
 
     @Override
     public void onBackPressed() {
-        if (mVideoPlayer == null || !mVideoPlayer.onBackPressed()) {
+        if (mQiqiPlayer == null || !mQiqiPlayer.onBackPressed()) {
             super.onBackPressed();
         }
     }
 
     private void initFindViewById() {
-        mVideoPlayer = findViewById(R.id.video_player);
+        mQiqiPlayer = findViewById(R.id.video_player);
         mBtnScaleNormal = findViewById(R.id.btn_scale_normal);
         mBtnScale169 = findViewById(R.id.btn_scale_169);
         mBtnScale43 = findViewById(R.id.btn_scale_43);
@@ -90,12 +90,12 @@ public class ContinuousVideoActivity extends AppCompatActivity implements View.O
         //设置视频背景图
         Glide.with(this).load(R.drawable.image_default).into(controller.getThumb());
         //设置控制器
-        mVideoPlayer.setController(controller);
-        mVideoPlayer.setUrl(ConstantVideo.VideoPlayerList[0]);
-        mVideoPlayer.start();
+        mQiqiPlayer.setController(controller);
+        mQiqiPlayer.setUrl(ConstantVideo.VideoPlayerList[0]);
+        mQiqiPlayer.start();
 
         //监听播放结束
-        mVideoPlayer.addOnStateChangeListener(new SimpleStateListener() {
+        mQiqiPlayer.addOnStateChangeListener(new SimpleStateListener() {
             private int mCurrentVideoPosition;
             @Override
             public void onPlayStateChanged(int playState) {
@@ -103,13 +103,13 @@ public class ContinuousVideoActivity extends AppCompatActivity implements View.O
                     if (data != null) {
                         mCurrentVideoPosition++;
                         if (mCurrentVideoPosition >= data.size()) return;
-                        mVideoPlayer.release();
+                        mQiqiPlayer.release();
                         //重新设置数据
                         VideoInfoBean videoBean = data.get(mCurrentVideoPosition);
-                        mVideoPlayer.setUrl(videoBean.getVideoUrl());
-                        mVideoPlayer.setController(controller);
+                        mQiqiPlayer.setUrl(videoBean.getVideoUrl());
+                        mQiqiPlayer.setController(controller);
                         //开始播放
-                        mVideoPlayer.start();
+                        mQiqiPlayer.start();
                     }
                 }
             }
@@ -128,11 +128,11 @@ public class ContinuousVideoActivity extends AppCompatActivity implements View.O
     @Override
     public void onClick(View v) {
         if (v == mBtnScale169){
-            mVideoPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_16_9);
+            mQiqiPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_16_9);
         } else if (v == mBtnScaleNormal){
-            mVideoPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_DEFAULT);
+            mQiqiPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_DEFAULT);
         }else if (v == mBtnScale43){
-            mVideoPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_4_3);
+            mQiqiPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_4_3);
         } else if (v == mBtnCrop){
 
         } else if (v == mBtnGif){

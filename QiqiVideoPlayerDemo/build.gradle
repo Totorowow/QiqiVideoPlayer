@@ -70,7 +70,7 @@ dependencies {
 
     //The following dependencies are not temporarily available
     //implementation 'com.woodpecker:MusicPlayer:1.0'
-    //implementation 'com.woodpecker:VideoPlayer:1.0'
+    //implementation 'com.woodpecker:QiqiPlayer:1.0'
     //implementation 'com.woodpecker:VideoCache:1.0'
     //implementation 'com.woodpecker:VideoKernel:1.0'
     //implementation 'com.woodpecker:VideoView:1.0'

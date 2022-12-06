@@ -20,7 +20,7 @@ import com.woodpecker.videocache.cache.ProxyVideoCacheManager;
 
 import com.woodpecker.video.config.ConstantKeys;
 import com.woodpecker.video.config.VideoInfoBean;
-import com.woodpecker.video.player.VideoPlayer;
+import com.woodpecker.video.player.QiqiPlayer;
 import com.woodpecker.video.tool.PlayerUtils;
 import com.woodpecker.video.ui.view.BasisVideoController;
 
@@ -46,7 +46,7 @@ public class TikTok2Activity extends AppCompatActivity {
     private Tiktok2Adapter mTiktok2Adapter;
     private VerticalViewPager mViewPager;
     private PreloadManager mPreloadManager;
-    private VideoPlayer mVideoPlayer;
+    private QiqiPlayer mQiqiPlayer;
     private BasisVideoController mController;
 
     private static final String KEY_INDEX = "index";
@@ -60,8 +60,8 @@ public class TikTok2Activity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (mVideoPlayer != null) {
-            mVideoPlayer.release();
+        if (mQiqiPlayer != null) {
+            mQiqiPlayer.release();
         }
         mPreloadManager.removeAllPreloadTask();
         //清除缓存，实际使用可以不需要清除，这里为了方便测试
@@ -71,8 +71,8 @@ public class TikTok2Activity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if (mVideoPlayer != null) {
-            mVideoPlayer.resume();
+        if (mQiqiPlayer != null) {
+            mQiqiPlayer.resume();
         }
     }
 
@@ -80,14 +80,14 @@ public class TikTok2Activity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        if (mVideoPlayer != null) {
-            mVideoPlayer.pause();
+        if (mQiqiPlayer != null) {
+            mQiqiPlayer.pause();
         }
     }
 
     @Override
     public void onBackPressed() {
-        if (mVideoPlayer == null || !mVideoPlayer.onBackPressed()) {
+        if (mQiqiPlayer == null || !mQiqiPlayer.onBackPressed()) {
             super.onBackPressed();
         }
     }
@@ -130,12 +130,12 @@ public class TikTok2Activity extends AppCompatActivity {
     }
 
     private void initVideoView() {
-        mVideoPlayer = new VideoPlayer(this);
-        mVideoPlayer.setLooping(true);
+        mQiqiPlayer = new QiqiPlayer(this);
+        mQiqiPlayer.setLooping(true);
         //以下只能二选一，看你的需求
-        mVideoPlayer.setRenderViewFactory(TikTokRenderViewFactory.create());
+        mQiqiPlayer.setRenderViewFactory(TikTokRenderViewFactory.create());
         mController = new BasisVideoController(this);
-        mVideoPlayer.setController(mController);
+        mQiqiPlayer.setController(mController);
     }
 
     private void initViewPager() {
@@ -221,17 +221,17 @@ public class TikTok2Activity extends AppCompatActivity {
             View itemView = mViewPager.getChildAt(i);
             Tiktok2Adapter.ViewHolder viewHolder = (Tiktok2Adapter.ViewHolder) itemView.getTag();
             if (viewHolder.mPosition == position) {
-                mVideoPlayer.release();
-                PlayerUtils.removeViewFormParent(mVideoPlayer);
+                mQiqiPlayer.release();
+                PlayerUtils.removeViewFormParent(mQiqiPlayer);
 
                 VideoInfoBean tiktokBean = mVideoList.get(position);
                 String playUrl = mPreloadManager.getPlayUrl(tiktokBean.getVideoUrl());
                 VideoLogUtils.i("startPlay: " + "position: " + position + "  url: " + playUrl);
-                mVideoPlayer.setUrl(playUrl);
-                mVideoPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_16_9);
+                mQiqiPlayer.setUrl(playUrl);
+                mQiqiPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_16_9);
                 mController.addControlComponent(viewHolder.mTikTokView, true);
-                viewHolder.mPlayerContainer.addView(mVideoPlayer, 0);
-                mVideoPlayer.start();
+                viewHolder.mPlayerContainer.addView(mQiqiPlayer, 0);
+                mQiqiPlayer.start();
                 mCurPos = position;
                 break;
             }

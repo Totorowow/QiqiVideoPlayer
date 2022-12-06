@@ -27,7 +27,7 @@ import android.widget.TextView;
 
 import com.woodpecker.video.tool.PlayerUtils;
 
-import com.yc.video.R;
+import com.woodpecker.video.R;
 import com.woodpecker.video.old.listener.OnClarityChangedListener;
 
 import java.util.List;

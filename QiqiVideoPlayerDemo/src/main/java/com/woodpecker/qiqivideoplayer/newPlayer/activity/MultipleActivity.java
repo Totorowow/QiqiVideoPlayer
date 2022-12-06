@@ -5,7 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.woodpecker.video.player.VideoPlayer;
+import com.woodpecker.video.player.QiqiPlayer;
 import com.woodpecker.video.player.VideoPlayerBuilder;
 import com.woodpecker.video.ui.view.BasisVideoController;
 
@@ -19,9 +19,9 @@ public class MultipleActivity extends AppCompatActivity {
 
     private static String videoPath;
     private static String chestnutPath;
-    private VideoPlayer player1;
-    private VideoPlayer player2;
-    private List<VideoPlayer> mVideoViews = new ArrayList<>();
+    private QiqiPlayer player1;
+    private QiqiPlayer player2;
+    private List<QiqiPlayer> mVideoViews = new ArrayList<>();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -64,7 +64,7 @@ public class MultipleActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        for (VideoPlayer vv : mVideoViews) {
+        for (QiqiPlayer vv : mVideoViews) {
             vv.pause();
         }
     }
@@ -72,7 +72,7 @@ public class MultipleActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        for (VideoPlayer vv : mVideoViews) {
+        for (QiqiPlayer vv : mVideoViews) {
             vv.pause();
         }
     }
@@ -80,14 +80,14 @@ public class MultipleActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        for (VideoPlayer vv : mVideoViews) {
+        for (QiqiPlayer vv : mVideoViews) {
             vv.release();
         }
     }
 
     @Override
     public void onBackPressed() {
-        for (VideoPlayer vv : mVideoViews) {
+        for (QiqiPlayer vv : mVideoViews) {
             if (vv.onBackPressed())
                 return;
         }

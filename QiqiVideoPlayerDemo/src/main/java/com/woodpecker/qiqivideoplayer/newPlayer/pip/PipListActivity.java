@@ -17,7 +17,7 @@ import com.woodpecker.qiqivideoplayer.newPlayer.list.VideoRecyclerViewAdapter;
 
 import com.woodpecker.video.config.ConstantKeys;
 import com.woodpecker.video.config.VideoInfoBean;
-import com.woodpecker.video.player.VideoPlayer;
+import com.woodpecker.video.player.QiqiPlayer;
 import com.woodpecker.video.player.VideoViewManager;
 import com.woodpecker.video.tool.PlayerUtils;
 import com.woodpecker.video.ui.pip.FloatVideoManager;
@@ -33,7 +33,7 @@ import java.util.List;
 public class PipListActivity extends AppCompatActivity implements OnItemChildClickListener {
 
     private FloatVideoManager mPIPManager;
-    private VideoPlayer mVideoView;
+    private QiqiPlayer mVideoView;
     private BasisVideoController mController;
     private List<VideoInfoBean> mVideos;
     private LinearLayoutManager mLinearLayoutManager;

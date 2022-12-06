@@ -34,7 +34,7 @@ import androidx.annotation.Nullable;
 import com.woodpecker.video.bridge.ControlWrapper;
 import com.woodpecker.video.config.ConstantKeys;
 import com.woodpecker.video.player.InterVideoPlayer;
-import com.woodpecker.video.player.VideoPlayer;
+import com.woodpecker.video.player.QiqiPlayer;
 import com.woodpecker.video.player.VideoViewManager;
 import com.woodpecker.video.tool.NetworkUtils;
 import com.woodpecker.video.tool.PlayerUtils;
@@ -156,7 +156,7 @@ public abstract class BaseVideoController extends FrameLayout implements InterVi
     protected abstract int getLayoutId();
 
     /**
-     * 重要：此方法用于将{@link VideoPlayer} 和控制器绑定
+     * 重要：此方法用于将{@link QiqiPlayer} 和控制器绑定
      */
     @CallSuper
     public void setMediaPlayer(InterVideoPlayer mediaPlayer) {
@@ -234,7 +234,7 @@ public abstract class BaseVideoController extends FrameLayout implements InterVi
     }
 
     /**
-     * {@link VideoPlayer}调用此方法向控制器设置播放状态。
+     * {@link QiqiPlayer}调用此方法向控制器设置播放状态。
      * 这里使用注解限定符，不要使用1，2这种直观数字，不方便知道意思
      * 播放状态，主要是指播放器的各种状态
      * -1               播放错误
@@ -255,7 +255,7 @@ public abstract class BaseVideoController extends FrameLayout implements InterVi
     }
 
     /**
-     * {@link VideoPlayer}调用此方法向控制器设置播放器模式
+     * {@link QiqiPlayer}调用此方法向控制器设置播放器模式
      * 播放模式
      * 普通模式，小窗口模式，正常模式三种其中一种
      * MODE_NORMAL              普通模式
