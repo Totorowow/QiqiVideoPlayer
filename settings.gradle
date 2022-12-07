@@ -2,9 +2,7 @@
 //视频弹幕
 include ':VideoBarrage'
 //视频录频
-include ':VideoRecorder'
 //视频投屏
-include ':VideoScreen'
 //视频播放位置记录二级缓存
 include ':VideoSqlLite'
 //m3u8下载和合成
