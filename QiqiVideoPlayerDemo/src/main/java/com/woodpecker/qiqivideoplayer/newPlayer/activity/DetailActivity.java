@@ -35,7 +35,7 @@ public class DetailActivity extends AppCompatActivity {
     protected void initView() {
         mPlayerContainer = findViewById(R.id.player_container);
         ViewCompat.setTransitionName(mPlayerContainer, VIEW_NAME_PLAYER_CONTAINER);
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP || !addTransitionListener()) {
+        if (!addTransitionListener()) {
             initVideoView();
         }
     }

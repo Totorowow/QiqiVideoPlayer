@@ -35,7 +35,7 @@ import com.woodpecker.qiqivideoplayer.R;
 
 import java.util.ArrayList;
 
-public class NormalActivity extends AppCompatActivity implements View.OnClickListener {
+public class CustomVideoActivity extends AppCompatActivity implements View.OnClickListener {
 
     private QiqiPlayer mQiqiPlayer;
     private Button mBtnScaleNormal;
@@ -51,10 +51,11 @@ public class NormalActivity extends AppCompatActivity implements View.OnClickLis
     private BasisVideoController controller;
     private String videoPath;
 
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_video);
+        setContentView(R.layout.activity_custom_video);
         initFindViewById();
         initVideoPlayer();
         initListener();

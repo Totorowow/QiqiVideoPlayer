@@ -96,10 +96,7 @@ public final class PlayerUtils {
         if (activity.isFinishing()) {
             return false;
         }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1 && activity.isDestroyed()) {
-            return false;
-        }
-        return true;
+        return Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN_MR1 || !activity.isDestroyed();
     }
 
 

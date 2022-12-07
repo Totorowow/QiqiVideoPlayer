@@ -22,7 +22,7 @@
         tools:targetApi="n">
         <activity android:name="com.woodpecker.qiqivideoplayer.newPlayer.activity.MainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="fullSensor">
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -75,7 +75,7 @@
 <!--        <activity android:name="com.yc.ycvideoplayer.newPlayer.activity.MainActivity"-->
 <!--            android:configChanges="orientation|keyboardHidden|screenSize"-->
 <!--            android:screenOrientation="portrait"/>-->
-        <activity android:name="com.woodpecker.qiqivideoplayer.newPlayer.activity.NormalActivity"
+        <activity android:name="com.woodpecker.qiqivideoplayer.newPlayer.activity.CustomVideoActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"/>
         <activity android:name="com.woodpecker.qiqivideoplayer.newPlayer.activity.MultipleActivity"
@@ -90,7 +90,7 @@
         <activity android:name="com.woodpecker.qiqivideoplayer.oldPlayer.TestFullActivity2"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"/>
-        <activity android:name="com.woodpecker.qiqivideoplayer.newPlayer.danmu.DanmuActivity"
+        <activity android:name="com.woodpecker.qiqivideoplayer.newPlayer.danmu.BulletScreenActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"/>
         <activity android:name="com.woodpecker.qiqivideoplayer.newPlayer.ad.AdActivity"

@@ -16,13 +16,11 @@ import com.woodpecker.video.ui.view.BasisVideoController;
 
 import com.woodpecker.qiqivideoplayer.R;
 
+import java.util.Random;
+
 import cn.ycbjie.ycstatusbarlib.bar.StateAppBar;
 
-
-/**
- * @author yc
- */
-public class DanmuActivity extends BaseActivity implements View.OnClickListener {
+public class BulletScreenActivity extends BaseActivity implements View.OnClickListener {
 
     private QiqiPlayer mQiqiPlayer;
     private LinearLayout mLayout;
@@ -70,7 +68,7 @@ public class DanmuActivity extends BaseActivity implements View.OnClickListener 
 
     @Override
     public int getContentView() {
-        return R.layout.activity_danmu_player;
+        return R.layout.activity_bullet_screen_player;
     }
 
     @Override
@@ -86,13 +84,13 @@ public class DanmuActivity extends BaseActivity implements View.OnClickListener 
         //设置控制器
         mQiqiPlayer.setController(controller);
         mQiqiPlayer.setUrl(ConstantVideo.VideoPlayerList[0]);
-        mQiqiPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_16_9);
+        mQiqiPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_ORIGINAL);
         mQiqiPlayer.start();
         mQiqiPlayer.addOnStateChangeListener(new SimpleStateListener() {
             @Override
             public void onPlayStateChanged(int playState) {
                 if (playState == ConstantKeys.CurrentState.STATE_PREPARED) {
-                    simulateDanmu();
+                    simulateBulletScreen();
                 } else if (playState == ConstantKeys.CurrentState.STATE_BUFFERING_PLAYING) {
                     mHandler.removeCallbacksAndMessages(null);
                 }
@@ -148,11 +146,12 @@ public class DanmuActivity extends BaseActivity implements View.OnClickListener 
     /**
      * 模拟弹幕
      */
-    private void simulateDanmu() {
+    private void simulateBulletScreen() {
         mHandler.post(new Runnable() {
             @Override
             public void run() {
-                mMyDanmakuView.addDanmaku("awsl", false);
+
+                mMyDanmakuView.addDanmaku("shell", false);
                 mHandler.postDelayed(this, 100);
             }
         });

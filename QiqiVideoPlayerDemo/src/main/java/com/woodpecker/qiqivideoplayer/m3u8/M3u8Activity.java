@@ -18,7 +18,7 @@ import com.woodpecker.m3u8.manager.M3u8LiveManger;
 import com.woodpecker.m3u8.task.M3u8DownloadTask;
 import com.woodpecker.m3u8.utils.M3u8FileUtils;
 import com.woodpecker.m3u8.utils.NetSpeedUtils;
-import com.woodpecker.qiqivideoplayer.newPlayer.activity.NormalActivity;
+import com.woodpecker.qiqivideoplayer.newPlayer.activity.CustomVideoActivity;
 
 
 import com.woodpecker.qiqivideoplayer.R;
@@ -202,7 +202,7 @@ public class M3u8Activity extends AppCompatActivity {
 
     public void onPlay(View view){
         String url = etUrl.getText().toString().trim();
-        Intent intent = new Intent(this, NormalActivity.class);
+        Intent intent = new Intent(this, CustomVideoActivity.class);
         intent.putExtra("url",url);
         startActivity(intent);
     }

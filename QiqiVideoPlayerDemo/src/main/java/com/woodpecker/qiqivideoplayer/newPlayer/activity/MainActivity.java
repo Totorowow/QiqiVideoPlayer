@@ -12,7 +12,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.woodpecker.qiqivideoplayer.newPlayer.ad.AdActivity;
 import com.woodpecker.qiqivideoplayer.newPlayer.clarity.ClarityActivity;
-import com.woodpecker.qiqivideoplayer.newPlayer.danmu.DanmuActivity;
+import com.woodpecker.qiqivideoplayer.newPlayer.danmu.BulletScreenActivity;
 import com.woodpecker.qiqivideoplayer.newPlayer.list.ContinuousVideoActivity;
 import com.woodpecker.qiqivideoplayer.newPlayer.list.TestListActivity;
 import com.woodpecker.qiqivideoplayer.newPlayer.pip.PipActivity;
@@ -20,23 +20,8 @@ import com.woodpecker.qiqivideoplayer.newPlayer.pip.PipListActivity;
 import com.woodpecker.qiqivideoplayer.newPlayer.surface.TestSurfaceActivity;
 import com.woodpecker.qiqivideoplayer.newPlayer.tiny.TestFullActivity;
 import com.woodpecker.qiqivideoplayer.newPlayer.tiny.TinyScreenActivity;
-import com.woodpecker.video.config.ConstantKeys;
-
-import com.woodpecker.kernel.impl.exo.ExoMediaPlayer;
-import com.woodpecker.kernel.impl.exo.ExoPlayerFactory;
-import com.woodpecker.kernel.impl.ijk.IjkPlayerFactory;
-import com.woodpecker.kernel.impl.ijk.IjkVideoPlayer;
-import com.woodpecker.kernel.impl.media.AndroidMediaPlayer;
-import com.woodpecker.kernel.impl.media.MediaPlayerFactory;
-import com.woodpecker.kernel.factory.PlayerFactory;
-
-import com.woodpecker.video.config.VideoPlayerConfig;
-import com.woodpecker.video.player.VideoViewManager;
-import com.woodpecker.video.tool.PlayerUtils;
 
 import com.woodpecker.qiqivideoplayer.R;
-
-import java.lang.reflect.Field;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -118,7 +103,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if (v == mTv31){
-            startActivity(new Intent(this,NormalActivity.class));
+            startActivity(new Intent(this, CustomVideoActivity.class));
         } else if (v == mTv32){
             startActivity(new Intent(this, TestFullActivity.class));
         } else if (v == mTv33){
@@ -154,7 +139,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             intent.putExtra("type",5);
             startActivity(intent);
         } else if (v == mTv71){
-            startActivity(new Intent(this, DanmuActivity.class));
+            startActivity(new Intent(this, BulletScreenActivity.class));
         } else if (v == mTv81){
             startActivity(new Intent(this, AdActivity.class));
         } else if (v == mTv101){
