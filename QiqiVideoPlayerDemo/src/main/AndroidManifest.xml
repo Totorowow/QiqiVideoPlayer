@@ -39,16 +39,8 @@
             </intent-filter>
         </activity>
         <activity android:name="com.yc.ycvideoplayer.newPlayer.activity.MainActivity"/>-->
-        <activity android:name="com.woodpecker.qiqivideoplayer.oldPlayer.TestTinyActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="fullSensor"/>
-        <activity android:name="com.woodpecker.qiqivideoplayer.oldPlayer.TestClarityActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="fullSensor"/>
+
         <activity android:name="com.woodpecker.qiqivideoplayer.oldPlayer.TestRecyclerActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="fullSensor"/>
-        <activity android:name="com.woodpecker.qiqivideoplayer.oldPlayer.TestFragmentActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="fullSensor"/>
         <activity android:name="com.woodpecker.qiqivideoplayer.oldPlayer.TestEightVideoActivity"
@@ -57,18 +49,10 @@
         <activity android:name="com.woodpecker.qiqivideoplayer.newPlayer.list.TestListActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="fullSensor"/>
-        <activity android:name="com.woodpecker.qiqivideoplayer.oldPlayer.TestWindowActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="fullSensor"/>
-        <activity android:name="com.woodpecker.qiqivideoplayer.oldPlayer.TestNormalActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="fullSensor"/>
         <activity android:name="com.woodpecker.qiqivideoplayer.newPlayer.tiny.TestFullActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"/>
-        <activity android:name="com.woodpecker.qiqivideoplayer.oldPlayer.TestSavePosActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="portrait"/>
+
         <activity android:name="com.woodpecker.qiqivideoplayer.newPlayer.surface.TestSurfaceActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"/>
@@ -87,9 +71,7 @@
         <activity android:name="com.woodpecker.qiqivideoplayer.newPlayer.tiktok.TikTok1Activity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"/>
-        <activity android:name="com.woodpecker.qiqivideoplayer.oldPlayer.TestFullActivity2"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="portrait"/>
+
         <activity android:name="com.woodpecker.qiqivideoplayer.newPlayer.danmu.BulletScreenActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"/>
@@ -103,9 +85,6 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"/>
         <activity android:name="com.woodpecker.qiqivideoplayer.newPlayer.tiny.TinyScreenActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="portrait"/>
-        <activity android:name="com.woodpecker.qiqivideoplayer.oldPlayer.OldActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"/>
         <activity android:name="com.woodpecker.qiqivideoplayer.newPlayer.pip.PipActivity"

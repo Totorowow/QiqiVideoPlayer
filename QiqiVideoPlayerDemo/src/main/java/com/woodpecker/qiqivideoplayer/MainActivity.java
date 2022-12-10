@@ -21,7 +21,6 @@ import com.woodpecker.music.service.PlayService;
 import com.woodpecker.music.tool.BaseAppHelper;
 import com.woodpecker.qiqivideoplayer.m3u8.M3u8Activity;
 import com.woodpecker.qiqivideoplayer.music.MusicPlayerActivity;
-import com.woodpecker.qiqivideoplayer.oldPlayer.OldActivity;
 
 import java.util.List;
 
@@ -84,9 +83,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.tv_2:
                 startActivity(com.woodpecker.qiqivideoplayer.newPlayer.activity.MainActivity.class);
-                break;
-            case R.id.tv_3:
-                startActivity(OldActivity.class);
                 break;
             case R.id.tv_4:
                 startCheckService();

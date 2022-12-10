@@ -123,7 +123,7 @@ public class CustomVideoActivity extends AppCompatActivity implements View.OnCli
                 mQiqiPlayer.start();
             }
         },300);
-        //设置视频背景图
+
 
         Glide.with(this).load(R.drawable.image_default).into(controller.getThumb());
     }

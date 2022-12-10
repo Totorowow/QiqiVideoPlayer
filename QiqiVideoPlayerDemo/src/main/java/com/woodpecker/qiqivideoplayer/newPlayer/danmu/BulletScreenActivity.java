@@ -4,6 +4,7 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.woodpecker.qiqivideoplayer.BaseActivity;
@@ -15,6 +16,7 @@ import com.woodpecker.video.player.SimpleStateListener;
 import com.woodpecker.video.ui.view.BasisVideoController;
 
 import com.woodpecker.qiqivideoplayer.R;
+import com.yarolegovich.lovelydialog.LovelyTextInputDialog;
 
 import java.util.Random;
 
@@ -134,7 +136,7 @@ public class BulletScreenActivity extends BaseActivity implements View.OnClickLi
                 mMyDanmakuView.addDanmakuWithDrawable();
                 break;
             case R.id.btn_add_custom_dan:
-                mMyDanmakuView.addDanmaku("小杨逗比自定义弹幕~", true);
+                setCustomizeContent();
                 break;
             default:
                 break;
@@ -143,9 +145,7 @@ public class BulletScreenActivity extends BaseActivity implements View.OnClickLi
 
     private Handler mHandler = new Handler();
 
-    /**
-     * 模拟弹幕
-     */
+
     private void simulateBulletScreen() {
         mHandler.post(new Runnable() {
             @Override
@@ -155,6 +155,28 @@ public class BulletScreenActivity extends BaseActivity implements View.OnClickLi
                 mHandler.postDelayed(this, 100);
             }
         });
+    }
+
+    private void setCustomizeContent(){
+        new LovelyTextInputDialog(this, R.style.EditTextTintTheme)
+                .setTopColorRes(R.color.lightBlue)
+                .setTitle("自定义弹幕内容")
+                .setHint("小桥流水人间")
+                .setInputFilter("您输入的内容不正确", new LovelyTextInputDialog.TextFilter() {
+                    @Override
+                    public boolean check(String text) {
+                        return text.matches("\\w+");
+                    }
+                })
+                .setConfirmButton(android.R.string.ok, new LovelyTextInputDialog.OnTextInputConfirmListener() {
+                    @Override
+                    public void onTextInputConfirmed(String text) {
+                        mMyDanmakuView.addDanmaku(text, true);
+
+                    }
+                })
+                .show();
+
     }
 
 

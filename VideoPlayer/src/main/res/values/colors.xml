@@ -4,4 +4,6 @@
     <color name="alpha_25_black">#40000000</color>
     <color name="redTab">#D03E49</color>
     <color name="light_gray">#C9C9C9</color>
+    <color name="lightBlue">#5CACEE</color>
+    <color name="blackText">#000000</color>
 </resources>
