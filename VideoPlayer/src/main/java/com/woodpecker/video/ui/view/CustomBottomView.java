@@ -47,10 +47,8 @@ import com.woodpecker.video.R;
 /**
  * <pre>
  *     @author yangchong
- *     blog  : https://github.com/yangchong211
  *     time  : 2017/11/9
- *     desc  : 底部控制栏视图
- *     revise: 用于普通播放器
+ *     desc  : some content was deleted by Totorowow
  * </pre>
  */
 public class CustomBottomView extends FrameLayout implements InterControlView,
@@ -175,9 +173,7 @@ public class CustomBottomView extends FrameLayout implements InterControlView,
             case ConstantKeys.CurrentState.STATE_BUFFERING_PLAYING:
                 setVisibility(GONE);
                 mPbBottomProgress.setProgress(0);
-                mPbBottomProgress.setSecondaryProgress(0);
                 mSeekBar.setProgress(0);
-                mSeekBar.setSecondaryProgress(0);
                 break;
             case ConstantKeys.CurrentState.STATE_START_ABORT:
             case ConstantKeys.CurrentState.STATE_PREPARING:
@@ -261,15 +257,6 @@ public class CustomBottomView extends FrameLayout implements InterControlView,
                 mPbBottomProgress.setProgress(pos);
             } else {
                 mSeekBar.setEnabled(false);
-            }
-            int percent = mControlWrapper.getBufferedPercentage();
-            if (percent >= 95) {
-                //解决缓冲进度不能100%问题
-                mSeekBar.setSecondaryProgress(mSeekBar.getMax());
-                mPbBottomProgress.setSecondaryProgress(mPbBottomProgress.getMax());
-            } else {
-                mSeekBar.setSecondaryProgress(percent * 10);
-                mPbBottomProgress.setSecondaryProgress(percent * 10);
             }
         }
 

@@ -61,13 +61,11 @@
             android:layout_height="wrap_content"
             android:paddingStart="1dp"
             android:paddingEnd="4dp"
-            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
             android:text="超清"
             android:textColor="@android:color/white"
             android:textSize="14sp"
-            android:visibility="gone"
-            android:paddingLeft="1dp"
-            android:paddingRight="4dp" />
+            android:visibility="gone" />
 
         <ImageView
             android:id="@+id/iv_fullscreen"
@@ -81,7 +79,8 @@
         android:id="@+id/pb_bottom_progress"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
-        android:layout_height="2dp"
+        android:layout_height="1.5dp"
+        android:alpha="0.7"
         android:layout_gravity="bottom"
         android:max="1000"
         android:progressDrawable="@drawable/progress_bar_style"
