@@ -9,9 +9,9 @@ public class ConstantVideo {
 
 
     public static String[] VideoPlayerList = {
-            "android.resource://" + BaseApplication.getInstance().getPackageName() + "/" + R.raw.flower,
-            "android.resource://" + BaseApplication.getInstance().getPackageName() + "/" + R.raw.gold_flower,
-            "android.resource://" + BaseApplication.getInstance().getPackageName() + "/" + R.raw.tulip,
+            "android.resource://" + QiqiApplication.getInstance().getPackageName() + "/" + R.raw.flower,
+            "android.resource://" + QiqiApplication.getInstance().getPackageName() + "/" + R.raw.gold_flower,
+            "android.resource://" + QiqiApplication.getInstance().getPackageName() + "/" + R.raw.tulip,
             "http://vfx.mtime.cn/Video/2019/03/19/mp4/190319212559089721.mp4",
             "http://jzvd.nathen.cn/d2438fd1c37c4618a704513ad38d68c5/68626a9d53ca421c896ac8010f172b68-5287d2089db37e62345123a1be272f8b.mp4",
             "http://jzvd.nathen.cn/25a8d119cfa94b49a7a4117257d8ebd7/f733e65a22394abeab963908f3c336db-5287d2089db37e62345123a1be272f8b.mp4",
@@ -38,15 +38,15 @@ public class ConstantVideo {
         List<VideoInfoBean> videoList = new ArrayList<>();
         videoList.add(new VideoInfoBean("大家好，我是潇湘剑雨",
                 "https://img-blog.csdnimg.cn/20201012215233584.png",
-                "android.resource://" + BaseApplication.getInstance().getPackageName() + "/" + R.raw.flower));
+                "android.resource://" + QiqiApplication.getInstance().getPackageName() + "/" + R.raw.flower));
 
         videoList.add(new VideoInfoBean("如果项目可以，可以给个star",
                 "https://img-blog.csdnimg.cn/20201013092150588.png",
-                "android.resource://" + BaseApplication.getInstance().getPackageName() + "/" + R.raw.gold_flower));
+                "android.resource://" + QiqiApplication.getInstance().getPackageName() + "/" + R.raw.gold_flower));
 
         videoList.add(new VideoInfoBean("把本地项目代码复制到拷贝的仓库",
                 "https://img-blog.csdnimg.cn/2020101309293329.png",
-                "android.resource://" + BaseApplication.getInstance().getPackageName() + "/" + R.raw.tulip));
+                "android.resource://" + QiqiApplication.getInstance().getPackageName() + "/" + R.raw.tulip));
 
         videoList.add(new VideoInfoBean("有bug，可以直接提出来，欢迎一起探讨",
                 "https://img-blog.csdnimg.cn/20201013094115174.png",

@@ -17,8 +17,6 @@ public class CoreDependencyActivity extends AppCompatActivity implements View.On
     private TextView mTv1;
     private TextView mTv12;
     private TextView mTv2;
-    private TextView mTv3;
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -28,12 +26,10 @@ public class CoreDependencyActivity extends AppCompatActivity implements View.On
         mTv1 = findViewById(R.id.tv_1);
         mTv12 = findViewById(R.id.tv_1_2);
         mTv2 = findViewById(R.id.tv_2);
-        mTv3 = findViewById(R.id.tv_3);
 
         mTv1.setOnClickListener(this);
         mTv12.setOnClickListener(this);
         mTv2.setOnClickListener(this);
-        mTv3.setOnClickListener(this);
     }
 
     @Override
@@ -48,9 +44,7 @@ public class CoreDependencyActivity extends AppCompatActivity implements View.On
             case R.id.tv_2:
                 startActivity(IjkActivity.class);
                 break;
-            case R.id.tv_3:
-                startActivity(ExoActivity.class);
-                break;
+
         }
     }
 

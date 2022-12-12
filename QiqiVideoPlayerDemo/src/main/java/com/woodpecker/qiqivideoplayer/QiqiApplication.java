@@ -21,22 +21,22 @@ import com.woodpecker.videosqllite.manager.LocationManager;
  * 作    者：杨充
  * 版    本：1.0
  * 创建日期：2017/8/18
- * 描    述：BaseApplication
+ * 描    述：QiqiApplication
  * 修订历史：
  * ================================================
  */
-public class BaseApplication extends Application {
+public class QiqiApplication extends Application {
 
 
-    private static BaseApplication instance;
-    public static synchronized BaseApplication getInstance() {
+    private static QiqiApplication instance;
+    public static synchronized QiqiApplication getInstance() {
         if (null == instance) {
-            instance = new BaseApplication();
+            instance = new QiqiApplication();
         }
         return instance;
     }
 
-    public BaseApplication(){}
+    public QiqiApplication(){}
 
     /**
      * 这个最先执行
