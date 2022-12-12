@@ -14,8 +14,4 @@
         <item name="android:windowExitAnimation">@anim/anim_window_exit</item>
     </style>
 
-    <style name="EditTextTintTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
-        <item name="colorAccent">@color/blackText</item>
-    </style>
-
 </resources>

@@ -136,7 +136,7 @@ public class BulletScreenActivity extends BaseActivity implements View.OnClickLi
                 mMyDanmakuView.addDanmakuWithDrawable();
                 break;
             case R.id.btn_add_custom_dan:
-                setCustomizeContent();
+                setCustomizeText();
                 break;
             default:
                 break;
@@ -150,31 +150,19 @@ public class BulletScreenActivity extends BaseActivity implements View.OnClickLi
         mHandler.post(new Runnable() {
             @Override
             public void run() {
-
-                mMyDanmakuView.addDanmaku("shell", false);
-                mHandler.postDelayed(this, 100);
+                mMyDanmakuView.addDanmaku("Come on", false);
+                mHandler.postDelayed(this, 300);
             }
         });
     }
 
-    private void setCustomizeContent(){
+    private void setCustomizeText(){
         new LovelyTextInputDialog(this, R.style.EditTextTintTheme)
                 .setTopColorRes(R.color.lightBlue)
                 .setTitle("自定义弹幕内容")
                 .setHint("小桥流水人间")
-                .setInputFilter("您输入的内容不正确", new LovelyTextInputDialog.TextFilter() {
-                    @Override
-                    public boolean check(String text) {
-                        return text.matches("\\w+");
-                    }
-                })
-                .setConfirmButton(android.R.string.ok, new LovelyTextInputDialog.OnTextInputConfirmListener() {
-                    @Override
-                    public void onTextInputConfirmed(String text) {
-                        mMyDanmakuView.addDanmaku(text, true);
-
-                    }
-                })
+                .setInputFilter("您输入的内容不正确", text -> text.matches("\\w+"))
+                .setConfirmButton(android.R.string.ok, text -> mMyDanmakuView.addDanmaku(text, true))
                 .show();
 
     }

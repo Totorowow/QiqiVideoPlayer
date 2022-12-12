@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import com.bumptech.glide.Glide;
 
+import com.woodpecker.qiqivideoplayer.ConstantVideo;
 import com.woodpecker.video.player.QiqiPlayer;
 import com.woodpecker.video.player.VideoViewManager;
 import com.woodpecker.video.ui.pip.FloatVideoManager;
@@ -80,18 +81,15 @@ public class PipActivity extends AppCompatActivity{
                     .load(R.drawable.image_default)
                     .placeholder(android.R.color.darker_gray)
                     .into(thumb);
-            videoView.setUrl("android.resource://" + getPackageName() + "/" + R.raw.gold_flower);
+            videoView.setUrl(ConstantVideo.VideoPlayerList[0]);
         }
         mPlayerContainer.addView(videoView);
     }
 
     private void initListener() {
-        mBtnFloat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mPIPManager.startFloatWindow();
-                mPIPManager.resume();
-            }
+        mBtnFloat.setOnClickListener(v -> {
+            mPIPManager.startFloatWindow();
+            mPIPManager.resume();
         });
     }
 

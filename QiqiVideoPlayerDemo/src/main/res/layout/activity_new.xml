@@ -87,21 +87,13 @@
                 android:textColor="@color/colorWhite"
                 android:text="4.3 视频列表中小窗口播放视频"/>
             <TextView
-                android:id="@+id/tv_5_1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:padding="10dp"
-                android:textColor="@color/colorWhite"
-                android:text="5.1 全屏播放可以切换视频清晰度"/>
-            <TextView
                 android:id="@+id/tv_6_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:padding="10dp"
                 android:textColor="@color/colorWhite"
-                android:text="6.1 在fragment的列表播放"/>
+                android:text="5.1 在fragment的列表播放"/>
             <TextView
                 android:id="@+id/tv_6_2"
                 android:layout_width="match_parent"
@@ -109,7 +101,7 @@
                 android:layout_marginTop="10dp"
                 android:padding="10dp"
                 android:textColor="@color/colorWhite"
-                android:text="6.2 在fragment的列表播放，自动播放"/>
+                android:text="5.2 在fragment的列表播放，自动播放"/>
             <TextView
                 android:id="@+id/tv_6_3"
                 android:layout_width="match_parent"
@@ -117,7 +109,7 @@
                 android:layout_marginTop="10dp"
                 android:padding="10dp"
                 android:textColor="@color/colorWhite"
-                android:text="6.3 在列表中播放，类似抖音，使用ViewPager"/>
+                android:text="5.3 在列表中播放，类似抖音，使用ViewPager"/>
             <TextView
                 android:id="@+id/tv_6_4"
                 android:layout_width="match_parent"
@@ -125,7 +117,7 @@
                 android:layout_marginTop="10dp"
                 android:padding="10dp"
                 android:textColor="@color/colorWhite"
-                android:text="6.4 在列表中播放，类似抖音，使用RecyclerView"/>
+                android:text="5.4 在列表中播放，类似抖音，使用RecyclerView"/>
             <TextView
                 android:id="@+id/tv_6_5"
                 android:layout_width="match_parent"
@@ -133,7 +125,7 @@
                 android:layout_marginTop="10dp"
                 android:padding="10dp"
                 android:textColor="@color/colorWhite"
-                android:text="6.5 在fragment的列表播放无缝切换"/>
+                android:text="5.5 在fragment的列表播放无缝切换"/>
             <TextView
                 android:id="@+id/tv_6_6"
                 android:layout_width="match_parent"
@@ -141,7 +133,7 @@
                 android:layout_marginTop="10dp"
                 android:padding="10dp"
                 android:textColor="@color/colorWhite"
-                android:text="6.6 在列表播放，一次滑动一个item"/>
+                android:text="5.6 在列表播放，一次滑动一个item"/>
             <TextView
                 android:id="@+id/tv_7_1"
                 android:layout_width="match_parent"
@@ -149,7 +141,7 @@
                 android:layout_marginTop="10dp"
                 android:padding="10dp"
                 android:textColor="@color/colorWhite"
-                android:text="7.1 播放器添加视频自定义弹幕视图"/>
+                android:text="6.1 播放器添加视频自定义弹幕视图"/>
             <TextView
                 android:id="@+id/tv_8_1"
                 android:layout_width="match_parent"
@@ -157,7 +149,7 @@
                 android:layout_marginTop="10dp"
                 android:padding="10dp"
                 android:textColor="@color/colorWhite"
-                android:text="8.1 播放器添加自定义广告"/>
+                android:text="7.1 播放器添加自定义广告"/>
 
             <TextView
                 android:id="@+id/tv_10_1"
@@ -166,7 +158,7 @@
                 android:layout_marginTop="10dp"
                 android:padding="10dp"
                 android:textColor="@color/colorWhite"
-                android:text="10.1 连续性播放视频"/>
+                android:text="8.1 连续性播放视频"/>
             <TextView
                 android:id="@+id/tv_11_1"
                 android:layout_width="match_parent"
@@ -174,7 +166,7 @@
                 android:layout_marginTop="10dp"
                 android:padding="10dp"
                 android:textColor="@color/colorWhite"
-                android:text="11.1 视频播放器切换清晰度操作"/>
+                android:text="9.1 视频播放器切换清晰度操作"/>
             <TextView
                 android:id="@+id/tv_13_1"
                 android:layout_width="match_parent"
@@ -182,7 +174,7 @@
                 android:layout_marginTop="10dp"
                 android:padding="10dp"
                 android:textColor="@color/colorWhite"
-                android:text="13.1 使用自定义SurfaceView学习demo"/>
+                android:text="10.1 使用自定义SurfaceView学习demo"/>
 
         </LinearLayout>
     </ScrollView>

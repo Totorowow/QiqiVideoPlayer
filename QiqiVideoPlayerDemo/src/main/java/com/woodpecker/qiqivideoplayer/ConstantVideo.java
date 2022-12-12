@@ -12,7 +12,7 @@ public class ConstantVideo {
             "android.resource://" + BaseApplication.getInstance().getPackageName() + "/" + R.raw.flower,
             "android.resource://" + BaseApplication.getInstance().getPackageName() + "/" + R.raw.gold_flower,
             "android.resource://" + BaseApplication.getInstance().getPackageName() + "/" + R.raw.tulip,
-            "http://jzvd.nathen.cn/b201be3093814908bf987320361c5a73/2f6d913ea25941ffa78cc53a59025383-5287d2089db37e62345123a1be272f8b.mp4",
+            "http://vfx.mtime.cn/Video/2019/03/19/mp4/190319212559089721.mp4",
             "http://jzvd.nathen.cn/d2438fd1c37c4618a704513ad38d68c5/68626a9d53ca421c896ac8010f172b68-5287d2089db37e62345123a1be272f8b.mp4",
             "http://jzvd.nathen.cn/25a8d119cfa94b49a7a4117257d8ebd7/f733e65a22394abeab963908f3c336db-5287d2089db37e62345123a1be272f8b.mp4",
             "http://jzvd.nathen.cn/7512edd1ad834d40bb5b978402274b1a/9691c7f2d7b74b5e811965350a0e5772-5287d2089db37e62345123a1be272f8b.mp4",
