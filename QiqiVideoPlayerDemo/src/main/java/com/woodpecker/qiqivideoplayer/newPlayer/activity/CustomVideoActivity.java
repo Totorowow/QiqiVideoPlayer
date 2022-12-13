@@ -32,6 +32,7 @@ import com.woodpecker.video.ui.view.BasisVideoController;
 import com.woodpecker.video.ui.view.CustomErrorView;
 
 import com.woodpecker.qiqivideoplayer.R;
+import com.woodpecker.video.ui.view.CustomTitleView;
 
 import java.util.ArrayList;
 
@@ -114,6 +115,11 @@ public class CustomVideoActivity extends AppCompatActivity implements View.OnCli
             //url ="android.resource://" + getPackageName() + "/" + R.raw.gold_flower;
         }
         controller = new BasisVideoController(this);
+        CustomTitleView titleView = new CustomTitleView(this);
+        //titleView.setTitle("");
+        //titleView.setVisibility(View.GONE);//hide top back arrow
+        //controller.addControlComponent(titleView);
+        controller.removeControlComponent(titleView);//remove top native view
         mQiqiPlayer.setController(controller);
         mQiqiPlayer.setUrl(videoPath);
         mQiqiPlayer.start();
