@@ -374,6 +374,10 @@ public class BasisVideoController extends GestureVideoController implements View
         return vodControlView;
     }
 
+    public CustomTitleView getTitleView() {
+        return titleView;
+    }
+
 
     public TextView getTvLiveWaitMessage() {
         return tvLiveWaitMessage;

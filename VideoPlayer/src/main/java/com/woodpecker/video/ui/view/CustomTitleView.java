@@ -179,12 +179,12 @@ public class CustomTitleView extends FrameLayout implements InterControlView, Vi
                 //显示电量
                 mIvBattery.setVisibility(VISIBLE);
                 mTvSysTime.setVisibility(VISIBLE);
-                mIvBack.setVisibility(VISIBLE);
+                //mIvBack.setVisibility(VISIBLE);
             } else {
                 //不显示电量
                 mIvBattery.setVisibility(GONE);
                 mTvSysTime.setVisibility(GONE);
-                mIvBack.setVisibility(GONE);
+                //mIvBack.setVisibility(GONE);
             }
         }
     }

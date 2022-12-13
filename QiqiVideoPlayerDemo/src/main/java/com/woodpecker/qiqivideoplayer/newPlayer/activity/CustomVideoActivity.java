@@ -115,11 +115,16 @@ public class CustomVideoActivity extends AppCompatActivity implements View.OnCli
             //url ="android.resource://" + getPackageName() + "/" + R.raw.gold_flower;
         }
         controller = new BasisVideoController(this);
-        CustomTitleView titleView = new CustomTitleView(this);
+        CustomTitleView titleView = controller.getTitleView();
         //titleView.setTitle("");
         //titleView.setVisibility(View.GONE);//hide top back arrow
         //controller.addControlComponent(titleView);
-        controller.removeControlComponent(titleView);//remove top native view
+        //titleView.getView().setVisibility(View.GONE);
+        if (titleView!=null){
+            controller.removeControlComponent(titleView);
+        }
+        //controller.addControlComponent(titleView);
+        //controller.removeView(titleView);//remove top native view
         mQiqiPlayer.setController(controller);
         mQiqiPlayer.setUrl(videoPath);
         mQiqiPlayer.start();
