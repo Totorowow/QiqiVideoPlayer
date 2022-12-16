@@ -18,6 +18,11 @@ android {
         }
     }
 }
+ext {
+    PUBLISH_ARTIFACT_ID = "videosqllite"
+}
+
+apply from: '../publish.gradle'
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
@@ -58,75 +63,6 @@ task javadoc(type: Javadoc) {
     failOnError false
 }
 
-//文档打包成jar
-task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
-    from javadoc.destinationDir
-}
-//拷贝javadoc文件
-task copyDoc(type: Copy) {
-    from "${buildDir}/docs/"
-    into "docs"
-}
-
-//上传到jcenter所需要的源码文件
-artifacts {
-    archives javadocJar
-    archives sourcesJar
-}
-
-// 配置maven库，生成POM.xml文件
-install {
-    repositories.mavenInstaller {
-        // This generates POM.xml with proper parameters
-        pom {
-            project {
-                packaging 'aar'
-                //项目描述，自由填写
-                name 'This is video sqllite lib'
-                url siteUrl
-                licenses {
-                    license {
-                        //开源协议
-                        name 'The Apache Software License, Version 2.0'
-                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-                    }
-                }
-                developers {
-                    developer {
-                        //开发者的个人信息，根据个人信息填写
-                        id 'Totorowow'
-                        name 'woodpecker'
-                        email '123456@qq.com'
-                    }
-                }
-                scm {
-                    connection gitUrl
-                    developerConnection gitUrl
-                    url siteUrl
-                }
-            }
-        }
-    }
-}
-
-//上传到jcenter
-Properties properties = new Properties()
-properties.load(project.rootProject.file('local.properties').newDataInputStream())
-bintray {
-    user = properties.getProperty("bintray.user")    //读取 local.properties 文件里面的 bintray.user
-    key = properties.getProperty("bintray.apikey")  //读取 local.properties 文件里面的 bintray.apikey
-    configurations = ['archives']
-    pkg {
-        repo = "maven"
-        name = libName    //发布到JCenter上的项目名字，必须填写
-        desc = 'android video sqllite'    //项目描述
-        websiteUrl = siteUrl
-        vcsUrl = gitUrl
-        licenses = ["Apache-2.0"]
-        publish = true
-    }
-}
 
 javadoc {
     options {

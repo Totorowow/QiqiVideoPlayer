@@ -20,6 +20,12 @@ android {
     }
 }
 
+ext {
+    PUBLISH_ARTIFACT_ID = "videoview"
+}
+
+apply from: '../publish.gradle'
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project.ext.AppDependencies['appcompat']

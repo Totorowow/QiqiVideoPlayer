@@ -2,9 +2,10 @@ package com.woodpecker.music.manager;
 
 import android.media.AudioManager;
 
-import androidx.annotation.NonNull;
 
 import com.woodpecker.music.service.PlayService;
+
+import androidx.annotation.NonNull;
 
 import static android.content.Context.AUDIO_SERVICE;
 
