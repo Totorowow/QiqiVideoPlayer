@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: "com.vanniktech.maven.publish"
 
 android {
     compileSdkVersion 29
@@ -22,7 +23,7 @@ ext {
     PUBLISH_ARTIFACT_ID = "videosqllite"
 }
 
-apply from: '../publish.gradle'
+//apply from: '../publish.gradle'
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
