@@ -1,5 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: "com.vanniktech.maven.publish"
 
 android {
     compileSdkVersion 29
@@ -85,4 +84,24 @@ ext {
 }
 
 //apply from: '../publish.gradle'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.vanniktech:gradle-maven-publish-plugin:0.18.0'
+    }
+}
+
+allprojects {
+    plugins.withId("com.vanniktech.maven.publish") {
+        mavenPublish {
+            sonatypeHost = "S01"
+        }
+    }
+}
+
+apply plugin: "com.vanniktech.maven.publish"
+
 

@@ -24,7 +24,7 @@ ext {
     PUBLISH_ARTIFACT_ID = "videoview"
 }
 
-apply from: '../publish.gradle'
+//apply from: '../publish.gradle'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
