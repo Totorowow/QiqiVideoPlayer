@@ -71,19 +71,17 @@ dependencies {
 
 
 
-    //The following dependencies are not temporarily available
-    //implementation 'com.woodpecker:MusicPlayer:1.0'
-    //implementation 'com.woodpecker:QiqiPlayer:1.0'
-    //implementation 'com.woodpecker:VideoCache:1.0'
-    //implementation 'com.woodpecker:VideoKernel:1.0'
-    //implementation 'com.woodpecker:VideoView:1.0'
-    //implementation 'com.woodpecker:VideoM3u8:1.0'
-    //implementation 'com.woodpecker:VideoSqlLite:1.0'
+
+
+    //implementation 'com.woodpecker:videoplayer:1.0'
+    //implementation 'com.woodpecker:videocache:1.0'
+    //implementation 'com.woodpecker:videokernel:1.0'
 
 
     implementation 'cn.yc:YCStatusBarLib:1.5.0'
     implementation 'com.yc:PagerLib:1.0.4'
     implementation 'cn.yc:YCStateLib:1.2.2'
+
 
 
 }

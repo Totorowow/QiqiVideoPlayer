@@ -79,7 +79,7 @@ task javadoc(type: Javadoc) {
 }
 
 ext {
-    PUBLISH_ARTIFACT_ID = "videokernel"
+    POM_ARTIFACT_ID = "videokernel"
 }
 
 //apply from: '../publish.gradle'

@@ -19,7 +19,7 @@ android {
     }
 }
 ext {
-    PUBLISH_ARTIFACT_ID = "videoplayer"
+    POM_ARTIFACT_ID = "videoplayer"
 }
 
 //apply from: '../publish.gradle'
