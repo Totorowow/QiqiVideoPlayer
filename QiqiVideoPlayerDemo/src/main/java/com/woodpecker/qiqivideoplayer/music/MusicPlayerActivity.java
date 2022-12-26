@@ -20,7 +20,6 @@ import com.woodpecker.qiqivideoplayer.R;
 
 public class MusicPlayerActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Toolbar mToolbar;
     private TextView mTv1;
     private TextView mTv2;
     private TextView mTv3;
@@ -64,7 +63,6 @@ public class MusicPlayerActivity extends AppCompatActivity implements View.OnCli
     }
 
     private void initFindViewById() {
-        mToolbar = findViewById(R.id.toolbar);
         mTv1 = findViewById(R.id.tv_1);
         mTv2 = findViewById(R.id.tv_2);
         mTv3 = findViewById(R.id.tv_3);

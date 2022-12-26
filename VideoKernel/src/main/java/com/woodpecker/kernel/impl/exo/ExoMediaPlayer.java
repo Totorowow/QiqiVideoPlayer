@@ -99,7 +99,7 @@ public class ExoMediaPlayer extends AbstractVideoPlayer implements Player.Listen
                 .setLoadControl(mLoadControl)
                 .setBandwidthMeter(DefaultBandwidthMeter.getSingletonInstance(mAppContext))
                 .setLooper(Util.getCurrentOrMainLooper())
-                .setAnalyticsCollector(new AnalyticsCollector(Clock.DEFAULT))
+                //.setAnalyticsCollector(new AnalyticsCollector(Clock.DEFAULT))
                 .build();
 
         exoPlayer = new ExoPlayer.Builder(mAppContext).build();

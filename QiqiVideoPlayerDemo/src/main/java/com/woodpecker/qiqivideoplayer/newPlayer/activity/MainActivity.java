@@ -25,7 +25,6 @@ import com.woodpecker.qiqivideoplayer.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Toolbar mToolbar;
     private TextView mTvTitle;
     private TextView mTv31;
     private TextView mTv32;
@@ -58,7 +57,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     private void initFindViewById() {
-        mToolbar = findViewById(R.id.toolbar);
+
         mTvTitle = findViewById(R.id.tv_title);
         mTv31 = findViewById(R.id.tv_3_1);
         mTv32 = findViewById(R.id.tv_3_2);
