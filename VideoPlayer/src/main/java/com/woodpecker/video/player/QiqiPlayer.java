@@ -29,6 +29,7 @@ import android.view.Gravity;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
+import com.google.android.exoplayer2.video.VideoSize;
 import com.woodpecker.video.R;
 import com.woodpecker.video.config.ConstantKeys;
 import com.woodpecker.video.config.VideoPlayerConfig;
@@ -961,6 +962,7 @@ public class QiqiPlayer<P extends AbstractVideoPlayer> extends FrameLayout
             mRenderView.setVideoSize(videoWidth, videoHeight);
         }
     }
+
 
     /**
      * 设置视频比例

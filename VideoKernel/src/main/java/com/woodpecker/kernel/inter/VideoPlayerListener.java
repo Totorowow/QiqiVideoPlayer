@@ -15,6 +15,7 @@ limitations under the License.
 */
 package com.woodpecker.kernel.inter;
 
+import com.google.android.exoplayer2.video.VideoSize;
 import com.woodpecker.kernel.utils.PlayerConstant;
 
 /**
@@ -54,11 +55,9 @@ public interface VideoPlayerListener {
      */
     void onPrepared();
 
-    /**
-     * 视频size变化监听
-     * @param width                         宽
-     * @param height                        高
-     */
+
+
+
     void onVideoSizeChanged(int width, int height);
 
 

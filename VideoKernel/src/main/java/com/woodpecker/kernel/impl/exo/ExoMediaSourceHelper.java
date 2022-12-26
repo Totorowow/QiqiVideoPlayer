@@ -16,17 +16,17 @@ import com.google.android.exoplayer2.source.smoothstreaming.SsMediaSource;
 import com.google.android.exoplayer2.upstream.DataSource;
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory;
 import com.google.android.exoplayer2.upstream.DefaultHttpDataSource;
-import com.google.android.exoplayer2.upstream.DefaultHttpDataSourceFactory;
+
 import com.google.android.exoplayer2.upstream.HttpDataSource;
 import com.google.android.exoplayer2.upstream.cache.Cache;
 import com.google.android.exoplayer2.upstream.cache.CacheDataSource;
-import com.google.android.exoplayer2.upstream.cache.CacheDataSourceFactory;
 import com.google.android.exoplayer2.upstream.cache.LeastRecentlyUsedCacheEvictor;
 import com.google.android.exoplayer2.upstream.cache.SimpleCache;
 import com.google.android.exoplayer2.util.Util;
 
 import java.io.File;
 import java.lang.reflect.Field;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -108,7 +108,7 @@ public final class ExoMediaSourceHelper {
     }
 
     private int inferContentType(String fileName) {
-        fileName = Util.toLowerInvariant(fileName);
+        fileName = Util.formatInvariant(fileName);
         if (fileName.contains(".mpd")) {
             return C.TYPE_DASH;
         } else if (fileName.contains(".m3u8")) {
@@ -124,10 +124,7 @@ public final class ExoMediaSourceHelper {
         if (mCache == null) {
             mCache = newCache();
         }
-        return new CacheDataSourceFactory(
-                mCache,
-                getDataSourceFactory(),
-                CacheDataSource.FLAG_IGNORE_CACHE_ON_ERROR);
+        return new CacheDataSource.Factory();
     }
 
     private Cache newCache() {
@@ -155,13 +152,7 @@ public final class ExoMediaSourceHelper {
      */
     private DataSource.Factory getHttpDataSourceFactory() {
         if (mHttpDataSourceFactory == null) {
-            mHttpDataSourceFactory = new DefaultHttpDataSourceFactory(
-                    mUserAgent,
-                    null,
-                    DefaultHttpDataSource.DEFAULT_CONNECT_TIMEOUT_MILLIS,
-                    DefaultHttpDataSource.DEFAULT_READ_TIMEOUT_MILLIS,
-                    //http->https重定向支持
-                    true);
+            mHttpDataSourceFactory = new DefaultHttpDataSource.Factory();
         }
         return mHttpDataSourceFactory;
     }
@@ -183,7 +174,9 @@ public final class ExoMediaSourceHelper {
                         }
                     }
                 } else {
-                    mHttpDataSourceFactory.getDefaultRequestProperties().set(key, value);
+                    Map<String, String> lakeMap = new HashMap<>();
+                    lakeMap.put(key, value);
+                    mHttpDataSourceFactory.setDefaultRequestProperties(lakeMap);
                 }
             }
         }
