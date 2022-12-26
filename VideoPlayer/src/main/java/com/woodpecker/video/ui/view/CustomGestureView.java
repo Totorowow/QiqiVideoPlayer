@@ -35,7 +35,7 @@ import com.woodpecker.video.bridge.ControlWrapper;
 import com.woodpecker.video.controller.IGestureComponent;
 import com.woodpecker.video.tool.PlayerUtils;
 
-import com.woodpecker.video.R;
+import com.woodpecker.videoplayer.R;
 
 /**
  * 手势控制

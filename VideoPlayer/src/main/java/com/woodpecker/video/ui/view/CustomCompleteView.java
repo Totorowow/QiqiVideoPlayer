@@ -34,7 +34,7 @@ import com.woodpecker.video.bridge.ControlWrapper;
 import com.woodpecker.video.tool.BaseToast;
 import com.woodpecker.video.tool.PlayerUtils;
 
-import com.woodpecker.video.R;
+import com.woodpecker.videoplayer.R;
 
 
 /**

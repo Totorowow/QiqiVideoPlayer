@@ -36,7 +36,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.woodpecker.video.R;
+
+import com.woodpecker.videoplayer.R;
 
 import java.lang.ref.SoftReference;
 import java.lang.reflect.Field;

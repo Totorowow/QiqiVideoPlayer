@@ -27,8 +27,8 @@ import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 
 import com.woodpecker.video.tool.PlayerUtils;
+import com.woodpecker.videoplayer.R;
 
-import com.woodpecker.video.R;
 
 /**
  * <pre>

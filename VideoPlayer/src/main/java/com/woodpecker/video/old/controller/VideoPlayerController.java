@@ -47,9 +47,9 @@ import com.woodpecker.video.tool.BaseToast;
 import com.woodpecker.video.tool.PlayerUtils;
 
 import com.woodpecker.video.config.VideoInfoBean;
-import com.woodpecker.video.R;
 import com.woodpecker.video.config.ConstantKeys;
 import com.woodpecker.video.old.listener.OnClarityChangedListener;
+import com.woodpecker.videoplayer.R;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

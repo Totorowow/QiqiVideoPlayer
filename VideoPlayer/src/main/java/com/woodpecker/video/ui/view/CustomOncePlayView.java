@@ -28,7 +28,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.woodpecker.video.R;
+import com.woodpecker.videoplayer.R;
 import com.woodpecker.video.bridge.ControlWrapper;
 import com.woodpecker.video.config.ConstantKeys;
 import com.woodpecker.video.tool.BaseToast;

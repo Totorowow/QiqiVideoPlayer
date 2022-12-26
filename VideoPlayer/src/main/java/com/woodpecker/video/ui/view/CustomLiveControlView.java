@@ -32,7 +32,7 @@ import com.woodpecker.video.config.ConstantKeys;
 import com.woodpecker.video.bridge.ControlWrapper;
 import com.woodpecker.video.tool.PlayerUtils;
 
-import com.woodpecker.video.R;
+import com.woodpecker.videoplayer.R;
 
 
 /**

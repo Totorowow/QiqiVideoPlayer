@@ -1,12 +1,12 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 0
     buildToolsVersion "29.0.3"
 
     defaultConfig {
         minSdkVersion 17
-        targetSdkVersion 29
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
@@ -44,40 +44,7 @@ version = "1.0"
 /**  上面配置后上传至jcenter后的编译路径是这样的： compile 'cn.yc:YCVideoCacheLib:1.0.0'  **/
 
 
-// 配置maven库，生成POM.xml文件
-install {
-    repositories.mavenInstaller {
-        // This generates POM.xml with proper parameters
-        pom {
-            project {
-                packaging 'aar'
-                //项目描述，自由填写
-                name 'This is video cache lib'
-                url siteUrl
-                licenses {
-                    license {
-                        //开源协议
-                        name 'The Apache Software License, Version 2.0'
-                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-                    }
-                }
-                developers {
-                    developer {
-                        //开发者的个人信息，根据个人信息填写
-                        id 'Totorowow'
-                        name 'woodpecker'
-                        email '123456@qq.com'
-                    }
-                }
-                scm {
-                    connection gitUrl
-                    developerConnection gitUrl
-                    url siteUrl
-                }
-            }
-        }
-    }
-}
+
 
 ext {
     POM_ARTIFACT_ID = "videocache"

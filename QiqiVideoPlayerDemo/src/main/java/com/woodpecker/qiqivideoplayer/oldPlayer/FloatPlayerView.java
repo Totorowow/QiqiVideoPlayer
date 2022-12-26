@@ -49,8 +49,8 @@ public class FloatPlayerView extends FrameLayout {
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view ;
         if (inflater != null) {
-            view = inflater.inflate(com.woodpecker.video.R.layout.old_view_window_dialog, this);
-            mVideoPlayer = view.findViewById(com.woodpecker.video.R.id.video_player);
+            view = inflater.inflate(com.woodpecker.videoplayer.R.layout.old_view_window_dialog, this);
+            mVideoPlayer = view.findViewById(com.woodpecker.videoplayer.R.id.video_player);
             mVideoPlayer.setUp(path,null);
             mVideoPlayer.setPlayerType(ConstantKeys.VideoPlayerType.TYPE_IJK);
             //创建视频控制器

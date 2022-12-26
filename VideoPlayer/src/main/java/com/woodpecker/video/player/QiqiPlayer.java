@@ -30,7 +30,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 import com.google.android.exoplayer2.video.VideoSize;
-import com.woodpecker.video.R;
+
 import com.woodpecker.video.config.ConstantKeys;
 import com.woodpecker.video.config.VideoPlayerConfig;
 import com.woodpecker.video.tool.BaseToast;
@@ -44,6 +44,8 @@ import com.woodpecker.video.surface.SurfaceFactory;
 import com.woodpecker.kernel.inter.VideoPlayerListener;
 import com.woodpecker.kernel.utils.PlayerConstant;
 import com.woodpecker.kernel.utils.VideoLogUtils;
+import com.woodpecker.videoplayer.R;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;

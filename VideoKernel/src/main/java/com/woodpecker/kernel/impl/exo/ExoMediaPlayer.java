@@ -9,7 +9,7 @@ import android.util.Log;
 import android.view.Surface;
 import android.view.SurfaceHolder;
 
-import com.github.woodpecker.R;
+
 import com.google.android.exoplayer2.DefaultLoadControl;
 import com.google.android.exoplayer2.DefaultRenderersFactory;
 import com.google.android.exoplayer2.ExoPlaybackException;
@@ -277,15 +277,9 @@ public class ExoMediaPlayer extends AbstractVideoPlayer implements Player.Listen
     public void release() {
         if (exoPlayer != null) {
             exoPlayer.removeListener(this);
-            final ExoPlayer player=exoPlayer;
+            exoPlayer.release();
             exoPlayer = null;
-            new Thread() {
-                @Override
-                public void run() {
-                    //异步释放，防止卡顿
-                    player.release();
-                }
-            }.start();
+
         }
 
         mIsPreparing = false;

@@ -32,9 +32,10 @@ import androidx.annotation.Nullable;
 import com.woodpecker.video.config.ConstantKeys;
 import com.woodpecker.video.bridge.ControlWrapper;
 
-import com.woodpecker.video.R;
+
 
 import com.woodpecker.video.ui.view.InterControlView;
+import com.woodpecker.videoplayer.R;
 
 /**
  * <pre>
@@ -78,9 +79,6 @@ public class CustomFloatView extends FrameLayout implements InterControlView, Vi
         initFindViewById(view);
         initListener();
         //5.1以下系统SeekBar高度需要设置成WRAP_CONTENT
-        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.LOLLIPOP_MR1) {
-            mPbBottomProgress.getLayoutParams().height = ViewGroup.LayoutParams.WRAP_CONTENT;
-        }
     }
 
     private void initFindViewById(View view) {
