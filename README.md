@@ -6,8 +6,7 @@
     io.github.totorowow:videocache:1.2
     //视频内核层，必须有
     io.github.totorowow:videokernel:1.2
-   
-
+  
 ### 添加布局
     <com.woodpecker.video.player.QiqiPlayer
         android:id="@+id/video_player"
@@ -17,8 +16,7 @@
         android:layout_gravity="center"
        />
 
-
-#### 视频播放器参数设定
+### 视频播放器参数设定
 - 如下所示
     ```
     //创建基础视频播放器，一般播放器的功能
@@ -30,7 +28,7 @@
     //开始播放
     mVideoPlayer.start();
     ```
-
+    
 ###  注意问题
 - 如果是全屏播放，则需要在清单文件中设置当前activity的属性值
     - android:configChanges 保证了在全屏的时候横竖屏切换不会执行Activity的相关生命周期，打断视频的播放
@@ -52,7 +50,6 @@
         },300);
         ```
 
-
 ###  参考案例
 - yc播放器
 -   - https://github.com/yangchong211/YCVideoPlayer
@@ -68,8 +65,4 @@
     - https://github.com/lipangit/JiaoZiVideoPlayer
 - PictureSelector
     - https://github.com/LuckSiege/PictureSelector
-
-
-
-
 
