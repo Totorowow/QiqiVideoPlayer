@@ -23,7 +23,9 @@
         tools:targetApi="n">
         <activity android:name="com.woodpecker.qiqivideoplayer.newPlayer.activity.MainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

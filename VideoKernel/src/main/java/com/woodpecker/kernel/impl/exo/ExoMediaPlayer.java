@@ -53,8 +53,6 @@ import static com.google.android.exoplayer2.ExoPlaybackException.TYPE_SOURCE;
 /**
  * <pre>
  *     @author yangchong
- *     blog  : https://github.com/yangchong211
- *     time  : 2018/11/9
  *     desc  :some content was delected by Totorowow,such as class name
  *     revise:
  * </pre>

@@ -302,12 +302,10 @@ public class AndroidMediaPlayer extends AbstractVideoPlayer {
     @Override
     public void setSpeed(float speed) {
         // only support above Android M
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            try {
-                mMediaPlayer.setPlaybackParams(mMediaPlayer.getPlaybackParams().setSpeed(speed));
-            } catch (Exception e) {
-                mPlayerEventListener.onError(PlayerConstant.ErrorType.TYPE_UNEXPECTED,e.getMessage());
-            }
+        try {
+            mMediaPlayer.setPlaybackParams(mMediaPlayer.getPlaybackParams().setSpeed(speed));
+        } catch (Exception e) {
+            mPlayerEventListener.onError(PlayerConstant.ErrorType.TYPE_UNEXPECTED,e.getMessage());
         }
     }
 
@@ -318,12 +316,10 @@ public class AndroidMediaPlayer extends AbstractVideoPlayer {
     @Override
     public float getSpeed() {
         // only support above Android M
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            try {
-                return mMediaPlayer.getPlaybackParams().getSpeed();
-            } catch (Exception e) {
-                mPlayerEventListener.onError(PlayerConstant.ErrorType.TYPE_UNEXPECTED,e.getMessage());
-            }
+        try {
+            return mMediaPlayer.getPlaybackParams().getSpeed();
+        } catch (Exception e) {
+            mPlayerEventListener.onError(PlayerConstant.ErrorType.TYPE_UNEXPECTED,e.getMessage());
         }
         return 1f;
     }

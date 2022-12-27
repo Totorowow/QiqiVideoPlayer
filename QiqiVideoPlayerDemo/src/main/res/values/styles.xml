@@ -6,9 +6,11 @@
         <item name="colorPrimary">@color/blackText</item>
         <item name="colorPrimaryDark">@color/blackText</item>
         <item name="colorAccent">@color/blackText</item>
+
     </style>
 
-    <!--设置ToolBar样式-->
+
+
     <style name="AppTheme.ActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
         <!--设置字体为白色-->
         <item name="actionMenuTextColor">@color/colorWhite</item>

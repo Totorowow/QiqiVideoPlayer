@@ -8,6 +8,7 @@ import android.text.TextUtils;
 import com.google.android.exoplayer2.C;
 import com.google.android.exoplayer2.MediaItem;
 import com.google.android.exoplayer2.database.ExoDatabaseProvider;
+import com.google.android.exoplayer2.ext.rtmp.RtmpDataSource;
 import com.google.android.exoplayer2.ext.rtmp.RtmpDataSourceFactory;
 import com.google.android.exoplayer2.source.MediaSource;
 import com.google.android.exoplayer2.source.ProgressiveMediaSource;
@@ -33,9 +34,7 @@ import java.util.Map;
 /**
  * <pre>
  *     @author yangchong
- *     blog  : https://github.com/yangchong211
- *     time  : 2018/11/9
- *     desc  : exo视频播放器帮助类
+ *     desc  : some content was delected by Totorowow,such as class name
  *     revise:
  * </pre>
  */
@@ -82,7 +81,7 @@ public final class ExoMediaSourceHelper {
     public MediaSource getMediaSource(String uri, Map<String, String> headers, boolean isCache) {
         Uri contentUri = Uri.parse(uri);
         if ("rtmp".equals(contentUri.getScheme())) {
-            RtmpDataSourceFactory rtmpDataSourceFactory = new RtmpDataSourceFactory(null);
+            RtmpDataSource.Factory rtmpDataSourceFactory = new RtmpDataSource.Factory();
             return new ProgressiveMediaSource.Factory(rtmpDataSourceFactory).createMediaSource(MediaItem.fromUri(contentUri));
         }
         int contentType = inferContentType(uri);

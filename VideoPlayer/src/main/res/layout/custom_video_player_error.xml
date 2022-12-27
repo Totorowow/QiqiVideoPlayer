@@ -45,7 +45,7 @@
             android:layout_width="100dp"
             android:layout_height="40dp"
             android:layout_marginTop="16dp"
-            android:background="@drawable/bg_retry"
+            android:background="@drawable/bg_retry_actangle"
             android:gravity="center"
             android:paddingLeft="18dp"
             android:paddingTop="4dp"
