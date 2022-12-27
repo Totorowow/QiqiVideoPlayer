@@ -42,9 +42,7 @@ import com.woodpecker.kernel.inter.VideoPlayerListener;
 import com.woodpecker.kernel.utils.PlayerConstant;
 import com.woodpecker.kernel.utils.VideoLogUtils;
 
-import org.jetbrains.annotations.NotNull;
 
-import java.io.IOException;
 import java.util.Map;
 
 import androidx.annotation.NonNull;
@@ -215,7 +213,7 @@ public class ExoMediaPlayer extends AbstractVideoPlayer implements Player.Listen
 
     private MediaSourceEventListener mMediaSourceEventListener = new MediaSourceEventListener() {
         @Override
-        public void onLoadStarted(int windowIndex, @Nullable @org.jetbrains.annotations.Nullable MediaSource.MediaPeriodId mediaPeriodId, LoadEventInfo loadEventInfo, MediaLoadData mediaLoadData) {
+        public void onLoadStarted(int windowIndex, @Nullable MediaSource.MediaPeriodId mediaPeriodId, LoadEventInfo loadEventInfo, MediaLoadData mediaLoadData) {
             if (mPlayerEventListener != null && mIsPreparing) {
                 mPlayerEventListener.onPrepared();
             }
@@ -467,7 +465,7 @@ public class ExoMediaPlayer extends AbstractVideoPlayer implements Player.Listen
 
 
     @Override
-    public void onVideoSizeChanged(@NotNull VideoSize videoSize) {
+    public void onVideoSizeChanged(VideoSize videoSize) {
         if (mPlayerEventListener != null) {
             mPlayerEventListener.onVideoSizeChanged(videoSize.width,videoSize.height);
             //if (unappliedRotationDegrees > 0) {

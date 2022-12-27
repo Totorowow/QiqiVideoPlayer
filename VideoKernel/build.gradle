@@ -42,7 +42,7 @@ dependencies {
     //exoplayer-smoothstreaming：支持SmoothStreaming内容
     api "com.google.android.exoplayer:exoplayer-smoothstreaming:2.16.0"
     api "com.google.android.exoplayer:extension-rtmp:2.16.0"
-    implementation 'org.jetbrains:annotations-java5:15.0'
+
 
 }
 

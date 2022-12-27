@@ -78,9 +78,12 @@ dependencies {
 
 
 
-    //implementation 'com.woodpecker:videoplayer:1.0'
-    //implementation 'com.woodpecker:videocache:1.0'
-    //implementation 'com.woodpecker:videokernel:1.0'
+    //视频UI层，必须要有
+    //io.github.totorowow:videoplayer:1.2
+    //视频缓存，如果不需要则可以不依赖
+    //io.github.totorowow:videocache:1.2
+    //视频内核层，必须有
+    //io.github.totorowow:videokernel:1.2
 
 
     implementation 'cn.yc:YCStatusBarLib:1.5.0'
