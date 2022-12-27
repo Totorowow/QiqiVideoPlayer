@@ -20,10 +20,29 @@
     - 弹幕视图(这个很重要)，水印显示视图，倍速播放界面(用于控制倍速)，底部视频列表缩略图视图
     - 投屏视频视图界面，视频直播间刷礼物界面，老师开课界面，展示更多视图(下载，分享，切换音频等)
 
+### 视频播放器如何使用
+####  关于gradle引用说明
+- 如下所示
+    ```
+    //视频UI层，必须要有
+    io.github.totorowow:videoplayer:1.2
+    //视频缓存，如果不需要则可以不依赖
+    io.github.totorowow:videocache:1.2
+    //视频内核层，必须有
+    io.github.totorowow:videokernel:1.2
+   
+
+####  在xml中添加布局
+    <com.woodpecker.video.player.QiqiPlayer
+        android:id="@+id/video_player"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+       />
 
 
-
-###  最简单的视频播放器参数设定
+#### 最简单的视频播放器参数设定
 - 如下所示
     ```
     //创建基础视频播放器，一般播放器的功能
