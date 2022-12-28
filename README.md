@@ -1,11 +1,11 @@
 
 ### 添加类库
     //视频UI层，必须要有
-    io.github.totorowow:videoplayer:1.2
+    io.github.totorowow:videoplayer:1.3
     //视频缓存，如果不需要则可以不依赖
-    io.github.totorowow:videocache:1.2
+    io.github.totorowow:videocache:1.3
     //视频内核层，必须有
-    io.github.totorowow:videokernel:1.2
+    io.github.totorowow:videokernel:1.3
   
 ### 添加布局
     <com.woodpecker.video.player.QiqiPlayer
