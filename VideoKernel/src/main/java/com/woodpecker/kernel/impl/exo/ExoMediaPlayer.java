@@ -175,9 +175,7 @@ public class ExoMediaPlayer extends AbstractVideoPlayer implements Player.Listen
         exoPlayer.prepare();
     }
 
-    /**
-     * 播放
-     */
+
     @Override
     public void start() {
         if (exoPlayer == null){
@@ -186,9 +184,7 @@ public class ExoMediaPlayer extends AbstractVideoPlayer implements Player.Listen
         exoPlayer.setPlayWhenReady(true);
     }
 
-    /**
-     * 暂停
-     */
+
     @Override
     public void pause() {
         if (exoPlayer == null){
@@ -197,9 +193,7 @@ public class ExoMediaPlayer extends AbstractVideoPlayer implements Player.Listen
         exoPlayer.setPlayWhenReady(false);
     }
 
-    /**
-     * 停止
-     */
+
     @Override
     public void stop() {
         if (exoPlayer == null){

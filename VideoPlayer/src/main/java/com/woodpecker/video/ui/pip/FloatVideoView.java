@@ -89,22 +89,11 @@ public class FloatVideoView extends FrameLayout{
      */
     public boolean addToWindow() {
         if (mWindowManager != null) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-                if (!isAttachedToWindow()) {
-                    mWindowManager.addView(this, mParams);
-                    return true;
-                } else {
-                    return false;
-                }
+            if (!isAttachedToWindow()) {
+                mWindowManager.addView(this, mParams);
+                return true;
             } else {
-                try {
-                    if (getParent() == null) {
-                        mWindowManager.addView(this, mParams);
-                    }
-                    return true;
-                } catch (Exception e) {
-                    return false;
-                }
+                return false;
             }
         } else {
             return false;
@@ -116,22 +105,11 @@ public class FloatVideoView extends FrameLayout{
      */
     public boolean removeFromWindow() {
         if (mWindowManager != null) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-                if (isAttachedToWindow()) {
-                    mWindowManager.removeViewImmediate(this);
-                    return true;
-                } else {
-                    return false;
-                }
+            if (isAttachedToWindow()) {
+                mWindowManager.removeViewImmediate(this);
+                return true;
             } else {
-                try {
-                    if (getParent() != null) {
-                        mWindowManager.removeViewImmediate(this);
-                    }
-                    return true;
-                } catch (Exception e) {
-                    return false;
-                }
+                return false;
             }
         } else {
             return false;

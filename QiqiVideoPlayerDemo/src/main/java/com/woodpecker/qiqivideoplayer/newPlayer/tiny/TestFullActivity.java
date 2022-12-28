@@ -69,8 +69,8 @@ public class TestFullActivity extends BaseActivity implements View.OnClickListen
         StateAppBar.translucentStatusBar(this, true);
         adaptCutoutAboveAndroidP();
         mQiqiPlayer = findViewById(R.id.video_player);
-        mBtnTiny1 = (Button) findViewById(R.id.btn_tiny_1);
-        mBtnTiny2 = (Button) findViewById(R.id.btn_tiny_2);
+        mBtnTiny1 = findViewById(R.id.btn_tiny_1);
+        mBtnTiny2 = findViewById(R.id.btn_tiny_2);
 
         BasisVideoController controller = new BasisVideoController(this);
         //设置视频背景图
@@ -98,6 +98,7 @@ public class TestFullActivity extends BaseActivity implements View.OnClickListen
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_tiny_1:
+
                 mQiqiPlayer.startFullScreen();
                 break;
             case R.id.btn_tiny_2:

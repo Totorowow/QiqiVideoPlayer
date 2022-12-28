@@ -2,6 +2,7 @@ package com.woodpecker.qiqivideoplayer.newPlayer.pip;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -11,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.bumptech.glide.Glide;
 
 import com.woodpecker.qiqivideoplayer.ConstantVideo;
+import com.woodpecker.video.config.ConstantKeys;
 import com.woodpecker.video.player.QiqiPlayer;
 import com.woodpecker.video.player.VideoViewManager;
 import com.woodpecker.video.ui.pip.FloatVideoManager;
@@ -68,27 +70,36 @@ public class PipActivity extends AppCompatActivity{
     private void initVideoPlayer() {
         mPIPManager = FloatVideoManager.getInstance(this);
         QiqiPlayer videoView = VideoViewManager.instance().get(FloatVideoManager.PIP);
-        BasisVideoController controller = new BasisVideoController(this);
-        videoView.setController(controller);
+        BasisVideoController mController = new BasisVideoController(this);
+        videoView.setController(mController);
         if (mPIPManager.isStartFloatWindow()) {
             mPIPManager.stopFloatWindow();
-            controller.setPlayerState(videoView.getCurrentPlayerState());
-            controller.setPlayState(videoView.getCurrentPlayState());
+            mController.setPlayerState(videoView.getCurrentPlayerState());
+            mController.setPlayState(videoView.getCurrentPlayState());
         } else {
             mPIPManager.setActClass(PipActivity.class);
-            ImageView thumb = controller.getThumb();
+            ImageView thumb = mController.getThumb();
             Glide.with(this)
                     .load(R.drawable.image_default)
                     .placeholder(android.R.color.darker_gray)
                     .into(thumb);
             videoView.setUrl(ConstantVideo.VideoPlayerList[0]);
         }
+        ViewGroup parent = (ViewGroup) videoView.getParent();
+        if (parent != null) {
+            parent.removeView(videoView);
+        }
+
         mPlayerContainer.addView(videoView);
+
+
+
     }
 
     private void initListener() {
         mBtnFloat.setOnClickListener(v -> {
             mPIPManager.startFloatWindow();
+            //mController.setPlayState(ConstantKeys.CurrentState.STATE_IDLE);
             mPIPManager.resume();
         });
     }

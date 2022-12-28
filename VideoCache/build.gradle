@@ -46,7 +46,7 @@ version = "1.0"
 
 
 
-ext {
+ext {    //if you don't want to update this library,you need to commend out these few lines of code
     POM_ARTIFACT_ID = "videocache"
     VERSION_NAME=1.2
 }
