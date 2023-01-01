@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
@@ -18,6 +19,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:networkSecurityConfig="@xml/network_security_config"
+        android:requestLegacyExternalStorage="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="n">
@@ -108,6 +110,8 @@
             android:screenOrientation="portrait"/>
         <activity android:name="com.woodpecker.qiqivideoplayer.music.MusicPlayerActivity"/>
         <activity android:name="com.woodpecker.qiqivideoplayer.m3u8.M3u8Activity"/>
+        <activity android:name="com.frank.ffmpeg.activity.VideoPreviewActivity" />
+        <activity android:name="com.frank.ffmpeg.activity.VideoHandleActivity" />
     </application>
 
 </manifest>

@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.frank.ffmpeg.activity.VideoHandleActivity;
 import com.woodpecker.qiqivideoplayer.newPlayer.ad.AdActivity;
 import com.woodpecker.qiqivideoplayer.newPlayer.clarity.ClarityActivity;
 import com.woodpecker.qiqivideoplayer.newPlayer.danmu.BulletScreenActivity;
@@ -146,7 +147,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (v == mTv111){
             startActivity(new Intent(this, ClarityActivity.class));
         } else if (v == mTv131){
-            startActivity(new Intent(this, TestSurfaceActivity.class));
+
+            //startActivity(new Intent(this, TestSurfaceActivity.class));
+            startActivity(new Intent(this, VideoHandleActivity.class));
         }
     }
 

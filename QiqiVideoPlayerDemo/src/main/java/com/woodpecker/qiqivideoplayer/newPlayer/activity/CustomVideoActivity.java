@@ -127,6 +127,7 @@ public class CustomVideoActivity extends AppCompatActivity implements View.OnCli
         if (titleView!=null){
             controller.removeControlComponent(titleView);
         }
+        controller.setEnableOrientation(false);
         //controller.addControlComponent(titleView);
         //controller.removeView(titleView);//remove top native view
         mQiqiPlayer.setController(controller);

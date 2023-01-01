@@ -10,4 +10,40 @@
     <string name="loading">加载中</string>
     <string name="error">发生错误</string>
 
+    <string name="select_file">选择文件</string>
+    <string name="please_select">请选择或设置正确文件</string>
+    <string name="please_click_select">请点击右上角菜单选择文件</string>
+
+    <string name="video_cut">视频剪切</string>
+    <string name="video_concat">视频拼接</string>
+    <string name="video_water_mark">视频水印</string>
+    <string name="video_remove_logo">去除水印</string>
+    <string name="video_to_gif">视频转Gif</string>
+    <string name="video_transform">视频转码</string>
+    <string name="video_screen_shot">视频截图</string>
+    <string name="video_screen_record">屏幕录制</string>
+    <string name="video_from_photo">合成视频</string>
+    <string name="video_extract_frame">视频抽帧</string>
+    <string name="video_part_zoom">视频局部放大</string>
+    <string name="video_play">视频播放</string>
+    <string name="video_filter">FFmpeg滤镜</string>
+    <string name="camera_filter">Camera滤镜</string>
+    <string name="video_slow">慢放</string>
+    <string name="video_fast">快进</string>
+    <string name="video_multi">画面拼接</string>
+    <string name="video_reverse">视频倒播</string>
+    <string name="video_denoise">视频降噪</string>
+    <string name="video_image">视频转图片</string>
+    <string name="video_pip">视频画中画</string>
+    <string name="video_preview">播放预览</string>
+    <string name="video_moov">MOOV前移</string>
+    <string name="video_speed">播放倍率</string>
+    <string name="video_thumbnail">插入封面</string>
+    <string name="video_subtitle">添加字幕</string>
+    <string name="video_zoom">图片缩放</string>
+    <string name="video_gray">黑白视频</string>
+    <string name="video_stereo3d">3D视频</string>
+    <string name="video_rotate">旋转</string>
+    <string name="wrong_video_format">非视频文件</string>
+
 </resources>
