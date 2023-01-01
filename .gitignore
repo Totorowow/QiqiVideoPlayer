@@ -11,7 +11,8 @@
 .DS_Store
 /build
 /captures
- frank/
+ /QiqiVideoPlayerDemo/src/main/java/com/frank
+ /QiqiVideoPlayerDemo/src/main/cpp
 .externalNativeBuild
 .cxx
 
