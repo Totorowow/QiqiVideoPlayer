@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +16,7 @@ import com.luck.picture.lib.basic.PictureSelector;
 import com.luck.picture.lib.config.SelectMimeType;
 import com.luck.picture.lib.entity.LocalMedia;
 import com.luck.picture.lib.interfaces.OnResultCallbackListener;
+import com.luck.picture.lib.utils.ToastUtils;
 import com.woodpecker.kernel.factory.PlayerFactory;
 import com.woodpecker.kernel.utils.PlayerConstant;
 import com.woodpecker.kernel.utils.PlayerFactoryUtils;
@@ -51,6 +53,7 @@ public class CustomVideoActivity extends AppCompatActivity implements View.OnCli
     private ImageView closeCurrentPage;
     private BasisVideoController controller;
     private String videoPath;
+    private String outputPath;
 
 
     @Override
@@ -114,8 +117,11 @@ public class CustomVideoActivity extends AppCompatActivity implements View.OnCli
     }
 
     private void initVideoPlayer() {
-        if (videoPath==null || videoPath.length()==0){
+        if (getIntent().getStringExtra(ConstantVideo.OUTPUT_PATH)!=null){
+            videoPath = getIntent().getStringExtra(ConstantVideo.OUTPUT_PATH);
+        }else if (videoPath==null || videoPath.length()==0){
             videoPath = ConstantVideo.VideoPlayerList[1];
+            //ToastUtils.showToast(this,"视频路径不存在");
             //url ="android.resource://" + getPackageName() + "/" + R.raw.gold_flower;
         }
         controller = new BasisVideoController(this);
