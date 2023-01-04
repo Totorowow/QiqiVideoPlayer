@@ -374,14 +374,7 @@ public abstract class GestureVideoController extends BaseVideoController impleme
         return super.onInterceptTouchEvent(ev);
     }
 
-    /**
-     * 分发事件：使用对象	Activity、ViewGroup、View
-     * @param ev                            event
-     * @return                              返回值
-     * true： 消费事件；事件不会往下传递；后续事件（Move、Up）会继续分发到该View
-     * false：不消费事件；事件不会往下传递；将事件回传给父控件的onTouchEvent()处理；Activity例外：返回false=消费事件
-     *        后续事件（Move、Up）会继续分发到该View(与onTouchEvent()区别）
-     */
+
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
         VideoLogUtils.e("事件----------事件分发----------");

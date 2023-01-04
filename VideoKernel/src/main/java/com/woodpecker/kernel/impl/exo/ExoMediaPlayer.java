@@ -19,12 +19,6 @@ import com.google.android.exoplayer2.PlaybackException;
 import com.google.android.exoplayer2.PlaybackParameters;
 import com.google.android.exoplayer2.Player;
 import com.google.android.exoplayer2.RenderersFactory;
-import com.google.android.exoplayer2.SimpleExoPlayer;
-import com.google.android.exoplayer2.analytics.AnalyticsCollector;
-import com.google.android.exoplayer2.drm.DefaultDrmSessionManagerProvider;
-import com.google.android.exoplayer2.mediacodec.MediaCodecRenderer;
-import com.google.android.exoplayer2.mediacodec.MediaCodecUtil;
-import com.google.android.exoplayer2.source.DefaultMediaSourceFactory;
 import com.google.android.exoplayer2.source.LoadEventInfo;
 import com.google.android.exoplayer2.source.MediaLoadData;
 import com.google.android.exoplayer2.source.MediaSource;
@@ -33,7 +27,6 @@ import com.google.android.exoplayer2.trackselection.DefaultTrackSelector;
 import com.google.android.exoplayer2.trackselection.MappingTrackSelector;
 import com.google.android.exoplayer2.trackselection.TrackSelector;
 import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter;
-import com.google.android.exoplayer2.util.Clock;
 import com.google.android.exoplayer2.util.EventLogger;
 import com.google.android.exoplayer2.util.Util;
 import com.google.android.exoplayer2.video.VideoSize;
@@ -85,8 +78,6 @@ public class ExoMediaPlayer extends AbstractVideoPlayer implements Player.Listen
 
     @Override
     public void initPlayer() {
-        //创建exo播放器
-
         mRenderersFactory = mRenderersFactory == null ?  new DefaultRenderersFactory(mAppContext) : mRenderersFactory;
         mTrackSelector = mTrackSelector == null ?  new DefaultTrackSelector(mAppContext) : mTrackSelector;
         mLoadControl = mLoadControl == null ?  new DefaultLoadControl() : mLoadControl;
@@ -102,16 +93,13 @@ public class ExoMediaPlayer extends AbstractVideoPlayer implements Player.Listen
 
         setOptions();
 
-        //播放器日志
         if (VideoLogUtils.isIsLog() && mTrackSelector instanceof MappingTrackSelector) {
             exoPlayer.addAnalyticsListener(new EventLogger((MappingTrackSelector) mTrackSelector, "ExoPlayer"));
         }
         initListener();
     }
 
-    /**
-     * exo视频播放器监听listener
-     */
+
     private void initListener() {
         exoPlayer.addListener(this);
         //exoPlayer.addVideoListener(this);
@@ -131,15 +119,9 @@ public class ExoMediaPlayer extends AbstractVideoPlayer implements Player.Listen
         mLoadControl = loadControl;
     }
 
-    /**
-     * 设置播放地址
-     *
-     * @param path    播放地址
-     * @param headers 播放地址请求头
-     */
+
     @Override
     public void setDataSource(String path, Map<String, String> headers) {
-        // 设置dataSource
         if(path==null || path.length()==0){
             if (mPlayerEventListener!=null){
                 mPlayerEventListener.onInfo(PlayerConstant.MEDIA_INFO_URL_NULL, 0);
@@ -154,9 +136,6 @@ public class ExoMediaPlayer extends AbstractVideoPlayer implements Player.Listen
         //no support
     }
 
-    /**
-     * 准备开始播放（异步）
-     */
     @Override
     public void prepareAsync() {
         if (exoPlayer == null){
@@ -170,7 +149,6 @@ public class ExoMediaPlayer extends AbstractVideoPlayer implements Player.Listen
         }
         mIsPreparing = true;
         mMediaSource.addEventListener(new Handler(), mMediaSourceEventListener);
-        //准备播放
         exoPlayer.setMediaSource(mMediaSource);
         exoPlayer.prepare();
     }
@@ -213,9 +191,6 @@ public class ExoMediaPlayer extends AbstractVideoPlayer implements Player.Listen
     };
 
 
-    /**
-     * 重置播放器
-     */
     @Override
     public void reset() {
         if (exoPlayer != null) {
@@ -229,9 +204,6 @@ public class ExoMediaPlayer extends AbstractVideoPlayer implements Player.Listen
         }
     }
 
-    /**
-     * 是否正在播放
-     */
     @Override
     public boolean isPlaying() {
         if (exoPlayer == null){
@@ -249,9 +221,7 @@ public class ExoMediaPlayer extends AbstractVideoPlayer implements Player.Listen
         }
     }
 
-    /**
-     * 调整进度
-     */
+
     @Override
     public void seekTo(long time) {
         if (exoPlayer == null){
@@ -260,9 +230,7 @@ public class ExoMediaPlayer extends AbstractVideoPlayer implements Player.Listen
         exoPlayer.seekTo(time);
     }
 
-    /**
-     * 释放播放器
-     */
+
     @Override
     public void release() {
         if (exoPlayer != null) {
@@ -279,9 +247,7 @@ public class ExoMediaPlayer extends AbstractVideoPlayer implements Player.Listen
         mSpeedPlaybackParameters = null;
     }
 
-    /**
-     * 获取当前播放的位置
-     */
+
     @Override
     public long getCurrentPosition() {
         if (exoPlayer == null){
@@ -290,9 +256,6 @@ public class ExoMediaPlayer extends AbstractVideoPlayer implements Player.Listen
         return exoPlayer.getCurrentPosition();
     }
 
-    /**
-     * 获取视频总时长
-     */
     @Override
     public long getDuration() {
         if (exoPlayer == null){
@@ -301,17 +264,13 @@ public class ExoMediaPlayer extends AbstractVideoPlayer implements Player.Listen
         return exoPlayer.getDuration();
     }
 
-    /**
-     * 获取缓冲百分比
-     */
+
     @Override
     public int getBufferedPercentage() {
         return exoPlayer == null ? 0 : exoPlayer.getBufferedPercentage();
     }
 
-    /**
-     * 设置渲染视频的View,主要用于SurfaceView
-     */
+
     @Override
     public void setSurface(Surface surface) {
         if (surface!=null){
@@ -334,9 +293,6 @@ public class ExoMediaPlayer extends AbstractVideoPlayer implements Player.Listen
         }
     }
 
-    /**
-     * 设置音量
-     */
     @Override
     public void setVolume(float leftVolume, float rightVolume) {
         if (exoPlayer != null){
@@ -344,9 +300,7 @@ public class ExoMediaPlayer extends AbstractVideoPlayer implements Player.Listen
         }
     }
 
-    /**
-     * 设置是否循环播放
-     */
+
     @Override
     public void setLooping(boolean isLooping) {
         if (exoPlayer != null){
@@ -356,7 +310,6 @@ public class ExoMediaPlayer extends AbstractVideoPlayer implements Player.Listen
 
     @Override
     public void setOptions() {
-        //准备好就开始播放
         exoPlayer.setPlayWhenReady(true);
     }
 
@@ -372,9 +325,7 @@ public class ExoMediaPlayer extends AbstractVideoPlayer implements Player.Listen
         }
     }
 
-    /**
-     * 获取播放速度
-     */
+
     @Override
     public float getSpeed() {
         if (mSpeedPlaybackParameters != null) {
@@ -383,12 +334,9 @@ public class ExoMediaPlayer extends AbstractVideoPlayer implements Player.Listen
         return 1f;
     }
 
-    /**
-     * 获取当前缓冲的网速
-     */
+
     @Override
     public long getTcpSpeed() {
-        // no support
         return 0;
     }
 
@@ -413,7 +361,7 @@ public class ExoMediaPlayer extends AbstractVideoPlayer implements Player.Listen
         switch (state) {
             case Player.STATE_IDLE:
                 break;
-            //开始缓充
+
             case Player.STATE_BUFFERING:
                 mPlayerEventListener.onInfo(PlayerConstant.MEDIA_INFO_BUFFERING_START, getBufferedPercentage());
                 mIsBuffering = true;
@@ -425,7 +373,6 @@ public class ExoMediaPlayer extends AbstractVideoPlayer implements Player.Listen
                     mIsBuffering = false;
                 }
                 break;
-            //播放器已经播放完了媒体
             case Player.STATE_ENDED:
                 mPlayerEventListener.onCompletion();
                 break;

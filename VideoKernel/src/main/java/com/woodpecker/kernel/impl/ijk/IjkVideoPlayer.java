@@ -61,7 +61,6 @@ public class IjkVideoPlayer extends AbstractVideoPlayer {
     @Override
     public void initPlayer() {
         mMediaPlayer = new IjkMediaPlayer();
-        //native日志
         IjkMediaPlayer.native_setLogLevel(VideoLogUtils.isIsLog()
                 ? IjkMediaPlayer.IJK_LOG_INFO : IjkMediaPlayer.IJK_LOG_SILENT);
         setOptions();

@@ -31,10 +31,6 @@ public final class VideoLogUtils {
     private static final String TAG = "YCVideoPlayer";
     private static boolean isLog = false;
 
-    /**
-     * 设置是否开启日志
-     * @param isLog                 是否开启日志
-     */
     public static void setIsLog(boolean isLog) {
         VideoLogUtils.isLog = isLog;
     }
