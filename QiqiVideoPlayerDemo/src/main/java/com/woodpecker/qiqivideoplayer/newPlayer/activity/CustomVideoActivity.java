@@ -24,6 +24,7 @@ import com.woodpecker.qiqivideoplayer.BuriedPointEventImpl;
 
 import com.woodpecker.qiqivideoplayer.ConstantVideo;
 import com.woodpecker.qiqivideoplayer.util.GlideEngine;
+import com.woodpecker.qiqivideoplayer.util.StorageUtil;
 import com.woodpecker.video.config.ConstantKeys;
 import com.woodpecker.video.config.VideoPlayerConfig;
 import com.woodpecker.video.player.OnVideoStateListener;
@@ -184,7 +185,8 @@ public class CustomVideoActivity extends AppCompatActivity implements View.OnCli
             finish();
         }
         else if (v == mBtnCrop){
-
+            Bitmap screenBitmap=mQiqiPlayer.doScreenShot();
+            StorageUtil.saveBitmapToAlbum(this,screenBitmap);
 
         } else if (v == mBtnGif){
 

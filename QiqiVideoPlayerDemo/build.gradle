@@ -91,6 +91,7 @@ dependencies {
     implementation 'com.github.ctiao:ndkbitmap-armv7a:0.9.21'
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.github.GrenderG:Toasty:1.5.2'
 
 
     implementation project(path: ':VideoCache')

@@ -41,9 +41,7 @@ public class CoreDependencyActivity extends AppCompatActivity implements View.On
             case R.id.tv_1_2:
                 startActivity(MediaActivity2.class);
                 break;
-            case R.id.tv_2:
-                startActivity(IjkActivity.class);
-                break;
+
 
         }
     }

@@ -1,5 +1,6 @@
 package com.woodpecker.qiqivideoplayer.util;
 
+import android.annotation.SuppressLint;
 import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
@@ -13,6 +14,11 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
 
+import com.luck.picture.lib.utils.PictureFileUtils;
+import com.luck.picture.lib.utils.ToastUtils;
+
+import org.apache.commons.io.FileUtils;
+
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -22,6 +28,7 @@ import java.io.OutputStream;
 import java.nio.file.Files;
 
 import androidx.annotation.RequiresApi;
+import es.dmoral.toasty.Toasty;
 
 public class StorageUtil {
     private static final String TAG = "SaveUtils";
@@ -52,6 +59,7 @@ public class StorageUtil {
         }
     }
 
+    @SuppressLint("CheckResult")
     @RequiresApi(api = Build.VERSION_CODES.Q)
     private static boolean saveBitmapToAlbumAfterQ(Context context, Bitmap bitmap) {
         Uri contentUri;
@@ -68,13 +76,14 @@ public class StorageUtil {
         OutputStream os = null;
         try {
             os = context.getContentResolver().openOutputStream(uri);
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 50, os);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, os);
 //            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
 //                Files.copy(bitmapFile.toPath(), os);
 //            }
             contentValues.clear();
             contentValues.put(MediaStore.MediaColumns.IS_PENDING, 0);
             context.getContentResolver().update(uri, contentValues, null, null);
+            ToastUtils.showToast(context,"图片已保存至本地相册.");
             return true;
         } catch (Exception e) {
             context.getContentResolver().delete(uri, null, null);
@@ -91,10 +100,12 @@ public class StorageUtil {
         }
     }
 
+    @SuppressLint("CheckResult")
     private static boolean saveBitmapToAlbumBeforeQ(Context context, Bitmap bitmap) {
         File picDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM);
         File destFile = new File(picDir, context.getPackageName() + File.separator + System.currentTimeMillis() + ".jpg");
 //            FileUtils.copy(imageFile, destFile.getAbsolutePath());
+        String filePath=picDir+File.separator+context.getPackageName() + File.separator + System.currentTimeMillis() + ".jpg";
         OutputStream os = null;
         boolean result = false;
         try {
@@ -103,7 +114,9 @@ public class StorageUtil {
                 destFile.createNewFile();
             }
             os = new BufferedOutputStream(new FileOutputStream(destFile));
-            result = bitmap.compress(Bitmap.CompressFormat.JPEG, 50, os);
+            result = bitmap.compress(Bitmap.CompressFormat.JPEG, 100, os);
+            //Toasty.info(context,"图片已保存至"+filePath);
+
             if (!bitmap.isRecycled()) bitmap.recycle();
         } catch (IOException e) {
             e.printStackTrace();
@@ -121,9 +134,10 @@ public class StorageUtil {
                 new String[]{destFile.getAbsolutePath()},
                 new String[]{"image/*"},
                 (path, uri) -> {
-                    Log.d(TAG, "saveImgToAlbum: " + path + " " + uri);
-                    // Scan Completed
+                    ToastUtils.showToast(context,"图片已保存至本地相册.");
+
                 });
+
         return result;
     }
 
@@ -235,6 +249,7 @@ public class StorageUtil {
     /**
      * 获取视频的contentValue
      */
+    @RequiresApi(api = Build.VERSION_CODES.Q)
     public static ContentValues getVideoContentValues(Context context, File paramFile, long timestamp) {
         ContentValues localContentValues = new ContentValues();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
