@@ -46,4 +46,30 @@
     <string name="video_rotate">旋转</string>
     <string name="wrong_video_format">非视频文件</string>
 
+    <string name="video_sketch">素描</string>
+    <string name="video_hue">hue</string>
+    <string name="video_lut">lut</string>
+    <string name="video_edge">边缘</string>
+    <string name="video_blur">模糊</string>
+    <string name="video_grid">九宫格</string>
+    <string name="video_flip">翻转</string>
+    <string name="video_box">矩形</string>
+    <string name="video_flash">闪烁</string>
+    <string name="video_balance">色彩平衡</string>
+    <string name="video_sharp">锐化</string>
+
+    <string name="filter_sketch">素描</string>
+    <string name="filter_distinct">鲜明</string>
+    <string name="filter_edge">边缘</string>
+    <string name="filter_division">九宫格</string>
+    <string name="filter_equalize">均衡</string>
+    <string name="filter_rectangle">矩形</string>
+    <string name="filter_flip">镜像</string>
+    <string name="filter_blur">模糊</string>
+    <string name="filter_rotate">旋转</string>
+    <string name="filter_sharpening">锐化</string>
+
+    <string name="sound_on">声音开</string>
+    <string name="sound_off">声音关</string>
+
 </resources>

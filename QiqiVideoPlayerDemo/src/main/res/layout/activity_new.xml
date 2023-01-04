@@ -181,7 +181,16 @@
                 android:layout_marginTop="10dp"
                 android:padding="10dp"
                 android:textColor="@color/colorWhite"
-                android:text="11.1 使用自定义SurfaceView学习demo"/>
+                android:text="11.1 简单的视频滤镜示例"/>
+
+            <TextView
+                android:id="@+id/tv_15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:textColor="@color/colorWhite"
+                android:text="12.1 使用自定义SurfaceView学习demo"/>
 
         </LinearLayout>
     </ScrollView>

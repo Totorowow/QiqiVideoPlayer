@@ -112,6 +112,7 @@
         <activity android:name="com.woodpecker.qiqivideoplayer.m3u8.M3u8Activity"/>
         <activity android:name="com.frank.ffmpeg.activity.VideoPreviewActivity" />
         <activity android:name="com.frank.ffmpeg.activity.VideoHandleActivity" />
+        <activity android:name="com.frank.ffmpeg.activity.FilterActivity" />
     </application>
 
 </manifest>

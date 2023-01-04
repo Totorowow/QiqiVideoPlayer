@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.frank.ffmpeg.activity.FilterActivity;
 import com.frank.ffmpeg.activity.VideoHandleActivity;
 import com.frank.ffmpeg.activity.VideoPreviewActivity;
 import com.woodpecker.qiqivideoplayer.newPlayer.ad.AdActivity;
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView mTv111;
     private TextView mTv131;
     private TextView mTv132;
+    private TextView mTv133;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -80,6 +82,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mTv111 = findViewById(R.id.tv_11_1);
         mTv131 = findViewById(R.id.tv_13_1);
         mTv132=findViewById(R.id.tv_14);
+        mTv133=findViewById(R.id.tv_15);
     }
 
     private void initListener() {
@@ -102,6 +105,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mTv111.setOnClickListener(this);
         mTv131.setOnClickListener(this);
         mTv132.setOnClickListener(this);
+        mTv133.setOnClickListener(this);
     }
 
     @Override
@@ -151,8 +155,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (v == mTv111){
             startActivity(new Intent(this, ClarityActivity.class));
         } else if (v == mTv131){
-            startActivity(new Intent(this, VideoHandleActivity.class));
+            startActivity(new Intent(this,VideoHandleActivity.class));
         }else if (v == mTv132){
+            startActivity(new Intent(this, FilterActivity.class));
+        }else if (v == mTv133){
             startActivity(new Intent(this, TestSurfaceActivity.class));
         }
     }

@@ -94,7 +94,7 @@ object FileUtil {
         }
         val file = File(path)
         if (!file.exists()) {
-            Log.e("FileUtil", "$path is not exist!")
+            Log.e("StorageUtil", "$path is not exist!")
             return false
         }
         return true
