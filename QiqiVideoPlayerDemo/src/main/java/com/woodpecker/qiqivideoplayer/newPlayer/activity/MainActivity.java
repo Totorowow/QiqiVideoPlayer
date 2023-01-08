@@ -8,11 +8,9 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import com.frank.ffmpeg.activity.FilterActivity;
 import com.frank.ffmpeg.activity.VideoHandleActivity;
-import com.frank.ffmpeg.activity.VideoPreviewActivity;
 import com.woodpecker.qiqivideoplayer.newPlayer.ad.AdActivity;
 import com.woodpecker.qiqivideoplayer.newPlayer.clarity.ClarityActivity;
 import com.woodpecker.qiqivideoplayer.newPlayer.danmu.BulletScreenActivity;
@@ -111,7 +109,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if (v == mTv31){
-            startActivity(new Intent(this, CustomVideoActivity.class));
+            startActivity(new Intent(this, NormalVideoActivity.class));
         } else if (v == mTv32){
             startActivity(new Intent(this, TestFullActivity.class));
         } else if (v == mTv33){

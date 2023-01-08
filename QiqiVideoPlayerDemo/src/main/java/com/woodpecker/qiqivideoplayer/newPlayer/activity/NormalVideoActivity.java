@@ -39,7 +39,7 @@ import com.woodpecker.video.ui.view.CustomTitleView;
 
 import java.util.ArrayList;
 
-public class CustomVideoActivity extends AppCompatActivity implements View.OnClickListener {
+public class NormalVideoActivity extends AppCompatActivity implements View.OnClickListener {
 
     private QiqiPlayer mQiqiPlayer;
     private Button mBtnScaleNormal;
