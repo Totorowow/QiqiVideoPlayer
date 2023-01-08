@@ -79,7 +79,7 @@ task javadoc(type: Javadoc) {
 
 ext {
     POM_ARTIFACT_ID = "videokernel"
-    VERSION_NAME=1.3
+    VERSION_NAME=1.4
 }
 
 //apply from: '../publish.gradle'
