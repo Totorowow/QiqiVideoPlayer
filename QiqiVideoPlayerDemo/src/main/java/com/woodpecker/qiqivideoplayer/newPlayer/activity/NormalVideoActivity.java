@@ -54,7 +54,6 @@ public class NormalVideoActivity extends AppCompatActivity implements View.OnCli
     private ImageView closeCurrentPage;
     private BasisVideoController controller;
     private String videoPath;
-    private String outputPath;
 
 
     @Override
