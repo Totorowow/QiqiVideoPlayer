@@ -27,48 +27,31 @@ dependencies {
 }
 
 
-/** 以下开始是将Android Library上传到jcenter的相关配置**/
-apply plugin: 'com.github.dcendents.android-maven'
-apply plugin: 'com.jfrog.bintray'
-
-//项目主页
-def siteUrl = 'https://github.com/Totorowow/QiqiVideoPlayer'    // project homepage
-//项目的版本控制地址
-def gitUrl = 'https://github.com/Totorowow/QiqiVideoPlayer.git' // project git
-
-//发布到组织名称名字，必须填写
-group = "com.woodpecker"
-def libName = "YCVideoCacheLib"
-// 版本号，下次更新是只需要更改版本号即可
-version = "1.0"
-/**  上面配置后上传至jcenter后的编译路径是这样的： compile 'cn.yc:YCVideoCacheLib:1.0.0'  **/
 
 
-
-
-ext {    //if you don't want to update this library,you need to commend out these few lines of code
-    POM_ARTIFACT_ID = "videocache"
-    VERSION_NAME=1.2
-}
+//ext {    //if you don't want to update this library,you need to commend out these few lines of code
+   // POM_ARTIFACT_ID = "videocache"
+   // VERSION_NAME=1.2
+//}
 
 //apply from: '../publish.gradle'
 
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath 'com.vanniktech:gradle-maven-publish-plugin:0.18.0'
-    }
-}
+//buildscript {
+    //repositories {
+       // mavenCentral()
+   // }
+    //dependencies {
+       // classpath 'com.vanniktech:gradle-maven-publish-plugin:0.18.0'
+   // }
+//}
 
-allprojects {
-    plugins.withId("com.vanniktech.maven.publish") {
-        mavenPublish {
-            sonatypeHost = "S01"
-        }
-    }
-}
+//allprojects {
+   // plugins.withId("com.vanniktech.maven.publish") {
+       // mavenPublish {
+           // sonatypeHost = "S01"
+      //  }
+   // }
+//}
 
 apply plugin: "com.vanniktech.maven.publish"
 

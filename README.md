@@ -1,11 +1,11 @@
 
 ### 添加类库
     //视频UI层，必须要有
-    io.github.totorowow:videoplayer:1.3
+    io.github.totorowow:videoplayer:1.4
     //视频缓存，如果不需要则可以不依赖
     io.github.totorowow:videocache:1.2
     //视频内核层，必须有
-    io.github.totorowow:videokernel:1.3
+    io.github.totorowow:videokernel:1.4
   
 ### 添加布局
     <com.woodpecker.video.player.QiqiPlayer
@@ -18,16 +18,10 @@
 
 ### 视频播放器参数设定
 - 如下所示
-    ```
-    //创建基础视频播放器，一般播放器的功能
     BasisVideoController controller = new BasisVideoController(this);
-    //设置控制器
     mVideoPlayer.setVideoController(controller);
-    //设置视频播放链接地址
     mVideoPlayer.setUrl(url);
-    //开始播放
     mVideoPlayer.start();
-    ```
     
 ###  注意问题
 - 如果是全屏播放，则需要在清单文件中设置当前activity的属性值
