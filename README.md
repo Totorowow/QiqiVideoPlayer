@@ -18,10 +18,12 @@
 
 ### 视频播放器参数设定
 - 如下所示
+    ```
     BasisVideoController controller = new BasisVideoController(this);
     mVideoPlayer.setVideoController(controller);
     mVideoPlayer.setUrl(url);
     mVideoPlayer.start();
+    ```
     
 ###  注意问题
 - 如果是全屏播放，则需要在清单文件中设置当前activity的属性值
