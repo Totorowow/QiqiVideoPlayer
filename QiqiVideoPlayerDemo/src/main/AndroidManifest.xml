@@ -27,6 +27,7 @@
         <activity android:name="com.woodpecker.qiqivideoplayer.newPlayer.activity.MainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"
+            android:exported="true"
 
             tools:ignore="LockedOrientationActivity">
             <intent-filter>
@@ -37,59 +38,79 @@
         </activity>
 
         <activity android:name="com.woodpecker.qiqivideoplayer.newPlayer.list.TestListActivity"
+            android:exported="false"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="fullSensor"/>
         <activity android:name="com.woodpecker.qiqivideoplayer.newPlayer.tiny.TestFullActivity"
+            android:exported="false"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"/>
 
         <activity android:name="com.woodpecker.qiqivideoplayer.newPlayer.surface.TestSurfaceActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"
             android:screenOrientation="portrait"/>
 
         <activity android:name="com.woodpecker.qiqivideoplayer.newPlayer.activity.NormalVideoActivity"
+            android:exported="false"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"/>
         <activity android:name="com.woodpecker.qiqivideoplayer.newPlayer.activity.MultipleActivity"
+            android:exported="false"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"/>
         <activity android:name="com.woodpecker.qiqivideoplayer.newPlayer.tiktok.TikTok2Activity"
+            android:exported="false"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"/>
         <activity android:name="com.woodpecker.qiqivideoplayer.newPlayer.tiktok.TikTok1Activity"
+            android:exported="false"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"/>
 
         <activity android:name="com.woodpecker.qiqivideoplayer.newPlayer.danmu.BulletScreenActivity"
+            android:exported="false"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"/>
         <activity android:name="com.woodpecker.qiqivideoplayer.newPlayer.ad.AdActivity"
+            android:exported="false"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"/>
         <activity android:name="com.woodpecker.qiqivideoplayer.newPlayer.list.ContinuousVideoActivity"
+            android:exported="false"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"/>
         <activity android:name="com.woodpecker.qiqivideoplayer.newPlayer.clarity.ClarityActivity"
+            android:exported="false"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"/>
         <activity android:name="com.woodpecker.qiqivideoplayer.newPlayer.tiny.TinyScreenActivity"
+            android:exported="false"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"/>
         <activity android:name="com.woodpecker.qiqivideoplayer.newPlayer.pip.PipActivity"
+            android:exported="false"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"/>
         <activity android:name="com.woodpecker.qiqivideoplayer.newPlayer.pip.PipListActivity"
+            android:exported="false"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"/>
 
         <activity android:name="com.woodpecker.qiqivideoplayer.activity.MediaActivity2"
+            android:exported="false"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"/>
-        <activity android:name="com.woodpecker.qiqivideoplayer.music.MusicPlayerActivity"/>
-        <activity android:name="com.woodpecker.qiqivideoplayer.m3u8.M3u8Activity"/>
-        <activity android:name="com.frank.ffmpeg.activity.VideoPreviewActivity" />
-        <activity android:name="com.frank.ffmpeg.activity.VideoHandleActivity" />
-        <activity android:name="com.frank.ffmpeg.activity.FilterActivity" />
+        <activity android:name="com.woodpecker.qiqivideoplayer.music.MusicPlayerActivity"
+            android:exported="false"/>
+        <activity android:name="com.woodpecker.qiqivideoplayer.m3u8.M3u8Activity"
+            android:exported="false"/>
+        <activity android:name="com.frank.ffmpeg.activity.VideoPreviewActivity"
+            android:exported="false"/>
+        <activity android:name="com.frank.ffmpeg.activity.VideoHandleActivity"
+            android:exported="false"/>
+        <activity android:name="com.frank.ffmpeg.activity.FilterActivity"
+            android:exported="false"/>
     </application>
 
 </manifest>
