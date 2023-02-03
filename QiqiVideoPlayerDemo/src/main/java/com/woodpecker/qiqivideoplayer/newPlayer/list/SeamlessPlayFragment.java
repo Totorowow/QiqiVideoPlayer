@@ -87,7 +87,7 @@ public class SeamlessPlayFragment extends RecyclerViewAutoPlayFragment {
     @Override
     public void onStart() {
         super.onStart();
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP || !addTransitionListener()) {
+        if (!addTransitionListener()) {
             restoreVideoView();
         }
     }

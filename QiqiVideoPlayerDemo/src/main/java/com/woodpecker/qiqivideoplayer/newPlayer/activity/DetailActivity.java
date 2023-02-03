@@ -67,7 +67,7 @@ public class DetailActivity extends AppCompatActivity {
         }
     }
 
-    @RequiresApi(21)
+
     private boolean addTransitionListener() {
         final Transition transition = getWindow().getSharedElementEnterTransition();
 

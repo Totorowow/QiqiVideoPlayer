@@ -97,10 +97,7 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"/>
 
-        <activity android:name="com.woodpecker.qiqivideoplayer.activity.MediaActivity2"
-            android:exported="false"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="portrait"/>
+
         <activity android:name="com.woodpecker.qiqivideoplayer.music.MusicPlayerActivity"
             android:exported="false"/>
         <activity android:name="com.woodpecker.qiqivideoplayer.m3u8.M3u8Activity"

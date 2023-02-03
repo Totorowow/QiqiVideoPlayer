@@ -8,17 +8,17 @@
     android:background="@color/blackText">
 
     <RelativeLayout
+        android:id="@+id/top_operate_bar"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="90dp"
         android:layout_marginTop="15dp"
-
 
         >
 
         <ImageView
             android:id="@+id/close_current_page"
-            android:layout_width="wrap_content"
-            android:layout_height="60dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
             android:layout_marginStart="20dp"
@@ -27,8 +27,8 @@
 
         <ImageView
             android:id="@+id/select_video"
-            android:layout_width="wrap_content"
-            android:layout_height="60dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="20dp"

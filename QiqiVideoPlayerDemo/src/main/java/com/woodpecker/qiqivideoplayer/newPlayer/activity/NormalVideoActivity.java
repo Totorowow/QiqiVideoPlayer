@@ -223,81 +223,7 @@ public class NormalVideoActivity extends AppCompatActivity implements View.OnCli
                 });
     }
 
-
-
-
-
-
-    private void test(){
-        //VideoPlayer相关
-        VideoPlayerBuilder.Builder builder = VideoPlayerBuilder.newBuilder();
-        VideoPlayerBuilder videoPlayerBuilder = new VideoPlayerBuilder(builder);
-        //设置视频播放器的背景色
-        builder.setPlayerBackgroundColor(Color.BLACK);
-        //设置小屏的宽高
-        int[] mTinyScreenSize = {0, 0};
-        builder.setTinyScreenSize(mTinyScreenSize);
-        //是否开启AudioFocus监听， 默认开启
-        builder.setEnableAudioFocus(false);
-        mQiqiPlayer.setVideoBuilder(videoPlayerBuilder);
-        //截图
-        Bitmap bitmap = mQiqiPlayer.doScreenShot();
-        //移除所有播放状态监听
-        mQiqiPlayer.clearOnStateChangeListeners();
-        //获取当前缓冲百分比
-        int bufferedPercentage = mQiqiPlayer.getBufferedPercentage();
-        //获取当前播放器的状态
-        int currentPlayerState = mQiqiPlayer.getCurrentPlayerState();
-        //获取当前的播放状态
-        int currentPlayState = mQiqiPlayer.getCurrentPlayState();
-        //获取当前播放的位置
-        long currentPosition = mQiqiPlayer.getCurrentPosition();
-        //获取视频总时长
-        long duration = mQiqiPlayer.getDuration();
-        //获取倍速速度
-        float speed = mQiqiPlayer.getSpeed();
-        //获取缓冲速度
-        long tcpSpeed = mQiqiPlayer.getTcpSpeed();
-        //获取视频宽高
-        int[] videoSize = mQiqiPlayer.getVideoSize();
-        //是否处于静音状态
-        boolean mute = mQiqiPlayer.isMute();
-        //判断是否处于全屏状态
-        boolean fullScreen = mQiqiPlayer.isFullScreen();
-        //是否是小窗口模式
-        boolean tinyScreen = mQiqiPlayer.isTinyScreen();
-
-        //是否处于播放状态
-        boolean playing = mQiqiPlayer.isPlaying();
-        //暂停播放
-        mQiqiPlayer.pause();
-        //视频缓冲完毕，准备开始播放时回调
-        mQiqiPlayer.onPrepared();
-        //重新播放
-        mQiqiPlayer.replay(true);
-        //继续播放
-        mQiqiPlayer.resume();
-        //调整播放进度
-        mQiqiPlayer.seekTo(100);
-        //循环播放， 默认不循环播放
-        mQiqiPlayer.setLooping(true);
-        //设置播放速度
-        mQiqiPlayer.setSpeed(1.1f);
-        //设置音量 0.0f-1.0f 之间
-        mQiqiPlayer.setVolume(1,1);
-        //开始播放
-        mQiqiPlayer.start();
-
-
-        //进入全屏
-        mQiqiPlayer.startFullScreen();
-        //退出全屏
-        mQiqiPlayer.stopFullScreen();
-        //开启小屏
-        mQiqiPlayer.startTinyScreen();
-        //退出小屏
-        mQiqiPlayer.stopTinyScreen();
-
+    private void initStateChangeListener(){
         mQiqiPlayer.setOnStateChangeListener(new OnVideoStateListener() {
             /**
              * 播放模式
@@ -372,6 +298,83 @@ public class NormalVideoActivity extends AppCompatActivity implements View.OnCli
                 }
             }
         });
+
+    }
+
+
+
+
+
+
+    private void test(){
+        //VideoPlayer相关
+        VideoPlayerBuilder.Builder builder = VideoPlayerBuilder.newBuilder();
+        VideoPlayerBuilder videoPlayerBuilder = new VideoPlayerBuilder(builder);
+        //设置视频播放器的背景色
+        builder.setPlayerBackgroundColor(Color.BLACK);
+        //设置小屏的宽高
+        int[] mTinyScreenSize = {0, 0};
+        builder.setTinyScreenSize(mTinyScreenSize);
+        //是否开启AudioFocus监听， 默认开启
+        builder.setEnableAudioFocus(false);
+        mQiqiPlayer.setVideoBuilder(videoPlayerBuilder);
+        //截图
+        Bitmap bitmap = mQiqiPlayer.doScreenShot();
+        //移除所有播放状态监听
+        mQiqiPlayer.clearOnStateChangeListeners();
+        //获取当前缓冲百分比
+        int bufferedPercentage = mQiqiPlayer.getBufferedPercentage();
+        //获取当前播放器的状态
+        int currentPlayerState = mQiqiPlayer.getCurrentPlayerState();
+        //获取当前的播放状态
+        int currentPlayState = mQiqiPlayer.getCurrentPlayState();
+        //获取当前播放的位置
+        long currentPosition = mQiqiPlayer.getCurrentPosition();
+        //获取视频总时长
+        long duration = mQiqiPlayer.getDuration();
+        //获取倍速速度
+        float speed = mQiqiPlayer.getSpeed();
+        //获取缓冲速度
+        long tcpSpeed = mQiqiPlayer.getTcpSpeed();
+        //获取视频宽高
+        int[] videoSize = mQiqiPlayer.getVideoSize();
+        //是否处于静音状态
+        boolean mute = mQiqiPlayer.isMute();
+        //判断是否处于全屏状态
+        boolean fullScreen = mQiqiPlayer.isFullScreen();
+        //是否是小窗口模式
+        boolean tinyScreen = mQiqiPlayer.isTinyScreen();
+
+        //是否处于播放状态
+        boolean playing = mQiqiPlayer.isPlaying();
+        //暂停播放
+        mQiqiPlayer.pause();
+        //视频缓冲完毕，准备开始播放时回调
+        mQiqiPlayer.onPrepared();
+        //重新播放
+        mQiqiPlayer.replay(true);
+        //继续播放
+        mQiqiPlayer.resume();
+        //调整播放进度
+        mQiqiPlayer.seekTo(100);
+        //循环播放， 默认不循环播放
+        mQiqiPlayer.setLooping(true);
+        //设置播放速度
+        mQiqiPlayer.setSpeed(1.1f);
+        //设置音量 0.0f-1.0f 之间
+        mQiqiPlayer.setVolume(1,1);
+        //开始播放
+        mQiqiPlayer.start();
+
+
+        //进入全屏
+        mQiqiPlayer.startFullScreen();
+        //退出全屏
+        mQiqiPlayer.stopFullScreen();
+        //开启小屏
+        mQiqiPlayer.startTinyScreen();
+        //退出小屏
+        mQiqiPlayer.stopTinyScreen();
 
         //设置视频背景图
         ImageView thumb = controller.getThumb();
