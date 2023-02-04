@@ -1,6 +1,8 @@
 package com.woodpecker.qiqivideoplayer.newPlayer.activity;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -47,7 +49,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView mTv132;
     private TextView mTv133;
 
-    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -108,19 +109,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+
         if (v == mTv31){
-            startActivity(new Intent(this, NormalVideoActivity.class));
+            startSpecifiedActivity(NormalVideoActivity.class);
         } else if (v == mTv32){
-            startActivity(new Intent(this, TestFullActivity.class));
+            startSpecifiedActivity(TestFullActivity.class);
         } else if (v == mTv33){
-            startActivity(new Intent(this,MultipleActivity.class));
+            startSpecifiedActivity(MultipleActivity.class);
         } else if (v == mTv41){
-            startActivity(new Intent(this, PipActivity.class));
+            startSpecifiedActivity(PipActivity.class);
         } else if (v == mTv42){
-            startActivity(new Intent(this, PipListActivity.class));
+            startSpecifiedActivity(PipListActivity.class);
         }   else if (v == mTv43){
-            startActivity(new Intent(this, TinyScreenActivity.class));
+            startSpecifiedActivity(TinyScreenActivity.class);
         } else if (v == mTv61){
+
             Intent intent = new Intent(this, TestListActivity.class);
             intent.putExtra("type",0);
             startActivity(intent);
@@ -145,20 +148,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             intent.putExtra("type",5);
             startActivity(intent);
         } else if (v == mTv71){
-            startActivity(new Intent(this, BulletScreenActivity.class));
+            startSpecifiedActivity(BulletScreenActivity.class);
         } else if (v == mTv81){
+            startSpecifiedActivity(AdActivity.class);
             startActivity(new Intent(this, AdActivity.class));
         } else if (v == mTv101){
-            startActivity(new Intent(this, ContinuousVideoActivity.class));
+            startSpecifiedActivity(ContinuousVideoActivity.class);
         } else if (v == mTv111){
-            startActivity(new Intent(this, ClarityActivity.class));
+            startSpecifiedActivity(ClarityActivity.class);
         } else if (v == mTv131){
-            startActivity(new Intent(this,VideoHandleActivity.class));
+            startSpecifiedActivity(VideoHandleActivity.class);
         }else if (v == mTv132){
-            startActivity(new Intent(this, FilterActivity.class));
+            startSpecifiedActivity(FilterActivity.class);
         }else if (v == mTv133){
-            startActivity(new Intent(this, TestSurfaceActivity.class));
+            startSpecifiedActivity(TestSurfaceActivity.class);
         }
+    }
+
+    private void startSpecifiedActivity(Class<?> specifiedClass){
+        startActivity(new Intent(this, specifiedClass));
+
     }
 
 }
