@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import com.bumptech.glide.Glide;
 import com.luck.picture.lib.basic.PictureSelector;
@@ -23,6 +24,7 @@ import com.woodpecker.kernel.utils.PlayerFactoryUtils;
 import com.woodpecker.qiqivideoplayer.BuriedPointEventImpl;
 
 import com.woodpecker.qiqivideoplayer.ConstantVideo;
+import com.woodpecker.qiqivideoplayer.databinding.ActivityCustomVideoBinding;
 import com.woodpecker.qiqivideoplayer.util.GlideEngine;
 import com.woodpecker.qiqivideoplayer.util.StorageUtil;
 import com.woodpecker.video.config.ConstantKeys;
@@ -41,19 +43,10 @@ import java.util.ArrayList;
 
 public class NormalVideoActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private QiqiPlayer mQiqiPlayer;
-    private Button mBtnScaleNormal;
-    private Button mBtnScale169;
-    private Button mBtnScale43;
-    private Button mBtnScaleFull;
-    private Button mBtnScaleOriginal;
-    private Button mBtnScaleCrop;
-    private Button mBtnCrop;
-    private Button mBtnGif;
-    private ImageView selectVideo;
-    private ImageView closeCurrentPage;
     private BasisVideoController controller;
     private String videoPath;
+    ActivityCustomVideoBinding customVideoBinding;
+    private QiqiPlayer qiqiPlayer;
 
 
     @Override
@@ -63,8 +56,8 @@ public class NormalVideoActivity extends AppCompatActivity implements View.OnCli
         View decorView = getWindow().getDecorView();
         decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
         getWindow().setStatusBarColor(Color.TRANSPARENT);
-        setContentView(R.layout.activity_custom_video);
-        initFindViewById();
+        customVideoBinding= DataBindingUtil.setContentView(this,R.layout.activity_custom_video);
+        qiqiPlayer=customVideoBinding.videoPlayer;
         initVideoPlayer();
         initListener();
     }
@@ -72,8 +65,8 @@ public class NormalVideoActivity extends AppCompatActivity implements View.OnCli
     @Override
     protected void onResume() {
         super.onResume();
-        if (mQiqiPlayer != null) {
-            mQiqiPlayer.resume();
+        if (qiqiPlayer != null) {
+            qiqiPlayer.resume();
         }
     }
 
@@ -81,40 +74,28 @@ public class NormalVideoActivity extends AppCompatActivity implements View.OnCli
     @Override
     protected void onPause() {
         super.onPause();
-        if (mQiqiPlayer != null) {
-            mQiqiPlayer.pause();
+        if (qiqiPlayer != null) {
+            qiqiPlayer.pause();
         }
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (mQiqiPlayer != null) {
+        if (qiqiPlayer != null) {
 
-            mQiqiPlayer.release();
+            qiqiPlayer.release();
         }
     }
 
     @Override
     public void onBackPressed() {
-        if (mQiqiPlayer == null || !mQiqiPlayer.onBackPressed()) {
+        if (qiqiPlayer == null || !qiqiPlayer.onBackPressed()) {
             super.onBackPressed();
         }
     }
 
-    private void initFindViewById() {
-        mQiqiPlayer = findViewById(R.id.video_player);
-        mBtnScaleNormal = findViewById(R.id.btn_scale_normal);
-        mBtnScale169 = findViewById(R.id.btn_scale_169);
-        mBtnScale43 = findViewById(R.id.btn_scale_43);
-        mBtnScaleFull = findViewById(R.id.btn_scale_full);
-        mBtnScaleOriginal = findViewById(R.id.btn_scale_original);
-        mBtnScaleCrop = findViewById(R.id.btn_scale_crop);
-        mBtnCrop = findViewById(R.id.btn_crop);
-        mBtnGif = findViewById(R.id.btn_gif);
-        selectVideo=findViewById(R.id.select_video);
-        closeCurrentPage=findViewById(R.id.close_current_page);
-    }
+
 
     private void initVideoPlayer() {
         if (getIntent().getStringExtra(ConstantVideo.OUTPUT_PATH)!=null){
@@ -136,13 +117,13 @@ public class NormalVideoActivity extends AppCompatActivity implements View.OnCli
         controller.setEnableOrientation(false);
         //controller.addControlComponent(titleView);
         //controller.removeView(titleView);//remove top native view
-        mQiqiPlayer.setController(controller);
-        mQiqiPlayer.setUrl(videoPath);
-        mQiqiPlayer.start();
-        mQiqiPlayer.postDelayed(new Runnable() {
+        qiqiPlayer.setController(controller);
+        qiqiPlayer.setUrl(videoPath);
+        qiqiPlayer.start();
+        qiqiPlayer.postDelayed(new Runnable() {
             @Override
             public void run() {
-                mQiqiPlayer.start();
+                qiqiPlayer.start();
             }
         },300);
 
@@ -151,43 +132,40 @@ public class NormalVideoActivity extends AppCompatActivity implements View.OnCli
     }
 
     private void initListener() {
-        mBtnScaleNormal.setOnClickListener(this);
-        mBtnScale169.setOnClickListener(this);
-        mBtnScale43.setOnClickListener(this);
-        mBtnScaleFull.setOnClickListener(this);
-        mBtnScaleOriginal.setOnClickListener(this);
-        mBtnScaleCrop.setOnClickListener(this);
-        mBtnCrop.setOnClickListener(this);
-        mBtnGif.setOnClickListener(this);
-        selectVideo.setOnClickListener(this);
-        closeCurrentPage.setOnClickListener(this);
+        customVideoBinding.btnScaleNormal.setOnClickListener(this);
+        customVideoBinding.btnScale169.setOnClickListener(this);
+        customVideoBinding.btnScale43.setOnClickListener(this);
+        customVideoBinding.btnScaleFull.setOnClickListener(this);
+        customVideoBinding.btnScaleOriginal.setOnClickListener(this);
+        customVideoBinding.btnScaleCrop.setOnClickListener(this);
+        customVideoBinding.btnCrop.setOnClickListener(this);
+        customVideoBinding.selectVideo.setOnClickListener(this);
+        customVideoBinding.closeCurrentPage.setOnClickListener(this);
     }
 
 
     @Override
     public void onClick(View v) {
-        if (v == mBtnScale169){
-            mQiqiPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_16_9);
-        } else if (v == mBtnScaleNormal){
-            mQiqiPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_DEFAULT);
-        }else if (v == mBtnScale43){
-            mQiqiPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_4_3);
-        } else if (v == mBtnScaleFull){
-            mQiqiPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_MATCH_PARENT);
-        }else if (v == mBtnScaleOriginal){
-            mQiqiPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_ORIGINAL);
-        }else if (v == mBtnScaleCrop){
-            mQiqiPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_CENTER_CROP);
-        }else if (v==selectVideo){
+        if (v == customVideoBinding.btnScale169){
+            qiqiPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_16_9);
+        } else if (v == customVideoBinding.btnScaleNormal){
+            qiqiPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_DEFAULT);
+        }else if (v == customVideoBinding.btnScale43){
+            qiqiPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_4_3);
+        } else if (v == customVideoBinding.btnScaleFull){
+            qiqiPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_MATCH_PARENT);
+        }else if (v == customVideoBinding.btnScaleOriginal){
+            qiqiPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_ORIGINAL);
+        }else if (v == customVideoBinding.btnScaleCrop){
+            qiqiPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_CENTER_CROP);
+        }else if (v==customVideoBinding.selectVideo){
             selectLocalVideo();
-        }else if (v==closeCurrentPage){
+        }else if (v==customVideoBinding.closeCurrentPage){
             finish();
         }
-        else if (v == mBtnCrop){
-            Bitmap screenBitmap=mQiqiPlayer.doScreenShot();
+        else if (v == customVideoBinding.btnCrop){
+            Bitmap screenBitmap=qiqiPlayer.doScreenShot();
             StorageUtil.saveBitmapToAlbum(this,screenBitmap);
-
-        } else if (v == mBtnGif){
 
         }
     }
@@ -208,8 +186,8 @@ public class NormalVideoActivity extends AppCompatActivity implements View.OnCli
                     @Override
                     public void onResult(ArrayList<LocalMedia> result) {
                         for (LocalMedia media : result){
-                            if (mQiqiPlayer != null) {
-                                mQiqiPlayer.release();
+                            if (qiqiPlayer != null) {
+                                qiqiPlayer.release();
                             }
                             videoPath=media.getPath();
                             initVideoPlayer();
@@ -224,7 +202,7 @@ public class NormalVideoActivity extends AppCompatActivity implements View.OnCli
     }
 
     private void initStateChangeListener(){
-        mQiqiPlayer.setOnStateChangeListener(new OnVideoStateListener() {
+        qiqiPlayer.setOnStateChangeListener(new OnVideoStateListener() {
             /**
              * 播放模式
              * 普通模式，小窗口模式，正常模式三种其中一种
@@ -317,64 +295,64 @@ public class NormalVideoActivity extends AppCompatActivity implements View.OnCli
         builder.setTinyScreenSize(mTinyScreenSize);
         //是否开启AudioFocus监听， 默认开启
         builder.setEnableAudioFocus(false);
-        mQiqiPlayer.setVideoBuilder(videoPlayerBuilder);
+        qiqiPlayer.setVideoBuilder(videoPlayerBuilder);
         //截图
-        Bitmap bitmap = mQiqiPlayer.doScreenShot();
+        Bitmap bitmap = qiqiPlayer.doScreenShot();
         //移除所有播放状态监听
-        mQiqiPlayer.clearOnStateChangeListeners();
+        qiqiPlayer.clearOnStateChangeListeners();
         //获取当前缓冲百分比
-        int bufferedPercentage = mQiqiPlayer.getBufferedPercentage();
+        int bufferedPercentage = qiqiPlayer.getBufferedPercentage();
         //获取当前播放器的状态
-        int currentPlayerState = mQiqiPlayer.getCurrentPlayerState();
+        int currentPlayerState = qiqiPlayer.getCurrentPlayerState();
         //获取当前的播放状态
-        int currentPlayState = mQiqiPlayer.getCurrentPlayState();
+        int currentPlayState = qiqiPlayer.getCurrentPlayState();
         //获取当前播放的位置
-        long currentPosition = mQiqiPlayer.getCurrentPosition();
+        long currentPosition = qiqiPlayer.getCurrentPosition();
         //获取视频总时长
-        long duration = mQiqiPlayer.getDuration();
+        long duration = qiqiPlayer.getDuration();
         //获取倍速速度
-        float speed = mQiqiPlayer.getSpeed();
+        float speed = qiqiPlayer.getSpeed();
         //获取缓冲速度
-        long tcpSpeed = mQiqiPlayer.getTcpSpeed();
+        long tcpSpeed = qiqiPlayer.getTcpSpeed();
         //获取视频宽高
-        int[] videoSize = mQiqiPlayer.getVideoSize();
+        int[] videoSize = qiqiPlayer.getVideoSize();
         //是否处于静音状态
-        boolean mute = mQiqiPlayer.isMute();
+        boolean mute = qiqiPlayer.isMute();
         //判断是否处于全屏状态
-        boolean fullScreen = mQiqiPlayer.isFullScreen();
+        boolean fullScreen = qiqiPlayer.isFullScreen();
         //是否是小窗口模式
-        boolean tinyScreen = mQiqiPlayer.isTinyScreen();
+        boolean tinyScreen = qiqiPlayer.isTinyScreen();
 
         //是否处于播放状态
-        boolean playing = mQiqiPlayer.isPlaying();
+        boolean playing = qiqiPlayer.isPlaying();
         //暂停播放
-        mQiqiPlayer.pause();
+        qiqiPlayer.pause();
         //视频缓冲完毕，准备开始播放时回调
-        mQiqiPlayer.onPrepared();
+        qiqiPlayer.onPrepared();
         //重新播放
-        mQiqiPlayer.replay(true);
+        qiqiPlayer.replay(true);
         //继续播放
-        mQiqiPlayer.resume();
+        qiqiPlayer.resume();
         //调整播放进度
-        mQiqiPlayer.seekTo(100);
+        qiqiPlayer.seekTo(100);
         //循环播放， 默认不循环播放
-        mQiqiPlayer.setLooping(true);
+        qiqiPlayer.setLooping(true);
         //设置播放速度
-        mQiqiPlayer.setSpeed(1.1f);
+        qiqiPlayer.setSpeed(1.1f);
         //设置音量 0.0f-1.0f 之间
-        mQiqiPlayer.setVolume(1,1);
+        qiqiPlayer.setVolume(1,1);
         //开始播放
-        mQiqiPlayer.start();
+        qiqiPlayer.start();
 
 
         //进入全屏
-        mQiqiPlayer.startFullScreen();
+        qiqiPlayer.startFullScreen();
         //退出全屏
-        mQiqiPlayer.stopFullScreen();
+        qiqiPlayer.stopFullScreen();
         //开启小屏
-        mQiqiPlayer.startTinyScreen();
+        qiqiPlayer.startTinyScreen();
         //退出小屏
-        mQiqiPlayer.stopTinyScreen();
+        qiqiPlayer.stopTinyScreen();
 
         //设置视频背景图
         ImageView thumb = controller.getThumb();

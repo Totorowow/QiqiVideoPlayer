@@ -1,18 +1,15 @@
 package com.woodpecker.qiqivideoplayer.newPlayer.activity;
-
-import android.annotation.SuppressLint;
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import com.frank.ffmpeg.activity.FilterActivity;
 import com.frank.ffmpeg.activity.VideoHandleActivity;
+import com.woodpecker.qiqivideoplayer.databinding.ActivityMainBinding;
 import com.woodpecker.qiqivideoplayer.newPlayer.ad.AdActivity;
 import com.woodpecker.qiqivideoplayer.newPlayer.clarity.ClarityActivity;
 import com.woodpecker.qiqivideoplayer.newPlayer.danmu.BulletScreenActivity;
@@ -28,139 +25,96 @@ import com.woodpecker.qiqivideoplayer.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private TextView mTvTitle;
-    private TextView mTv31;
-    private TextView mTv32;
-    private TextView mTv33;
-    private TextView mTv41;
-    private TextView mTv42;
-    private TextView mTv43;
-    private TextView mTv61;
-    private TextView mTv62;
-    private TextView mTv63;
-    private TextView mTv64;
-    private TextView mTv65;
-    private TextView mTv66;
-    private TextView mTv71;
-    private TextView mTv81;
-    private TextView mTv101;
-    private TextView mTv111;
-    private TextView mTv131;
-    private TextView mTv132;
-    private TextView mTv133;
+
+    ActivityMainBinding mainBinding;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new);
-        initFindViewById();
+        mainBinding= DataBindingUtil.setContentView(this,R.layout.activity_main);
         initListener();
-        mTvTitle.setText(getResources().getString(R.string.app_name));
+        mainBinding.tvTitle.setText(getResources().getString(R.string.app_name));
         setTitle(getResources().getString(R.string.app_name));
     }
 
 
-    private void initFindViewById() {
-
-        mTvTitle = findViewById(R.id.tv_title);
-        mTv31 = findViewById(R.id.tv_3_1);
-        mTv32 = findViewById(R.id.tv_3_2);
-        mTv33 = findViewById(R.id.tv_3_3);
-        mTv41 = findViewById(R.id.tv_4_1);
-        mTv42 = findViewById(R.id.tv_4_2);
-        mTv43 = findViewById(R.id.tv_4_3);
-        mTv61 = findViewById(R.id.tv_6_1);
-        mTv62 = findViewById(R.id.tv_6_2);
-        mTv63 = findViewById(R.id.tv_6_3);
-        mTv64 = findViewById(R.id.tv_6_4);
-        mTv65 = findViewById(R.id.tv_6_5);
-        mTv66 = findViewById(R.id.tv_6_6);
-        mTv71 = findViewById(R.id.tv_7_1);
-        mTv81 = findViewById(R.id.tv_8_1);
-        mTv101 = findViewById(R.id.tv_10_1);
-        mTv111 = findViewById(R.id.tv_11_1);
-        mTv131 = findViewById(R.id.tv_13_1);
-        mTv132=findViewById(R.id.tv_14);
-        mTv133=findViewById(R.id.tv_15);
-    }
-
     private void initListener() {
 
-        mTv31.setOnClickListener(this);
-        mTv32.setOnClickListener(this);
-        mTv33.setOnClickListener(this);
-        mTv41.setOnClickListener(this);
-        mTv42.setOnClickListener(this);
-        mTv43.setOnClickListener(this);
-        mTv61.setOnClickListener(this);
-        mTv62.setOnClickListener(this);
-        mTv63.setOnClickListener(this);
-        mTv64.setOnClickListener(this);
-        mTv65.setOnClickListener(this);
-        mTv66.setOnClickListener(this);
-        mTv71.setOnClickListener(this);
-        mTv81.setOnClickListener(this);
-        mTv101.setOnClickListener(this);
-        mTv111.setOnClickListener(this);
-        mTv131.setOnClickListener(this);
-        mTv132.setOnClickListener(this);
-        mTv133.setOnClickListener(this);
+        mainBinding.squid.setOnClickListener(this);
+        mainBinding.squid1.setOnClickListener(this);
+        mainBinding.squid2.setOnClickListener(this);
+        mainBinding.squid3.setOnClickListener(this);
+        mainBinding.squid4.setOnClickListener(this);
+        mainBinding.squid5.setOnClickListener(this);
+        mainBinding.squid6.setOnClickListener(this);
+        mainBinding.squid7.setOnClickListener(this);
+        mainBinding.squid8.setOnClickListener(this);
+        mainBinding.squid9.setOnClickListener(this);
+        mainBinding.squid10.setOnClickListener(this);
+        mainBinding.squid11.setOnClickListener(this);
+        mainBinding.squid12.setOnClickListener(this);
+        mainBinding.squid13.setOnClickListener(this);
+        mainBinding.squid14.setOnClickListener(this);
+        mainBinding.squid15.setOnClickListener(this);
+       mainBinding.squid16.setOnClickListener(this);
+        mainBinding.squid17.setOnClickListener(this);
+        mainBinding.squid18.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
 
-        if (v == mTv31){
+        if (v == mainBinding.squid){
             startSpecifiedActivity(NormalVideoActivity.class);
-        } else if (v == mTv32){
+        } else if (v == mainBinding.squid1){
             startSpecifiedActivity(TestFullActivity.class);
-        } else if (v == mTv33){
+        } else if (v == mainBinding.squid2){
             startSpecifiedActivity(MultipleActivity.class);
-        } else if (v == mTv41){
+        } else if (v == mainBinding.squid3){
             startSpecifiedActivity(PipActivity.class);
-        } else if (v == mTv42){
+        } else if (v == mainBinding.squid4){
             startSpecifiedActivity(PipListActivity.class);
-        }   else if (v == mTv43){
+        }   else if (v == mainBinding.squid5){
             startSpecifiedActivity(TinyScreenActivity.class);
-        } else if (v == mTv61){
+        } else if (v == mainBinding.squid6){
 
             Intent intent = new Intent(this, TestListActivity.class);
             intent.putExtra("type",0);
             startActivity(intent);
-        } else if (v == mTv62){
+        } else if (v == mainBinding.squid7){
             Intent intent = new Intent(this, TestListActivity.class);
             intent.putExtra("type",1);
             startActivity(intent);
-        } else if (v == mTv63){
+        } else if (v == mainBinding.squid8){
             Intent intent = new Intent(this, TestListActivity.class);
             intent.putExtra("type",2);
             startActivity(intent);
-        } else if (v == mTv64){
+        } else if (v == mainBinding.squid9){
             Intent intent = new Intent(this, TestListActivity.class);
             intent.putExtra("type",3);
             startActivity(intent);
-        } else if (v == mTv65){
+        } else if (v == mainBinding.squid10){
             Intent intent = new Intent(this, TestListActivity.class);
             intent.putExtra("type",4);
             startActivity(intent);
-        } else if (v == mTv66){
+        } else if (v == mainBinding.squid11){
             Intent intent = new Intent(this, TestListActivity.class);
             intent.putExtra("type",5);
             startActivity(intent);
-        } else if (v == mTv71){
+        } else if (v == mainBinding.squid12){
             startSpecifiedActivity(BulletScreenActivity.class);
-        } else if (v == mTv81){
+        } else if (v == mainBinding.squid13){
             startSpecifiedActivity(AdActivity.class);
             startActivity(new Intent(this, AdActivity.class));
-        } else if (v == mTv101){
+        } else if (v == mainBinding.squid14){
             startSpecifiedActivity(ContinuousVideoActivity.class);
-        } else if (v == mTv111){
+        } else if (v == mainBinding.squid15){
             startSpecifiedActivity(ClarityActivity.class);
-        } else if (v == mTv131){
+        } else if (v == mainBinding.squid16){
             startSpecifiedActivity(VideoHandleActivity.class);
-        }else if (v == mTv132){
+        }else if (v == mainBinding.squid17){
             startSpecifiedActivity(FilterActivity.class);
-        }else if (v == mTv133){
+        }else if (v == mainBinding.squid18){
             startSpecifiedActivity(TestSurfaceActivity.class);
         }
     }
