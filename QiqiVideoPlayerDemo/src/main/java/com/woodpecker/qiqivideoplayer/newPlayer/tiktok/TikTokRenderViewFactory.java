@@ -2,6 +2,7 @@ package com.woodpecker.qiqivideoplayer.newPlayer.tiktok;
 
 import android.content.Context;
 
+import com.woodpecker.qiqivideoplayer.newPlayer.view.TikTokRenderView;
 import com.woodpecker.video.surface.InterSurfaceView;
 import com.woodpecker.video.surface.SurfaceFactory;
 import com.woodpecker.video.surface.RenderTextureView;

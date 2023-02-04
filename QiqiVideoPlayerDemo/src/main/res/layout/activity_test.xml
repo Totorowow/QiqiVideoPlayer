@@ -5,9 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".newPlayer.surface.TestSurfaceActivity">
+    tools:context=".newPlayer.activity.TestSurfaceActivity">
 
-    <com.woodpecker.qiqivideoplayer.newPlayer.surface.QiqiSurfaceView
+    <com.woodpecker.qiqivideoplayer.newPlayer.view.QiqiSurfaceView
         android:id="@+id/surfaceView"
         android:layout_width="match_parent"
         android:layout_height="0dp"

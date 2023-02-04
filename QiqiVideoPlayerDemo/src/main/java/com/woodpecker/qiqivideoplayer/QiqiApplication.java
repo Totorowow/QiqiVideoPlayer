@@ -8,6 +8,7 @@ import com.woodpecker.kernel.utils.PlayerConstant;
 import com.woodpecker.kernel.utils.PlayerFactoryUtils;
 
 import com.woodpecker.music.utils.MusicSpUtils;
+import com.woodpecker.qiqivideoplayer.util.ScreenDensityUtils;
 import com.woodpecker.video.config.VideoPlayerConfig;
 import com.woodpecker.video.player.VideoViewManager;
 import com.woodpecker.videosqllite.manager.CacheConfig;

@@ -2,7 +2,7 @@ package com.woodpecker.qiqivideoplayer.newPlayer.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
@@ -10,16 +10,6 @@ import androidx.databinding.DataBindingUtil;
 import com.frank.ffmpeg.activity.FilterActivity;
 import com.frank.ffmpeg.activity.VideoHandleActivity;
 import com.woodpecker.qiqivideoplayer.databinding.ActivityMainBinding;
-import com.woodpecker.qiqivideoplayer.newPlayer.ad.AdActivity;
-import com.woodpecker.qiqivideoplayer.newPlayer.clarity.ClarityActivity;
-import com.woodpecker.qiqivideoplayer.newPlayer.danmu.BulletScreenActivity;
-import com.woodpecker.qiqivideoplayer.newPlayer.list.ContinuousVideoActivity;
-import com.woodpecker.qiqivideoplayer.newPlayer.list.TestListActivity;
-import com.woodpecker.qiqivideoplayer.newPlayer.pip.PipActivity;
-import com.woodpecker.qiqivideoplayer.newPlayer.pip.PipListActivity;
-import com.woodpecker.qiqivideoplayer.newPlayer.surface.TestSurfaceActivity;
-import com.woodpecker.qiqivideoplayer.newPlayer.tiny.TestFullActivity;
-import com.woodpecker.qiqivideoplayer.newPlayer.tiny.TinyScreenActivity;
 
 import com.woodpecker.qiqivideoplayer.R;
 
