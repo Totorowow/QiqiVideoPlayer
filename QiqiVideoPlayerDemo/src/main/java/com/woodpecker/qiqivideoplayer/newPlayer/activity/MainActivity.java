@@ -1,6 +1,9 @@
 package com.woodpecker.qiqivideoplayer.newPlayer.activity;
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.View;
 
 import androidx.annotation.Nullable;
@@ -13,6 +16,8 @@ import com.woodpecker.qiqivideoplayer.databinding.ActivityMainBinding;
 
 import com.woodpecker.qiqivideoplayer.R;
 
+import java.util.Locale;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
 
@@ -24,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mainBinding= DataBindingUtil.setContentView(this,R.layout.activity_main);
         initListener();
         mainBinding.tvTitle.setText(getResources().getString(R.string.app_name));
+        //setLanguage("en");
         setTitle(getResources().getString(R.string.app_name));
     }
 
@@ -113,5 +119,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         startActivity(new Intent(this, specifiedClass));
 
     }
+
+    private void setLanguage(String language){
+        Resources resources = this.getResources();
+        Configuration configuration = resources.getConfiguration();
+        DisplayMetrics displayMetrics = resources.getDisplayMetrics();
+        if (language == null){
+            configuration.setLocale(Locale.getDefault());
+        }else {
+            switch (language) {
+                case "en":
+                    configuration.setLocale(Locale.ENGLISH);
+                    break;
+                case "zh-rCN":
+                    configuration.setLocale(Locale.SIMPLIFIED_CHINESE);
+                    break;
+                case "es":
+                    configuration.setLocale(new Locale("es"));
+                    break;
+            }
+        }
+        resources.updateConfiguration(configuration,displayMetrics);
+    }
+
 
 }
