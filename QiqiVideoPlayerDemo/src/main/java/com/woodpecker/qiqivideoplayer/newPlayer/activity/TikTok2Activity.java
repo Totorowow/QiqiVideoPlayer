@@ -16,6 +16,7 @@ import com.woodpecker.qiqivideoplayer.ConstantVideo;
 
 import com.woodpecker.qiqivideoplayer.newPlayer.tiktok.TikTokRenderViewFactory;
 import com.woodpecker.qiqivideoplayer.newPlayer.adapter.Tiktok2Adapter;
+import com.woodpecker.qiqivideoplayer.util.GlideCacheUtil;
 import com.yc.pagerlib.pager.VerticalViewPager;
 import com.woodpecker.videocache.cache.PreloadManager;
 import com.woodpecker.videocache.cache.ProxyVideoCacheManager;
@@ -66,6 +67,7 @@ public class TikTok2Activity extends AppCompatActivity {
             mQiqiPlayer.release();
         }
         mPreloadManager.removeAllPreloadTask();
+        GlideCacheUtil.getInstance().clearImageAllCache(this);
         //清除缓存，实际使用可以不需要清除，这里为了方便测试
         ProxyVideoCacheManager.clearAllCache(this);
     }
@@ -244,5 +246,6 @@ public class TikTok2Activity extends AppCompatActivity {
         mVideoList.addAll(ConstantVideo.getVideoList());
         mTiktok2Adapter.notifyDataSetChanged();
     }
+
 
 }

@@ -22,46 +22,43 @@ public class ConstantVideo {
 
 
     public static String[] VideoPlayerTitle = {
-            "大家好，我是潇湘剑雨",
-            "大家好，我是潇湘剑雨",
-            "如果项目可以，可以给个star",
-            "有bug，可以直接提出来，欢迎一起探讨",
-            "把本地项目代码复制到拷贝的仓库",
-            "依次输入命令上传代码",
-            "把本地项目代码复制到拷贝的仓库",
-            "依次输入命令上传代码",
-            "逗比逗比把本地项目代码复制到拷贝的仓库",
+            "一畦春韭绿，十里稻花香",
+            "桃花帘外开仍旧，帘中人比桃花瘦",
+            "山迢迢兮水长，照轩窗兮明月光",
+            "轻烟迷曲径，冷翠滴回廊",
+            "篱畔秋酣一觉清，和云伴月不分明",
+            "松影一庭惟见鹤，梨花满地不闻莺",
+            "入泥怜洁白，匝地惜琼瑶",
+            "晓风不散愁千点，宿雨还添泪一痕",
+            "枕上轻寒窗外雨，眼前春色梦中人",
     };
 
 
     public static List<VideoInfoBean> getVideoList() {
         List<VideoInfoBean> videoList = new ArrayList<>();
-        videoList.add(new VideoInfoBean("大家好，我是潇湘剑雨",
-                "https://img-blog.csdnimg.cn/20201012215233584.png",
+        videoList.add(new VideoInfoBean(VideoPlayerTitle[0],
+                "https://api.likepoems.com/img/aliyun/pe",
                 "android.resource://" + QiqiApplication.getInstance().getPackageName() + "/" + R.raw.flower));
 
-        videoList.add(new VideoInfoBean("如果项目可以，可以给个star",
-                "https://img-blog.csdnimg.cn/20201013092150588.png",
+        videoList.add(new VideoInfoBean(VideoPlayerTitle[1],
+                "https://api.likepoems.com/img/aliyun/mc",
                 "android.resource://" + QiqiApplication.getInstance().getPackageName() + "/" + R.raw.gold_flower));
 
-        videoList.add(new VideoInfoBean("把本地项目代码复制到拷贝的仓库",
-                "https://img-blog.csdnimg.cn/2020101309293329.png",
+        videoList.add(new VideoInfoBean(VideoPlayerTitle[2],
+                "https://api.likepoems.com/img/aliyun/nature",
                 "android.resource://" + QiqiApplication.getInstance().getPackageName() + "/" + R.raw.tulip));
 
-        videoList.add(new VideoInfoBean("有bug，可以直接提出来，欢迎一起探讨",
-                "https://img-blog.csdnimg.cn/20201013094115174.png",
+        videoList.add(new VideoInfoBean(VideoPlayerTitle[3],
+                "https://api.likepoems.com/img/aliyun/mc",
                 "http://vfx.mtime.cn/Video/2019/03/19/mp4/190319212559089721.mp4"));
 
-        videoList.add(new VideoInfoBean("逗比逗比把本地项目代码复制到拷贝的仓库",
-                "https://img-blog.csdnimg.cn/20201013091432693.jpg",
+        videoList.add(new VideoInfoBean(VideoPlayerTitle[4],
+                "https://api.likepoems.com/img/aliyun/pe",
                 "http://vfx.mtime.cn/Video/2019/03/18/mp4/190318231014076505.mp4"));
 
-        videoList.add(new VideoInfoBean("预告片6",
-                "https://img-blog.csdnimg.cn/20201013091432695.jpg",
+        videoList.add(new VideoInfoBean(VideoPlayerTitle[5],
+                "https://api.likepoems.com/img/aliyun/mc",
                 "http://vfx.mtime.cn/Video/2019/03/18/mp4/190318214226685784.mp4"));
-
-
-
 
 
         return videoList;

@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.OrientationHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.woodpecker.qiqivideoplayer.util.GlideCacheUtil;
 import com.woodpecker.video.player.QiqiPlayer;
 import com.yc.pagerlib.recycler.OnPagerListener;
 import com.yc.pagerlib.recycler.PagerLayoutManager;
@@ -171,6 +172,12 @@ public class TikTok1Activity extends AppCompatActivity {
             return;
         //恢复上次播放的位置
         startPlay(mLastPos);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        GlideCacheUtil.getInstance().clearImageAllCache(this);
     }
 
     /**

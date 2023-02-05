@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.woodpecker.qiqivideoplayer.util.GlideCacheUtil;
 import com.woodpecker.video.player.QiqiPlayer;
 import com.woodpecker.video.player.VideoPlayerBuilder;
 import com.woodpecker.video.ui.view.BasisVideoController;
@@ -83,6 +84,7 @@ public class MultipleActivity extends AppCompatActivity {
         for (QiqiPlayer vv : mVideoViews) {
             vv.release();
         }
+        GlideCacheUtil.getInstance().clearImageAllCache(this);
     }
 
     @Override
