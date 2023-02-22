@@ -905,6 +905,10 @@ public class QiqiPlayer<P extends AbstractVideoPlayer> extends FrameLayout
      * 开启小屏
      */
     public void startTinyScreen() {
+        startTinyScreen(Gravity.BOTTOM | Gravity.END);
+    }
+
+    public void startTinyScreen(int gravity){
         if (mIsTinyScreen) {
             return;
         }
@@ -922,10 +926,11 @@ public class QiqiPlayer<P extends AbstractVideoPlayer> extends FrameLayout
             height = width * 9 / 16;
         }
         LayoutParams params = new LayoutParams(width, height);
-        params.gravity = Gravity.BOTTOM | Gravity.END;
+        params.gravity = gravity;
         contentView.addView(mPlayerContainer, params);
         mIsTinyScreen = true;
         setPlayerState(ConstantKeys.PlayMode.MODE_TINY_WINDOW);
+
     }
 
     /**

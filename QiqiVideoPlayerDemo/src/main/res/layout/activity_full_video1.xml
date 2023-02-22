@@ -32,7 +32,7 @@
             android:background="@color/colorTransparent"
             android:textColor="@color/colorWhite"
 
-            android:text="竖屏"/>
+            android:text="全屏"/>
 
         <Button
             android:id="@+id/btn_tiny_2"
@@ -41,7 +41,7 @@
             android:layout_weight="1"
             android:background="@color/colorTransparent"
             android:textColor="@color/colorWhite"
-            android:text="横屏"/>
+            android:text="小屏"/>
 
     </LinearLayout>
 

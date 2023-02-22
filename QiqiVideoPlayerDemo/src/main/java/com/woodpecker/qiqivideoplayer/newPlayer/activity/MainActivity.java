@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initListener();
         mainBinding.tvTitle.setText(getResources().getString(R.string.app_name));
         //setLanguage("en");
-        setTitle(getResources().getString(R.string.app_name));
+
     }
 
 

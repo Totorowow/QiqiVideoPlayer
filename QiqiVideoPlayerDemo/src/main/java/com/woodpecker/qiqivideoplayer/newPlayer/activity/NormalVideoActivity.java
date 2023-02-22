@@ -120,12 +120,7 @@ public class NormalVideoActivity extends AppCompatActivity implements View.OnCli
         qiqiPlayer.setController(controller);
         qiqiPlayer.setUrl(videoPath);
         qiqiPlayer.start();
-        qiqiPlayer.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                qiqiPlayer.start();
-            }
-        },300);
+        qiqiPlayer.postDelayed(() -> qiqiPlayer.start(),300);
 
 
         Glide.with(this).load(R.drawable.image_default).into(controller.getThumb());

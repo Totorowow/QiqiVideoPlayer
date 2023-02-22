@@ -1,6 +1,7 @@
 package com.woodpecker.qiqivideoplayer.newPlayer.activity;
 
 import android.os.Build;
+import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -101,7 +102,7 @@ public class TestFullActivity extends BaseActivity implements View.OnClickListen
                 mQiqiPlayer.startFullScreen();
                 break;
             case R.id.btn_tiny_2:
-                mQiqiPlayer.startTinyScreen();
+                mQiqiPlayer.startTinyScreen(Gravity.BOTTOM | Gravity.CENTER);
                 break;
             default:
                 break;
