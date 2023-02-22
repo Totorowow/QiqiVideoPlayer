@@ -86,6 +86,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'io.github.lucksiege:pictureselector:v3.10.7'
     implementation 'com.yarolegovich:lovely-dialog:1.1.1'
+    implementation 'pub.devrel:easypermissions:3.0.0'
 
 
     implementation 'com.github.bumptech.glide:glide:4.9.0'

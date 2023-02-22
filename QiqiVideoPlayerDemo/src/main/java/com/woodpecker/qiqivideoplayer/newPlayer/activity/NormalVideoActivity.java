@@ -47,6 +47,7 @@ public class NormalVideoActivity extends AppCompatActivity implements View.OnCli
     private String videoPath;
     ActivityCustomVideoBinding customVideoBinding;
     private QiqiPlayer qiqiPlayer;
+    private boolean isLooping;
 
 
     @Override
@@ -128,6 +129,7 @@ public class NormalVideoActivity extends AppCompatActivity implements View.OnCli
 
     private void initListener() {
         customVideoBinding.btnScaleNormal.setOnClickListener(this);
+        customVideoBinding.loopPlay.setOnClickListener(this);
         customVideoBinding.btnScale169.setOnClickListener(this);
         customVideoBinding.btnScale43.setOnClickListener(this);
         customVideoBinding.btnScaleFull.setOnClickListener(this);
@@ -145,7 +147,10 @@ public class NormalVideoActivity extends AppCompatActivity implements View.OnCli
             qiqiPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_16_9);
         } else if (v == customVideoBinding.btnScaleNormal){
             qiqiPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_DEFAULT);
-        }else if (v == customVideoBinding.btnScale43){
+        }else if (v == customVideoBinding.loopPlay){
+            qiqiPlayer.setLooping(true);
+
+        } else if (v == customVideoBinding.btnScale43){
             qiqiPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_4_3);
         } else if (v == customVideoBinding.btnScaleFull){
             qiqiPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_MATCH_PARENT);
@@ -273,11 +278,6 @@ public class NormalVideoActivity extends AppCompatActivity implements View.OnCli
         });
 
     }
-
-
-
-
-
 
     private void test(){
         //VideoPlayer相关

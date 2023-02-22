@@ -88,6 +88,7 @@ public class QiqiPlayer<P extends AbstractVideoPlayer> extends FrameLayout
      * 是否处于全屏状态
      */
     protected boolean mIsFullScreen;
+
     /**
      * 是否处于小屏状态
      */
@@ -892,14 +893,12 @@ public class QiqiPlayer<P extends AbstractVideoPlayer> extends FrameLayout
     }
 
 
-
-    /**
-     * 判断是否处于全屏状态
-     */
     @Override
     public boolean isFullScreen() {
         return mIsFullScreen;
     }
+
+
 
     /**
      * 开启小屏

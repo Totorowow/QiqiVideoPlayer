@@ -27,6 +27,8 @@ public class TestFullActivity extends BaseActivity implements View.OnClickListen
     private Button mBtnTiny1;
     private Button mBtnTiny2;
 
+
+
     @Override
     protected void onResume() {
         super.onResume();

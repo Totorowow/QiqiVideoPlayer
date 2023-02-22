@@ -39,7 +39,7 @@ public class MultipleActivity extends AppCompatActivity {
     }
 
     private void initVideoPlayer() {
-        //必须设置
+
         videoPath="android.resource://" + getPackageName() + "/" + R.raw.flower;
         player1.setUrl(videoPath);
         VideoPlayerBuilder.Builder builder = VideoPlayerBuilder.newBuilder();
