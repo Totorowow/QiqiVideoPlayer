@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 31
-    buildToolsVersion "29.0.3"
+    buildToolsVersion "30.0.2"
 
     defaultConfig {
         minSdkVersion 24
@@ -40,32 +40,13 @@ dependencies {
     api "com.google.android.exoplayer:exoplayer-smoothstreaming:2.17.1"
     api "com.google.android.exoplayer:extension-rtmp:2.17.1"
 
-
 }
 
-
-/** 以下开始是将Android Library上传到jcenter的相关配置**/
-apply plugin: 'com.github.dcendents.android-maven'
-apply plugin: 'com.jfrog.bintray'
-
-//项目主页
-def siteUrl = 'https://github.com/Totorowow/QiqiVideoPlayer'    // project homepage
-//项目的版本控制地址
-def gitUrl = 'https://github.com/Totorowow/QiqiVideoPlayer.git' // project git
-
-//发布到组织名称名字，必须填写
-group = "com.github.woodpecker"
-def libName = "YCVideoKernelLib"
-// 版本号，下次更新是只需要更改版本号即可
-version = "1.0"
-/**  上面配置后上传至jcenter后的编译路径是这样的： compile 'cn.yc:YCVideoKernelLib:1.0.0'  **/
-
-//生成源文件
-task sourcesJar(type: Jar) {
-    from android.sourceSets.main.java.srcDirs
-    classifier = 'sources'
+ext {
+    POM_ARTIFACT_ID = "videokernel"
+    VERSION_NAME=1.4
 }
-//生成文档
+
 task javadoc(type: Javadoc) {
     source = android.sourceSets.main.java.srcDirs
     classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
@@ -75,70 +56,6 @@ task javadoc(type: Javadoc) {
     options.version true
     options.links "https://github.com/linglongxin24/FastDev/tree/master/mylibrary/docs/javadoc"
     failOnError false
-}
-
-ext {
-    POM_ARTIFACT_ID = "videokernel"
-    VERSION_NAME=1.4
-}
-
-//apply from: '../publish.gradle'
-
-
-
-
-
-// 配置maven库，生成POM.xml文件
-install {
-    repositories.mavenInstaller {
-        // This generates POM.xml with proper parameters
-        pom {
-            project {
-                packaging 'aar'
-                //项目描述，自由填写
-                name 'This is video kernel lib'
-                url siteUrl
-                licenses {
-                    license {
-                        //开源协议
-                        name 'The Apache Software License, Version 2.0'
-                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-                    }
-                }
-                developers {
-                    developer {
-                        //开发者的个人信息，根据个人信息填写
-                        id 'Totorowow'
-                        name 'woodpecker'
-                        email '123456@qq.com'
-                    }
-                }
-                scm {
-                    connection gitUrl
-                    developerConnection gitUrl
-                    url siteUrl
-                }
-            }
-        }
-    }
-}
-
-//上传到jcenter
-Properties properties = new Properties()
-properties.load(project.rootProject.file('local.properties').newDataInputStream())
-bintray {
-    user = properties.getProperty("bintray.user")    //读取 local.properties 文件里面的 bintray.user
-    key = properties.getProperty("bintray.apikey")  //读取 local.properties 文件里面的 bintray.apikey
-    configurations = ['archives']
-    pkg {
-        repo = "maven"
-        name = libName    //发布到JCenter上的项目名字，必须填写
-        desc = 'android video kernel'    //项目描述
-        websiteUrl = siteUrl
-        vcsUrl = gitUrl
-        licenses = ["Apache-2.0"]
-        publish = true
-    }
 }
 
 javadoc {
@@ -170,4 +87,3 @@ allprojects {
 }
 
 apply plugin: "com.vanniktech.maven.publish"
-

@@ -3,7 +3,7 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 31
-    buildToolsVersion '29.0.3'
+    buildToolsVersion '30.0.2'
     defaultConfig {
         minSdkVersion 24
         targetSdkVersion 31
@@ -40,57 +40,29 @@ dependencies {
 
 }
 
-/** 以下开始是将Android Library上传到jcenter的相关配置**/
-apply plugin: 'com.github.dcendents.android-maven'
-apply plugin: 'com.jfrog.bintray'
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    options.encoding "UTF-8"
+    options.charSet 'UTF-8'
+    options.author true
+    options.version true
+    options.links "https://github.com/linglongxin24/FastDev/tree/master/mylibrary/docs/javadoc"
+    failOnError false
+}
 
-//项目主页
-def siteUrl = 'https://github.com/Totorowow/QiqiVideoPlayer'    // project homepage
-//项目的版本控制地址
-def gitUrl = 'https://github.com/Totorowow/QiqiVideoPlayer.git' // project git
-
-//发布到组织名称名字，必须填写
-group = "com.github.woodpecker"
-//发布到JCenter上的项目名字，必须填写
-def libName = "QiqiPlayer"
-// 版本号，下次更新是只需要更改版本号即可
-version = "1.0"
-
-
-// 配置maven库，生成POM.xml文件
-install {
-    repositories.mavenInstaller {
-        // This generates POM.xml with proper parameters
-        pom {
-            project {
-                packaging 'aar'
-                //项目描述，自由填写
-                name 'This is videoPlayer lib'
-                url siteUrl
-                licenses {
-                    license {
-                        //开源协议
-                        name 'The Apache Software License, Version 2.0'
-                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-                    }
-                }
-                developers {
-                    developer {
-                        //开发者的个人信息，根据个人信息填写
-                        id 'Totorowow'
-                        name 'woodpecker'
-                        email '123456@qq.com'
-                    }
-                }
-                scm {
-                    connection gitUrl
-                    developerConnection gitUrl
-                    url siteUrl
-                }
-            }
-        }
+javadoc {
+    options {
+        //如果你的项目里面有中文注释的话，必须将格式设置为UTF-8，不然会出现乱码
+        encoding "UTF-8"
+        charSet 'UTF-8'
+        author true
+        version true
+        links "http://docs.oracle.com/javase/7/docs/api"
     }
 }
+
+
 buildscript {
     repositories {
         mavenCentral()

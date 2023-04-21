@@ -1,10 +1,10 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+
 
 android {
     compileSdkVersion 31
-    buildToolsVersion '29.0.3'
+    buildToolsVersion '30.0.2'
     defaultConfig {
         applicationId "com.woodpecker.qiqivideoplayer"
         minSdkVersion 24
@@ -23,10 +23,16 @@ android {
         }
 
     }
+    buildFeatures {
+        viewBinding true
+    }
+
     dataBinding{
 
+        //noinspection DataBindingWithoutKapt
         enabled true
     }
+
     buildTypes {
         release {
             minifyEnabled false

@@ -1,12 +1,12 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "29.0.3"
+    compileSdkVersion 31
+    buildToolsVersion "30.0.2"
 
     defaultConfig {
         minSdkVersion 17
-        targetSdkVersion 30
+        targetSdkVersion 31
         versionCode 3
         versionName "1.2"
 
@@ -24,6 +24,28 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
+}
+
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    options.encoding "UTF-8"
+    options.charSet 'UTF-8'
+    options.author true
+    options.version true
+    options.links "https://github.com/linglongxin24/FastDev/tree/master/mylibrary/docs/javadoc"
+    failOnError false
+}
+
+javadoc {
+    options {
+        //如果你的项目里面有中文注释的话，必须将格式设置为UTF-8，不然会出现乱码
+        encoding "UTF-8"
+        charSet 'UTF-8'
+        author true
+        version true
+        links "http://docs.oracle.com/javase/7/docs/api"
+    }
 }
 
 
@@ -54,5 +76,7 @@ dependencies {
 //}
 
 apply plugin: "com.vanniktech.maven.publish"
+
+
 
 
