@@ -40,7 +40,7 @@ public class MultipleActivity extends AppCompatActivity {
 
     private void initVideoPlayer() {
 
-        videoPath="android.resource://" + getPackageName() + "/" + R.raw.flower;
+        videoPath="android.resource://" + getPackageName() + "/" + R.raw.badminton_highlights;
         player1.setUrl(videoPath);
         VideoPlayerBuilder.Builder builder = VideoPlayerBuilder.newBuilder();
         builder.setEnableAudioFocus(false);

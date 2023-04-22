@@ -80,7 +80,7 @@ public class TestFullActivity extends BaseActivity implements View.OnClickListen
         //设置控制器
         mQiqiPlayer.setController(controller);
         //mQiqiPlayer.setUrl(ConstantVideo.VideoPlayerList[0]);
-        mQiqiPlayer.setUrl("android.resource://" + getPackageName() + "/" + R.raw.flower);
+        mQiqiPlayer.setUrl("android.resource://" + getPackageName() + "/" + R.raw.badminton_highlights);
         mQiqiPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_ORIGINAL);
         mQiqiPlayer.start();
     }

@@ -9,7 +9,7 @@ public class ConstantVideo {
 
 
     public static String[] VideoPlayerList = {
-            "android.resource://" + QiqiApplication.getInstance().getPackageName() + "/" + R.raw.flower,
+            "android.resource://" + QiqiApplication.getInstance().getPackageName() + "/" + R.raw.badminton_highlights,
             "android.resource://" + QiqiApplication.getInstance().getPackageName() + "/" + R.raw.gold_flower,
             "android.resource://" + QiqiApplication.getInstance().getPackageName() + "/" + R.raw.tulip,
             "http://vfx.mtime.cn/Video/2019/03/19/mp4/190319212559089721.mp4",
@@ -38,7 +38,7 @@ public class ConstantVideo {
         List<VideoInfoBean> videoList = new ArrayList<>();
         videoList.add(new VideoInfoBean(VideoPlayerTitle[0],
                 "https://api.likepoems.com/img/aliyun/pe",
-                "android.resource://" + QiqiApplication.getInstance().getPackageName() + "/" + R.raw.flower));
+                "android.resource://" + QiqiApplication.getInstance().getPackageName() + "/" + R.raw.badminton_highlights));
 
         videoList.add(new VideoInfoBean(VideoPlayerTitle[1],
                 "https://api.likepoems.com/img/aliyun/mc",

@@ -102,7 +102,7 @@ public class NormalVideoActivity extends AppCompatActivity implements View.OnCli
         if (getIntent().getStringExtra(ConstantVideo.OUTPUT_PATH)!=null){
             videoPath = getIntent().getStringExtra(ConstantVideo.OUTPUT_PATH);
         }else if (videoPath==null || videoPath.length()==0){
-            videoPath = ConstantVideo.VideoPlayerList[1];
+            videoPath = ConstantVideo.VideoPlayerList[0];
             //ToastUtils.showToast(this,"视频路径不存在");
             //url ="android.resource://" + getPackageName() + "/" + R.raw.gold_flower;
         }
