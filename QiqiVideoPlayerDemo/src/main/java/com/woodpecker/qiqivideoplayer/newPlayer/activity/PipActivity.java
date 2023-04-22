@@ -1,35 +1,41 @@
 package com.woodpecker.qiqivideoplayer.newPlayer.activity;
 
 import android.Manifest;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.Settings;
+import android.util.Log;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import pub.devrel.easypermissions.AfterPermissionGranted;
-import pub.devrel.easypermissions.EasyPermissions;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-
 import com.luck.picture.lib.utils.ToastUtils;
+import com.qw.soul.permission.SoulPermission;
+import com.qw.soul.permission.bean.Permission;
+import com.qw.soul.permission.bean.Special;
+import com.qw.soul.permission.callbcak.CheckRequestPermissionListener;
+import com.qw.soul.permission.callbcak.SpecialPermissionListener;
 import com.woodpecker.qiqivideoplayer.ConstantVideo;
+import com.woodpecker.qiqivideoplayer.R;
 import com.woodpecker.video.player.QiqiPlayer;
 import com.woodpecker.video.player.VideoViewManager;
 import com.woodpecker.video.ui.pip.FloatVideoManager;
 import com.woodpecker.video.ui.view.BasisVideoController;
 
-import com.woodpecker.qiqivideoplayer.R;
-import com.woodpecker.videoview.PermissionActivity;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
+import static android.content.ContentValues.TAG;
 
 public class PipActivity extends AppCompatActivity{
 
     private FloatVideoManager mPIPManager;
     private FrameLayout mPlayerContainer;
     private Button mBtnFloat;
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -105,18 +111,21 @@ public class PipActivity extends AppCompatActivity{
 
         mBtnFloat.setOnClickListener(v -> {
 
-                mPIPManager.startFloatWindow();
-                //mPIPManager.setFloatViewVisible();
+            SoulPermission.getInstance().checkAndRequestPermission(Special.SYSTEM_ALERT, new SpecialPermissionListener() {
+                @Override
+                public void onGranted(Special permission) {
+                    mPIPManager.startFloatWindow();
+                    //mPIPManager.setFloatViewVisible();
+                    mPIPManager.resume();
+                }
 
-                //mController.setPlayState(ConstantKeys.CurrentState.STATE_IDLE);
-                mPIPManager.resume();
-
-
-
-
+                @Override
+                public void onDenied(Special permission) {
+                    Toast.makeText(PipActivity.this, "获取权限失败！", Toast.LENGTH_SHORT).show();
+                }
+            });
 
         });
     }
-
 
 }

@@ -25,9 +25,6 @@ public class ByteArrayCache implements Cache {
         if (offset >= data.length) {
             return -1;
         }
-        if (offset > Integer.MAX_VALUE) {
-            throw new IllegalArgumentException("Too long offset for memory cache " + offset);
-        }
         return new ByteArrayInputStream(data).read(buffer, (int) offset, length);
     }
 

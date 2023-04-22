@@ -140,8 +140,6 @@ public class ClarityActivity extends AppCompatActivity implements View.OnClickLi
             mQiqiPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_4_3);
         } else if (v == mBtnCrop){
 
-        } else if (v == mBtnGif){
-
         }
     }
 }
