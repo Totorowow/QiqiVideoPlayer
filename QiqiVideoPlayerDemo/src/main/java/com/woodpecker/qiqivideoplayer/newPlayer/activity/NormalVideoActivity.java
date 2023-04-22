@@ -138,6 +138,7 @@ public class NormalVideoActivity extends AppCompatActivity implements View.OnCli
         customVideoBinding.btnCrop.setOnClickListener(this);
         customVideoBinding.selectVideo.setOnClickListener(this);
         customVideoBinding.closeCurrentPage.setOnClickListener(this);
+
     }
 
 
@@ -147,10 +148,10 @@ public class NormalVideoActivity extends AppCompatActivity implements View.OnCli
             qiqiPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_16_9);
         } else if (v == customVideoBinding.btnScaleNormal){
             qiqiPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_DEFAULT);
-        }else if (v == customVideoBinding.loopPlay){
+        }else if (v == customVideoBinding.loopPlay) {
             qiqiPlayer.setLooping(true);
 
-        } else if (v == customVideoBinding.btnScale43){
+        }else if (v == customVideoBinding.btnScale43){
             qiqiPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_4_3);
         } else if (v == customVideoBinding.btnScaleFull){
             qiqiPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_MATCH_PARENT);

@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (v == mainBinding.squid2){
             startSpecifiedActivity(MultipleActivity.class);
         } else if (v == mainBinding.squid3){
-            startSpecifiedActivity(PipActivity.class);
+            startSpecifiedActivity(FloatWindowActivity.class);
         } else if (v == mainBinding.squid4){
             startSpecifiedActivity(PipListActivity.class);
         }   else if (v == mainBinding.squid5){

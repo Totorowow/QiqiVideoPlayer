@@ -1,11 +1,6 @@
 package com.woodpecker.qiqivideoplayer.newPlayer.activity;
 
-import android.Manifest;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.Settings;
-import android.util.Log;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
@@ -13,11 +8,8 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.luck.picture.lib.utils.ToastUtils;
 import com.qw.soul.permission.SoulPermission;
-import com.qw.soul.permission.bean.Permission;
 import com.qw.soul.permission.bean.Special;
-import com.qw.soul.permission.callbcak.CheckRequestPermissionListener;
 import com.qw.soul.permission.callbcak.SpecialPermissionListener;
 import com.woodpecker.qiqivideoplayer.ConstantVideo;
 import com.woodpecker.qiqivideoplayer.R;
@@ -29,9 +21,7 @@ import com.woodpecker.video.ui.view.BasisVideoController;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import static android.content.ContentValues.TAG;
-
-public class PipActivity extends AppCompatActivity{
+public class FloatWindowActivity extends AppCompatActivity{
 
     private FloatVideoManager mPIPManager;
     private FrameLayout mPlayerContainer;
@@ -88,7 +78,7 @@ public class PipActivity extends AppCompatActivity{
             mController.setPlayerState(videoView.getCurrentPlayerState());
             mController.setPlayState(videoView.getCurrentPlayState());
         } else {
-            mPIPManager.setActClass(PipActivity.class);
+            mPIPManager.setActClass(FloatWindowActivity.class);
             ImageView thumb = mController.getThumb();
             Glide.with(this)
                     .load(R.drawable.image_default)
@@ -121,7 +111,7 @@ public class PipActivity extends AppCompatActivity{
 
                 @Override
                 public void onDenied(Special permission) {
-                    Toast.makeText(PipActivity.this, "获取权限失败！", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(FloatWindowActivity.this, "获取权限失败！", Toast.LENGTH_SHORT).show();
                 }
             });
 

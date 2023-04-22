@@ -90,7 +90,7 @@
             android:exported="false"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"/>
-        <activity android:name="com.woodpecker.qiqivideoplayer.newPlayer.activity.PipActivity"
+        <activity android:name="com.woodpecker.qiqivideoplayer.newPlayer.activity.FloatWindowActivity"
             android:exported="false"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"/>
