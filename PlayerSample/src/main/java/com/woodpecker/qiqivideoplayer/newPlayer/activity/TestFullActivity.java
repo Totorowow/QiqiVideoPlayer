@@ -11,6 +11,7 @@ import com.bumptech.glide.Glide;
 
 import com.woodpecker.video.config.ConstantKeys;
 import com.woodpecker.video.player.QiqiPlayer;
+import com.woodpecker.video.tool.PlayerUtils;
 import com.woodpecker.video.ui.view.BasisVideoController;
 
 import com.woodpecker.qiqivideoplayer.R;
@@ -75,8 +76,7 @@ public class TestFullActivity extends BaseActivity implements View.OnClickListen
         mBtnTiny2 = findViewById(R.id.btn_tiny_2);
 
         BasisVideoController controller = new BasisVideoController(this);
-        //设置视频背景图
-        Glide.with(this).load(R.drawable.image_default).into(controller.getThumb());
+        Glide.with(this).load(R.drawable.badminton_screenshot).into(controller.getThumb());
         //设置控制器
         mQiqiPlayer.setController(controller);
         //mQiqiPlayer.setUrl(ConstantVideo.VideoPlayerList[0]);
@@ -100,11 +100,10 @@ public class TestFullActivity extends BaseActivity implements View.OnClickListen
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_tiny_1:
-
                 mQiqiPlayer.startFullScreen();
                 break;
             case R.id.btn_tiny_2:
-                mQiqiPlayer.startTinyScreen(Gravity.BOTTOM | Gravity.CENTER);
+                mQiqiPlayer.startTinyScreen(Gravity.CENTER);
                 break;
             default:
                 break;

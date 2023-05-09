@@ -124,7 +124,7 @@ public class NormalVideoActivity extends AppCompatActivity implements View.OnCli
         qiqiPlayer.postDelayed(() -> qiqiPlayer.start(),300);
 
 
-        Glide.with(this).load(R.drawable.image_default).into(controller.getThumb());
+        Glide.with(this).load(R.drawable.badminton_screenshot).into(controller.getThumb());
     }
 
     private void initListener() {

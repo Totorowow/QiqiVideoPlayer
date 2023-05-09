@@ -27,9 +27,7 @@ import com.woodpecker.qiqivideoplayer.R;
 
 import java.util.List;
 
-/**
- * 悬浮播放终极版
- */
+
 public class PipListActivity extends AppCompatActivity implements OnItemChildClickListener {
 
     private FloatVideoManager mPIPManager;
@@ -117,11 +115,7 @@ public class PipListActivity extends AppCompatActivity implements OnItemChildCli
         startPlay(position, true);
     }
 
-    /**
-     * 开始播放
-     *
-     * @param position 列表位置
-     */
+
     protected void startPlay(int position, boolean isRelease) {
         if (mPIPManager.isStartFloatWindow())
             mPIPManager.stopFloatWindow();

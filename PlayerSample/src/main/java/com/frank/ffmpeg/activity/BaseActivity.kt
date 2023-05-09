@@ -21,10 +21,7 @@ import com.woodpecker.qiqivideoplayer.R
 import com.woodpecker.qiqivideoplayer.util.GlideEngine
 import java.util.*
 
-/**
- * base Activity
- * Created by frank on 2019/11/2.
- */
+
 
 abstract class BaseActivity : AppCompatActivity(), View.OnClickListener {
 
