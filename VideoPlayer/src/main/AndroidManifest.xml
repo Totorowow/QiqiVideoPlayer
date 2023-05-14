@@ -17,7 +17,8 @@
 
     <application>
         <receiver android:name="com.woodpecker.video.com.woodpecker.video.old.other.BatterReceiver"/>
-        <receiver android:name="com.woodpecker.video.com.woodpecker.video.old.other.NetChangedReceiver">
+        <receiver android:name="com.woodpecker.video.com.woodpecker.video.old.other.NetChangedReceiver"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
             </intent-filter>

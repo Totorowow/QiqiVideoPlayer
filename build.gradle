@@ -20,7 +20,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.0.4'
+        classpath 'com.android.tools.build:gradle:7.2.1'
         classpath 'com.vanniktech:gradle-maven-publish-plugin:0.18.0'
         //添加下面两句，进行配置
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'

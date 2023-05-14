@@ -3,14 +3,15 @@ apply plugin: 'kotlin-android'
 
 
 android {
-    compileSdkVersion 31
-    buildToolsVersion '30.0.2'
+    compileSdkVersion 32
+
+    buildToolsVersion '31.0.0'
     defaultConfig {
         applicationId "com.woodpecker.qiqivideoplayer"
         minSdkVersion 24
-        targetSdkVersion 30
-        versionCode 5
-        versionName "1.4"
+        targetSdkVersion 32
+        versionCode 6
+        versionName "1.5"
         // dex突破65535的限制
         multiDexEnabled true
         ndk {
@@ -54,8 +55,8 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
 
     packagingOptions {
