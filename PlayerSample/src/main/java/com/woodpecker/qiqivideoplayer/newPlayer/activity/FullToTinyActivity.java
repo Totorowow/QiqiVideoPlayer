@@ -7,14 +7,10 @@ import android.view.WindowManager;
 import android.widget.Button;
 
 import com.bumptech.glide.Glide;
-
-
+import com.woodpecker.qiqivideoplayer.R;
 import com.woodpecker.video.config.ConstantKeys;
 import com.woodpecker.video.player.QiqiPlayer;
-import com.woodpecker.video.tool.PlayerUtils;
 import com.woodpecker.video.ui.view.BasisVideoController;
-
-import com.woodpecker.qiqivideoplayer.R;
 
 import cn.ycbjie.ycstatusbarlib.bar.StateAppBar;
 
@@ -22,7 +18,7 @@ import cn.ycbjie.ycstatusbarlib.bar.StateAppBar;
 /**
  * @author yc
  */
-public class TestFullActivity extends BaseActivity implements View.OnClickListener {
+public class FullToTinyActivity extends BaseActivity implements View.OnClickListener {
 
     private QiqiPlayer mQiqiPlayer;
     private Button mBtnTiny1;

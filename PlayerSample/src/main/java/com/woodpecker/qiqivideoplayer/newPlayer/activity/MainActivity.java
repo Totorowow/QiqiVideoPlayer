@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (v == mainBinding.squid){
             startSpecifiedActivity(NormalVideoActivity.class);
         } else if (v == mainBinding.squid1){
-            startSpecifiedActivity(TestFullActivity.class);
+            startSpecifiedActivity(FullToTinyActivity.class);
         } else if (v == mainBinding.squid2){
             startSpecifiedActivity(MultipleActivity.class);
         } else if (v == mainBinding.squid3){

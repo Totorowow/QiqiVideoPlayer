@@ -863,8 +863,10 @@ public class QiqiPlayer<P extends AbstractVideoPlayer> extends FrameLayout
         //隐藏NavigationBar和StatusBar
         VideoPlayerHelper.instance().hideSysBar(decorView,mContext,mVideoController);
         //从当前FrameLayout中移除播放器视图
-        this.removeView(mPlayerContainer);
+
         //将播放器视图添加到DecorView中即实现了全屏
+        this.removeView(mPlayerContainer);
+
         decorView.addView(mPlayerContainer);
         setPlayerState(ConstantKeys.PlayMode.MODE_FULL_SCREEN);
     }
