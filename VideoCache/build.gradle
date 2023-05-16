@@ -51,29 +51,29 @@ javadoc {
 
 
 
-//ext {    //if you don't want to update this library,you need to commend out these few lines of code
-   // POM_ARTIFACT_ID = "videocache"
-   // VERSION_NAME=1.3
-//}
+ext {    //if you don't want to update this library,you need to commend out these few lines of code
+    POM_ARTIFACT_ID = "videocache"
+    VERSION_NAME = 1.3
+}
 
 //apply from: '../publish.gradle'
 
-//buildscript {
-    //repositories {
-       // mavenCentral()
-   // }
-    //dependencies {
-       // classpath 'com.vanniktech:gradle-maven-publish-plugin:0.18.0'
-   // }
-//}
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.vanniktech:gradle-maven-publish-plugin:0.18.0'
+    }
+}
 
-//allprojects {
-   // plugins.withId("com.vanniktech.maven.publish") {
-       // mavenPublish {
-           // sonatypeHost = "S01"
-      //  }
-   // }
-//}
+allprojects {
+    plugins.withId("com.vanniktech.maven.publish") {
+        mavenPublish {
+            sonatypeHost = "S01"
+        }
+    }
+}
 
 apply plugin: "com.vanniktech.maven.publish"
 
