@@ -7,7 +7,7 @@ import com.woodpecker.qiqivideoplayer.newPlayer.fragment.SeamlessPlayFragment;
 import com.woodpecker.qiqivideoplayer.newPlayer.fragment.TikTok1ListFragment;
 import com.woodpecker.qiqivideoplayer.newPlayer.fragment.TikTokListFragment;
 import com.woodpecker.qiqivideoplayer.util.GlideCacheUtil;
-import com.woodpecker.video.old.other.VideoPlayerManager;
+
 
 import com.woodpecker.qiqivideoplayer.R;
 
@@ -19,9 +19,7 @@ public class TestListActivity extends BaseActivity {
 
     @Override
     public void onBackPressed() {
-        if (VideoPlayerManager.instance().onBackPressed()) {
-            return;
-        }
+
         super.onBackPressed();
     }
 

@@ -181,7 +181,7 @@ public class ExoMediaPlayer extends AbstractVideoPlayer implements Player.Listen
     }
 
 
-    private MediaSourceEventListener mMediaSourceEventListener = new MediaSourceEventListener() {
+    private final MediaSourceEventListener mMediaSourceEventListener = new MediaSourceEventListener() {
         @Override
         public void onLoadStarted(int windowIndex, @Nullable MediaSource.MediaPeriodId mediaPeriodId, LoadEventInfo loadEventInfo, MediaLoadData mediaLoadData) {
             if (mPlayerEventListener != null && mIsPreparing) {

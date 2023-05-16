@@ -1,14 +1,14 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 31
-    buildToolsVersion "30.0.2"
+    compileSdkVersion 32
+    buildToolsVersion "31.0.0"
 
     defaultConfig {
-        minSdkVersion 17
-        targetSdkVersion 31
-        versionCode 3
-        versionName "1.2"
+        minSdkVersion 24
+        targetSdkVersion 32
+        versionCode 4
+        versionName "1.3"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -53,7 +53,7 @@ javadoc {
 
 //ext {    //if you don't want to update this library,you need to commend out these few lines of code
    // POM_ARTIFACT_ID = "videocache"
-   // VERSION_NAME=1.2
+   // VERSION_NAME=1.3
 //}
 
 //apply from: '../publish.gradle'
