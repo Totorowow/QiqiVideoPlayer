@@ -26,9 +26,7 @@ import com.woodpecker.qiqivideoplayer.R;
 
 import java.util.List;
 
-/**
- * 小窗播放
- */
+
 public class TinyScreenActivity extends AppCompatActivity implements OnItemChildClickListener {
 
     private BasisVideoController mController;
@@ -120,7 +118,7 @@ public class TinyScreenActivity extends AppCompatActivity implements OnItemChild
                 int position = holder.mPosition;
                 if (position == mCurPos && !mQiqiPlayer.isFullScreen()) {
                     mQiqiPlayer.startTinyScreen();
-                    mQiqiPlayer.setController(null);
+                    //mQiqiPlayer.setController(null);
                     mController.setPlayState(ConstantKeys.CurrentState.STATE_IDLE);
                 }
             }
@@ -132,11 +130,7 @@ public class TinyScreenActivity extends AppCompatActivity implements OnItemChild
         startPlay(position, true);
     }
 
-    /**
-     * 开始播放
-     *
-     * @param position 列表位置
-     */
+
     protected void startPlay(int position, boolean isRelease) {
         if (mQiqiPlayer.isTinyScreen())
             mQiqiPlayer.stopTinyScreen();
@@ -158,6 +152,7 @@ public class TinyScreenActivity extends AppCompatActivity implements OnItemChild
         viewHolder.mPlayerContainer.addView(mQiqiPlayer, 0);
         mQiqiPlayer.start();
         mCurPos = position;
+
     }
 
     private void releaseVideoView() {

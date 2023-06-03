@@ -81,7 +81,7 @@ public class FloatWindowActivity extends AppCompatActivity{
             mPIPManager.setActClass(FloatWindowActivity.class);
             ImageView thumb = mController.getThumb();
             Glide.with(this)
-                    .load(R.drawable.image_default)
+                    .load(R.drawable.badminton_screenshot)
                     .placeholder(android.R.color.darker_gray)
                     .into(thumb);
             videoView.setUrl(ConstantVideo.VideoPlayerList[0]);
