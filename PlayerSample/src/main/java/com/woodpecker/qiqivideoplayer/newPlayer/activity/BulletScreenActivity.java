@@ -17,6 +17,8 @@ import com.woodpecker.video.ui.view.BasisVideoController;
 import com.woodpecker.qiqivideoplayer.R;
 import com.yarolegovich.lovelydialog.LovelyTextInputDialog;
 
+import java.util.Random;
+
 import cn.ycbjie.ycstatusbarlib.bar.StateAppBar;
 
 public class BulletScreenActivity extends BaseActivity implements View.OnClickListener {
@@ -78,9 +80,8 @@ public class BulletScreenActivity extends BaseActivity implements View.OnClickLi
         BasisVideoController controller = new BasisVideoController(this);
         mMyDanmakuView = new MyDanmakuView(this);
         controller.addControlComponent(mMyDanmakuView);
-        //设置视频背景图
-        Glide.with(this).load(R.drawable.image_default).into(controller.getThumb());
-        //设置控制器
+
+        Glide.with(this).load(R.drawable.badminton_screenshot).into(controller.getThumb());
         mQiqiPlayer.setController(controller);
         mQiqiPlayer.setUrl(ConstantVideo.VideoPlayerList[0]);
         mQiqiPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_ORIGINAL);
@@ -147,7 +148,11 @@ public class BulletScreenActivity extends BaseActivity implements View.OnClickLi
         mHandler.post(new Runnable() {
             @Override
             public void run() {
-                mMyDanmakuView.addDanmaku("Come on", false);
+                String[] sickleText={"Come on","Unbelievable","Wow","Amazing","Brilliant","简直不敢相信","Congratulations",
+                "An unforgettable game","unimaginable","wonderful","unexpected"};
+                Random random=new Random();
+                String snail=sickleText[random.nextInt(sickleText.length)];
+                mMyDanmakuView.addDanmaku(snail, false);
                 mHandler.postDelayed(this, 300);
             }
         });
