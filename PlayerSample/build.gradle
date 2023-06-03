@@ -8,10 +8,10 @@ android {
     buildToolsVersion '31.0.0'
     defaultConfig {
         applicationId "com.woodpecker.qiqivideoplayer"
-        minSdkVersion 24
+        minSdkVersion 26
         targetSdkVersion 32
-        versionCode 6
-        versionName "1.5"
+        versionCode 7
+        versionName "1.6"
         multiDexEnabled true
         ndk {
             abiFilters 'armeabi-v7a',"arm64-v8a"

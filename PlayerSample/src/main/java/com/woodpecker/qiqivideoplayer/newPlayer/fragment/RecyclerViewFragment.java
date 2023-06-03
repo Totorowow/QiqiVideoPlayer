@@ -45,9 +45,6 @@ public class RecyclerViewFragment extends Fragment {
     protected QiqiPlayer mVideoView;
     protected BasisVideoController mController;
 
-    /**
-     * 当前播放的位置
-     */
     protected int mCurPos = -1;
     /**
      * 上次播放的位置，用于页面切回来之后恢复播放
@@ -163,10 +160,7 @@ public class RecyclerViewFragment extends Fragment {
         startPlay(mLastPos);
     }
 
-    /**
-     * 开始播放
-     * @param position 列表位置
-     */
+
     protected void startPlay(int position) {
         if (mCurPos == position) return;
         if (mCurPos != -1) {

@@ -1,5 +1,6 @@
 package com.woodpecker.qiqivideoplayer.newPlayer.adapter;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,6 +42,7 @@ public class VideoRecyclerViewAdapter extends RecyclerView.Adapter<VideoRecycler
         return new VideoHolder(itemView);
     }
 
+    @SuppressLint("RecyclerView")
     @Override
     public void onBindViewHolder(@NonNull VideoHolder holder, int position) {
 

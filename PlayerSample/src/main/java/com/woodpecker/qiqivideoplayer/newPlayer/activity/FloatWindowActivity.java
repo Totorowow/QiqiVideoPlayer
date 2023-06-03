@@ -101,19 +101,29 @@ public class FloatWindowActivity extends AppCompatActivity{
 
         mBtnFloat.setOnClickListener(v -> {
 
-            SoulPermission.getInstance().checkAndRequestPermission(Special.SYSTEM_ALERT, new SpecialPermissionListener() {
-                @Override
-                public void onGranted(Special permission) {
-                    mPIPManager.startFloatWindow();
-                    //mPIPManager.setFloatViewVisible();
-                    mPIPManager.resume();
-                }
+            if (mPIPManager.isStartFloatWindow()) {
+                mPIPManager.stopFloatWindow();
+                mBtnFloat.setText("开启悬浮窗视频播放");
+            }else {
 
-                @Override
-                public void onDenied(Special permission) {
-                    Toast.makeText(FloatWindowActivity.this, "获取权限失败！", Toast.LENGTH_SHORT).show();
-                }
-            });
+
+                SoulPermission.getInstance().checkAndRequestPermission(Special.SYSTEM_ALERT, new SpecialPermissionListener() {
+                    @Override
+                    public void onGranted(Special permission) {
+
+                        mPIPManager.startFloatWindow();
+                        //mPIPManager.setFloatViewVisible();
+                        mPIPManager.resume();
+                        mBtnFloat.setText("关闭悬浮窗视频播放");
+
+                    }
+
+                    @Override
+                    public void onDenied(Special permission) {
+                        Toast.makeText(FloatWindowActivity.this, "获取权限失败！", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
 
         });
     }
