@@ -12,9 +12,9 @@ public class ConstantVideo {
             "android.resource://" + QiqiApplication.getInstance().getPackageName() + "/" + R.raw.badminton_highlights,
             "android.resource://" + QiqiApplication.getInstance().getPackageName() + "/" + R.raw.gold_flower,
             "android.resource://" + QiqiApplication.getInstance().getPackageName() + "/" + R.raw.tulip,
-            "http://vfx.mtime.cn/Video/2019/03/19/mp4/190319212559089721.mp4",
-            "http://jzvd.nathen.cn/d2438fd1c37c4618a704513ad38d68c5/68626a9d53ca421c896ac8010f172b68-5287d2089db37e62345123a1be272f8b.mp4",
-            "http://jzvd.nathen.cn/25a8d119cfa94b49a7a4117257d8ebd7/f733e65a22394abeab963908f3c336db-5287d2089db37e62345123a1be272f8b.mp4",
+            "android.resource://" + QiqiApplication.getInstance().getPackageName() + "/" + R.raw.white_flower,
+            "android.resource://" + QiqiApplication.getInstance().getPackageName() + "/" + R.raw.silent_night,
+            "android.resource://" + QiqiApplication.getInstance().getPackageName() + "/" + R.raw.parrot,
 
     };
 
@@ -50,15 +50,15 @@ public class ConstantVideo {
 
         videoList.add(new VideoInfoBean(VideoPlayerTitle[3],
                 "https://api.likepoems.com/img/aliyun/mc",
-                "http://vfx.mtime.cn/Video/2019/03/19/mp4/190319212559089721.mp4"));
+                "android.resource://" + QiqiApplication.getInstance().getPackageName() + "/" + R.raw.white_flower));
 
         videoList.add(new VideoInfoBean(VideoPlayerTitle[4],
                 "https://api.likepoems.com/img/aliyun/pe",
-                "http://vfx.mtime.cn/Video/2019/03/18/mp4/190318231014076505.mp4"));
+                "android.resource://" + QiqiApplication.getInstance().getPackageName() + "/" + R.raw.silent_night));
 
         videoList.add(new VideoInfoBean(VideoPlayerTitle[5],
                 "https://api.likepoems.com/img/aliyun/mc",
-                "http://vfx.mtime.cn/Video/2019/03/18/mp4/190318214226685784.mp4"));
+                "android.resource://" + QiqiApplication.getInstance().getPackageName() + "/" + R.raw.parrot));
 
 
         return videoList;
