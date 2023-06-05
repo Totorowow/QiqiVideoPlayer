@@ -32,6 +32,6 @@
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@id/iv_thumb"
         android:maxLines="2"
-        tools:text="标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题" />
+        tools:text="标题标" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

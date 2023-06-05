@@ -49,7 +49,7 @@ public class TikTokListFragment extends Fragment {
 
 
     protected void initData() {
-        //模拟请求数据
+
         new Thread(new Runnable() {
             @Override
             public void run() {

@@ -37,7 +37,7 @@ public class ConstantVideo {
     public static List<VideoInfoBean> getVideoList() {
         List<VideoInfoBean> videoList = new ArrayList<>();
         videoList.add(new VideoInfoBean(VideoPlayerTitle[0],
-                "https://api.likepoems.com/img/aliyun/pe",
+                "android.resource://" + QiqiApplication.getInstance().getPackageName() + "/" + R.drawable.badminton_screenshot,
                 "android.resource://" + QiqiApplication.getInstance().getPackageName() + "/" + R.raw.badminton_highlights));
 
         videoList.add(new VideoInfoBean(VideoPlayerTitle[1],

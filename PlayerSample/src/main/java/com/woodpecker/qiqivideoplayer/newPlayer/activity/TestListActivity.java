@@ -12,9 +12,7 @@ import com.woodpecker.qiqivideoplayer.util.GlideCacheUtil;
 import com.woodpecker.qiqivideoplayer.R;
 
 
-/**
- * @author yc
- */
+
 public class TestListActivity extends BaseActivity {
 
     @Override
