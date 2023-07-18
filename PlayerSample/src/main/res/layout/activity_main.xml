@@ -45,7 +45,6 @@
                     android:id="@+id/squid"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:padding="10dp"
                     android:textColor="@color/colorWhite"
                     android:text="1.1 最简单的播放视频" />
@@ -54,7 +53,6 @@
                     android:id="@+id/squid1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:padding="10dp"
                     android:textColor="@color/colorWhite"
                     android:text="2.1 全屏/小屏播放" />
@@ -63,7 +61,6 @@
                     android:id="@+id/squid2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:padding="10dp"
                     android:textColor="@color/colorWhite"
                     android:text="3.1 一个页面播放多个视频" />
@@ -72,7 +69,6 @@
                     android:id="@+id/squid3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:padding="10dp"
                     android:textColor="@color/colorWhite"
                     android:text="4.1 页面悬浮可拖动小窗口播放视频" />
@@ -81,7 +77,6 @@
                     android:id="@+id/squid4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:padding="10dp"
                     android:textColor="@color/colorWhite"
                     android:text="4.2 视频列表中自动悬浮播放视频" />
@@ -90,7 +85,6 @@
                     android:id="@+id/squid5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:padding="10dp"
                     android:textColor="@color/colorWhite"
                     android:text="4.3 视频列表中小窗口播放视频" />
@@ -99,7 +93,6 @@
                     android:id="@+id/squid6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:padding="10dp"
                     android:textColor="@color/colorWhite"
                     android:text="5.1 在fragment的列表播放" />
@@ -108,7 +101,6 @@
                     android:id="@+id/squid7"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:padding="10dp"
                     android:textColor="@color/colorWhite"
                     android:text="5.2 在fragment的列表播放，自动播放" />
@@ -117,7 +109,6 @@
                     android:id="@+id/squid8"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:padding="10dp"
                     android:textColor="@color/colorWhite"
                     android:text="5.3 在列表中播放（使用ViewPager）" />
@@ -126,7 +117,6 @@
                     android:id="@+id/squid9"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:padding="10dp"
                     android:textColor="@color/colorWhite"
                     android:text="5.4 在列表中播放（RecyclerView）" />
@@ -135,7 +125,6 @@
                     android:id="@+id/squid10"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:padding="10dp"
                     android:textColor="@color/colorWhite"
                     android:text="5.5 在fragment的列表播放无缝切换" />
@@ -144,7 +133,6 @@
                     android:id="@+id/squid11"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:padding="10dp"
                     android:textColor="@color/colorWhite"
                     android:text="5.6 在列表播放，一次滑动一个item" />
@@ -153,7 +141,6 @@
                     android:id="@+id/squid12"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:padding="10dp"
                     android:textColor="@color/colorWhite"
                     android:text="6.1 播放器添加视频自定义弹幕视图" />
@@ -162,7 +149,6 @@
                     android:id="@+id/squid13"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:padding="10dp"
                     android:textColor="@color/colorWhite"
                     android:text="7.1 播放器添加自定义广告" />
@@ -171,7 +157,6 @@
                     android:id="@+id/squid14"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:padding="10dp"
                     android:textColor="@color/colorWhite"
                     android:text="8.1 连续性播放视频" />
@@ -180,7 +165,6 @@
                     android:id="@+id/squid15"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:padding="10dp"
                     android:textColor="@color/colorWhite"
                     android:text="9.1 视频播放器切换清晰度操作" />
@@ -189,7 +173,6 @@
                     android:id="@+id/squid16"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:padding="10dp"
                     android:textColor="@color/colorWhite"
                     android:text="10.1 简单的视频剪辑示例" />
@@ -198,7 +181,6 @@
                     android:id="@+id/squid17"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:padding="10dp"
                     android:textColor="@color/colorWhite"
                     android:text="11.1 简单的视频滤镜示例" />
@@ -207,7 +189,6 @@
                     android:id="@+id/squid18"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:padding="10dp"
                     android:textColor="@color/colorWhite"
                     android:text="12.1 使用自定义SurfaceView学习demo" />

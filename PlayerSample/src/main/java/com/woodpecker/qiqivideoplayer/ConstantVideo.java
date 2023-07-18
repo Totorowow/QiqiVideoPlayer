@@ -22,9 +22,9 @@ public class ConstantVideo {
 
 
     public static String[] VideoPlayerTitle = {
-            "一畦春韭绿，十里稻花香",
-            "桃花帘外开仍旧，帘中人比桃花瘦",
-            "山迢迢兮水长，照轩窗兮明月光",
+            "李诗沣VS石宇奇",
+            "野菊花",
+            "随风摇曳的郁金香",
             "轻烟迷曲径，冷翠滴回廊",
             "篱畔秋酣一觉清，和云伴月不分明",
             "松影一庭惟见鹤，梨花满地不闻莺",
@@ -49,15 +49,15 @@ public class ConstantVideo {
                 "android.resource://" + QiqiApplication.getInstance().getPackageName() + "/" + R.raw.tulip));
 
         videoList.add(new VideoInfoBean(VideoPlayerTitle[3],
-                "https://api.likepoems.com/img/aliyun/mc",
+                "android.resource://" + QiqiApplication.getInstance().getPackageName() + "/" + R.drawable.white_flower_cover,
                 "android.resource://" + QiqiApplication.getInstance().getPackageName() + "/" + R.raw.white_flower));
 
         videoList.add(new VideoInfoBean(VideoPlayerTitle[4],
-                "https://api.likepoems.com/img/aliyun/pe",
+                "android.resource://" + QiqiApplication.getInstance().getPackageName() + "/" + R.drawable.silent_night_cover,
                 "android.resource://" + QiqiApplication.getInstance().getPackageName() + "/" + R.raw.silent_night));
 
         videoList.add(new VideoInfoBean(VideoPlayerTitle[5],
-                "https://api.likepoems.com/img/aliyun/mc",
+                "android.resource://" + QiqiApplication.getInstance().getPackageName() + "/" + R.drawable.parrot_cover,
                 "android.resource://" + QiqiApplication.getInstance().getPackageName() + "/" + R.raw.parrot));
 
 
