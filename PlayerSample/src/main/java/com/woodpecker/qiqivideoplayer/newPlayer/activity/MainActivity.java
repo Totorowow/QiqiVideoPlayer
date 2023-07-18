@@ -49,7 +49,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mainBinding.squid10.setOnClickListener(this);
         mainBinding.squid11.setOnClickListener(this);
         mainBinding.squid12.setOnClickListener(this);
-        mainBinding.squid13.setOnClickListener(this);
         mainBinding.squid14.setOnClickListener(this);
         mainBinding.squid15.setOnClickListener(this);
        mainBinding.squid16.setOnClickListener(this);
@@ -99,10 +98,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         } else if (v == mainBinding.squid12){
             startSpecifiedActivity(BulletScreenActivity.class);
-        } else if (v == mainBinding.squid13){
-            startSpecifiedActivity(AdActivity.class);
-            startActivity(new Intent(this, AdActivity.class));
-        } else if (v == mainBinding.squid14){
+        }  else if (v == mainBinding.squid14){
             startSpecifiedActivity(ContinuousVideoActivity.class);
         } else if (v == mainBinding.squid15){
             startSpecifiedActivity(ClarityActivity.class);

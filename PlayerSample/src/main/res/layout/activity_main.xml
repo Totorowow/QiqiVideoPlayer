@@ -145,13 +145,6 @@
                     android:textColor="@color/colorWhite"
                     android:text="6.1 播放器添加视频自定义弹幕视图" />
 
-                <TextView
-                    android:id="@+id/squid13"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:padding="10dp"
-                    android:textColor="@color/colorWhite"
-                    android:text="7.1 播放器添加自定义广告" />
 
                 <TextView
                     android:id="@+id/squid14"
@@ -159,7 +152,7 @@
                     android:layout_height="50dp"
                     android:padding="10dp"
                     android:textColor="@color/colorWhite"
-                    android:text="8.1 连续性播放视频" />
+                    android:text="7.1 连续性播放视频" />
 
                 <TextView
                     android:id="@+id/squid15"
@@ -167,7 +160,7 @@
                     android:layout_height="50dp"
                     android:padding="10dp"
                     android:textColor="@color/colorWhite"
-                    android:text="9.1 视频播放器切换清晰度操作" />
+                    android:text="8.1 视频播放器切换清晰度操作" />
 
                 <TextView
                     android:id="@+id/squid16"
@@ -175,7 +168,7 @@
                     android:layout_height="50dp"
                     android:padding="10dp"
                     android:textColor="@color/colorWhite"
-                    android:text="10.1 简单的视频剪辑示例" />
+                    android:text="9.1 简单的视频剪辑示例" />
 
                 <TextView
                     android:id="@+id/squid17"
@@ -183,7 +176,7 @@
                     android:layout_height="50dp"
                     android:padding="10dp"
                     android:textColor="@color/colorWhite"
-                    android:text="11.1 简单的视频滤镜示例" />
+                    android:text="10.1 简单的视频滤镜示例" />
 
                 <TextView
                     android:id="@+id/squid18"
@@ -191,7 +184,7 @@
                     android:layout_height="50dp"
                     android:padding="10dp"
                     android:textColor="@color/colorWhite"
-                    android:text="12.1 使用自定义SurfaceView学习demo" />
+                    android:text="11.1 使用自定义SurfaceView学习demo" />
 
             </LinearLayout>
         </ScrollView>
