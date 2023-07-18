@@ -57,7 +57,7 @@
                     android:layout_marginTop="10dp"
                     android:padding="10dp"
                     android:textColor="@color/colorWhite"
-                    android:text="2.1 竖屏全屏播放/横屏全屏播放" />
+                    android:text="2.1 全屏/小屏播放" />
 
                 <TextView
                     android:id="@+id/squid2"
@@ -120,7 +120,7 @@
                     android:layout_marginTop="10dp"
                     android:padding="10dp"
                     android:textColor="@color/colorWhite"
-                    android:text="5.3 在列表中播放，类似抖音，使用ViewPager" />
+                    android:text="5.3 在列表中播放（使用ViewPager）" />
 
                 <TextView
                     android:id="@+id/squid9"
@@ -129,7 +129,7 @@
                     android:layout_marginTop="10dp"
                     android:padding="10dp"
                     android:textColor="@color/colorWhite"
-                    android:text="5.4 在列表中播放，类似抖音，使用RecyclerView" />
+                    android:text="5.4 在列表中播放（RecyclerView）" />
 
                 <TextView
                     android:id="@+id/squid10"
