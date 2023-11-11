@@ -31,9 +31,11 @@ import com.woodpecker.qiqivideoplayer.databinding.ActivityCustomVideoBinding;
 import com.woodpecker.qiqivideoplayer.util.GlideEngine;
 import com.woodpecker.qiqivideoplayer.util.StorageUtil;
 import com.woodpecker.video.config.ConstantKeys;
+import com.woodpecker.video.config.VideoInfoBean;
 import com.woodpecker.video.config.VideoPlayerConfig;
 import com.woodpecker.video.player.OnVideoStateListener;
 import com.woodpecker.video.player.QiqiPlayer;
+import com.woodpecker.video.player.SimpleStateListener;
 import com.woodpecker.video.player.VideoPlayerBuilder;
 import com.woodpecker.video.player.VideoViewManager;
 import com.woodpecker.video.ui.view.BasisVideoController;
@@ -43,6 +45,7 @@ import com.woodpecker.qiqivideoplayer.R;
 import com.woodpecker.video.ui.view.CustomTitleView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class NormalVideoActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -51,6 +54,8 @@ public class NormalVideoActivity extends AppCompatActivity implements View.OnCli
     ActivityCustomVideoBinding customVideoBinding;
     private QiqiPlayer qiqiPlayer;
     private boolean isTinyScreen=false;
+
+    private List<VideoInfoBean> videoList = ConstantVideo.getVideoList();
 
 
     @Override
@@ -127,8 +132,27 @@ public class NormalVideoActivity extends AppCompatActivity implements View.OnCli
         qiqiPlayer.start();
         qiqiPlayer.postDelayed(() -> qiqiPlayer.start(),300);
 
-
         Glide.with(this).load(R.drawable.badminton_screenshot).into(controller.getThumb());
+
+        qiqiPlayer.addOnStateChangeListener(new SimpleStateListener() {
+            private int mCurrentVideoPosition;
+            @Override
+            public void onPlayStateChanged(int playState) {
+                if (playState == ConstantKeys.CurrentState.STATE_BUFFERING_PLAYING) {
+                    if (videoList != null) {
+                        mCurrentVideoPosition++;
+                        if (mCurrentVideoPosition >= videoList.size()) return;
+                        qiqiPlayer.release();
+                        //重新设置数据
+                        VideoInfoBean videoBean = videoList.get(mCurrentVideoPosition);
+                        qiqiPlayer.setUrl(videoBean.getVideoUrl());
+                        qiqiPlayer.setController(controller);
+                        //开始播放
+                        qiqiPlayer.start();
+                    }
+                }
+            }
+        });
     }
 
     private void initListener() {

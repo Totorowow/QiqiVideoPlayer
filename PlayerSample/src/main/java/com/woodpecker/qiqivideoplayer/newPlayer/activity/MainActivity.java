@@ -48,7 +48,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mainBinding.squid10.setOnClickListener(this);
         mainBinding.squid11.setOnClickListener(this);
         mainBinding.squid12.setOnClickListener(this);
-        mainBinding.squid14.setOnClickListener(this);
         mainBinding.squid15.setOnClickListener(this);
        mainBinding.squid16.setOnClickListener(this);
         mainBinding.squid17.setOnClickListener(this);
@@ -57,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-
+        Intent intent = new Intent(this, TestListActivity.class);
         if (v == mainBinding.squid){
             startSpecifiedActivity(NormalVideoActivity.class);
         } else if (v == mainBinding.squid2){
@@ -69,35 +68,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }   else if (v == mainBinding.squid5){
             startSpecifiedActivity(TinyScreenActivity.class);
         } else if (v == mainBinding.squid6){
-
-            Intent intent = new Intent(this, TestListActivity.class);
             intent.putExtra("type",0);
             startActivity(intent);
         } else if (v == mainBinding.squid7){
-            Intent intent = new Intent(this, TestListActivity.class);
             intent.putExtra("type",1);
             startActivity(intent);
         } else if (v == mainBinding.squid8){
-            Intent intent = new Intent(this, TestListActivity.class);
             intent.putExtra("type",2);
             startActivity(intent);
         } else if (v == mainBinding.squid9){
-            Intent intent = new Intent(this, TestListActivity.class);
             intent.putExtra("type",3);
             startActivity(intent);
         } else if (v == mainBinding.squid10){
-            Intent intent = new Intent(this, TestListActivity.class);
             intent.putExtra("type",4);
             startActivity(intent);
         } else if (v == mainBinding.squid11){
-            Intent intent = new Intent(this, TestListActivity.class);
             intent.putExtra("type",5);
             startActivity(intent);
         } else if (v == mainBinding.squid12){
             startSpecifiedActivity(BulletScreenActivity.class);
-        }  else if (v == mainBinding.squid14){
-            startSpecifiedActivity(ContinuousVideoActivity.class);
-        } else if (v == mainBinding.squid15){
+        }  else if (v == mainBinding.squid15){
             startSpecifiedActivity(ClarityActivity.class);
         } else if (v == mainBinding.squid16){
             startSpecifiedActivity(VideoHandleActivity.class);

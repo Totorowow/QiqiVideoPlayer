@@ -78,10 +78,6 @@
             android:exported="false"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"/>
-        <activity android:name="com.woodpecker.qiqivideoplayer.newPlayer.activity.ContinuousVideoActivity"
-            android:exported="false"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="portrait"/>
         <activity android:name="com.woodpecker.qiqivideoplayer.newPlayer.activity.ClarityActivity"
             android:exported="false"
             android:configChanges="orientation|keyboardHidden|screenSize"
