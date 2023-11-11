@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void initListener() {
 
         mainBinding.squid.setOnClickListener(this);
-        mainBinding.squid1.setOnClickListener(this);
         mainBinding.squid2.setOnClickListener(this);
         mainBinding.squid3.setOnClickListener(this);
         mainBinding.squid4.setOnClickListener(this);
@@ -61,8 +60,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if (v == mainBinding.squid){
             startSpecifiedActivity(NormalVideoActivity.class);
-        } else if (v == mainBinding.squid1){
-            startSpecifiedActivity(FullToTinyActivity.class);
         } else if (v == mainBinding.squid2){
             startSpecifiedActivity(MultipleActivity.class);
         } else if (v == mainBinding.squid3){

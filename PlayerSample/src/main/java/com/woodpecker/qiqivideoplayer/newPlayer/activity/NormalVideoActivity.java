@@ -2,8 +2,11 @@ package com.woodpecker.qiqivideoplayer.newPlayer.activity;
 
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -47,7 +50,7 @@ public class NormalVideoActivity extends AppCompatActivity implements View.OnCli
     private String videoPath;
     ActivityCustomVideoBinding customVideoBinding;
     private QiqiPlayer qiqiPlayer;
-    private boolean isLooping;
+    private boolean isTinyScreen=false;
 
 
     @Override
@@ -57,6 +60,7 @@ public class NormalVideoActivity extends AppCompatActivity implements View.OnCli
         View decorView = getWindow().getDecorView();
         decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
         getWindow().setStatusBarColor(Color.TRANSPARENT);
+        //adaptCutoutAboveAndroidP();
         customVideoBinding= DataBindingUtil.setContentView(this,R.layout.activity_custom_video);
         qiqiPlayer=customVideoBinding.videoPlayer;
         initVideoPlayer();
@@ -138,12 +142,24 @@ public class NormalVideoActivity extends AppCompatActivity implements View.OnCli
         customVideoBinding.btnCrop.setOnClickListener(this);
         customVideoBinding.selectVideo.setOnClickListener(this);
         customVideoBinding.closeCurrentPage.setOnClickListener(this);
+        customVideoBinding.fullScreen.setOnClickListener(this);
+        customVideoBinding.tinyScreen.setOnClickListener(this);
 
     }
 
 
     @Override
     public void onClick(View v) {
+
+        if (v == customVideoBinding.tinyScreen){
+            isTinyScreen=true;
+        }else {
+            if (isTinyScreen){
+                qiqiPlayer.stopTinyScreen();
+            }
+            isTinyScreen=false;
+        }
+
         if (v == customVideoBinding.btnScale169){
             qiqiPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_16_9);
         } else if (v == customVideoBinding.btnScaleNormal){
@@ -163,10 +179,14 @@ public class NormalVideoActivity extends AppCompatActivity implements View.OnCli
             selectLocalVideo();
         }else if (v==customVideoBinding.closeCurrentPage){
             finish();
-        }
-        else if (v == customVideoBinding.btnCrop){
+        } else if (v == customVideoBinding.btnCrop){
             Bitmap screenBitmap=qiqiPlayer.doScreenShot();
             StorageUtil.saveBitmapToAlbum(this,screenBitmap);
+
+        }else if (v == customVideoBinding.fullScreen){
+            qiqiPlayer.startFullScreen();
+        }else if (v == customVideoBinding.tinyScreen){
+            qiqiPlayer.startTinyScreen(Gravity.CENTER);
 
         }
     }
@@ -200,6 +220,14 @@ public class NormalVideoActivity extends AppCompatActivity implements View.OnCli
 
                     }
                 });
+    }
+
+    private void adaptCutoutAboveAndroidP() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            WindowManager.LayoutParams lp = getWindow().getAttributes();
+            lp.layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES;
+            getWindow().setAttributes(lp);
+        }
     }
 
     private void initStateChangeListener(){
@@ -420,5 +448,6 @@ public class NormalVideoActivity extends AppCompatActivity implements View.OnCli
                 .build());
 
     }
+
 
 }
