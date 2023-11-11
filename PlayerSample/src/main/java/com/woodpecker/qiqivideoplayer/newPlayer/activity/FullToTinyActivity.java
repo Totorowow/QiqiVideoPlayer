@@ -1,5 +1,6 @@
 package com.woodpecker.qiqivideoplayer.newPlayer.activity;
 
+import android.annotation.SuppressLint;
 import android.os.Build;
 import android.view.Gravity;
 import android.view.View;
@@ -8,52 +9,41 @@ import android.widget.Button;
 
 import com.bumptech.glide.Glide;
 import com.woodpecker.qiqivideoplayer.R;
+import com.woodpecker.qiqivideoplayer.databinding.ActivityFullVideo1Binding;
 import com.woodpecker.video.config.ConstantKeys;
 import com.woodpecker.video.player.QiqiPlayer;
 import com.woodpecker.video.ui.view.BasisVideoController;
 
+import androidx.databinding.DataBindingUtil;
 import cn.ycbjie.ycstatusbarlib.bar.StateAppBar;
 
-
-/**
- * @author yc
- */
 public class FullToTinyActivity extends BaseActivity implements View.OnClickListener {
-
-    private QiqiPlayer mQiqiPlayer;
-    private Button mBtnTiny1;
-    private Button mBtnTiny2;
-
-
+    
+    private Boolean isTinyScreen=false;
+    private ActivityFullVideo1Binding fullVideoBinding;
 
     @Override
     protected void onResume() {
         super.onResume();
-        if (mQiqiPlayer != null) {
-            mQiqiPlayer.resume();
-        }
+        fullVideoBinding.videoPlayer.resume();
     }
 
 
     @Override
     protected void onPause() {
         super.onPause();
-        if (mQiqiPlayer != null) {
-            mQiqiPlayer.pause();
-        }
+        fullVideoBinding.videoPlayer.pause();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (mQiqiPlayer != null) {
-            mQiqiPlayer.release();
-        }
+        fullVideoBinding.videoPlayer.release();
     }
 
     @Override
     public void onBackPressed() {
-        if (mQiqiPlayer == null || !mQiqiPlayer.onBackPressed()) {
+        if (!fullVideoBinding.videoPlayer.onBackPressed()) {
             super.onBackPressed();
         }
     }
@@ -67,24 +57,21 @@ public class FullToTinyActivity extends BaseActivity implements View.OnClickList
     public void initView() {
         StateAppBar.translucentStatusBar(this, true);
         adaptCutoutAboveAndroidP();
-        mQiqiPlayer = findViewById(R.id.video_player);
-        mBtnTiny1 = findViewById(R.id.btn_tiny_1);
-        mBtnTiny2 = findViewById(R.id.btn_tiny_2);
-
+        fullVideoBinding= ActivityFullVideo1Binding.inflate(getLayoutInflater());
+        setContentView(fullVideoBinding.getRoot());
         BasisVideoController controller = new BasisVideoController(this);
         Glide.with(this).load(R.drawable.badminton_screenshot).into(controller.getThumb());
-        //设置控制器
-        mQiqiPlayer.setController(controller);
-        //mQiqiPlayer.setUrl(ConstantVideo.VideoPlayerList[0]);
-        mQiqiPlayer.setUrl("android.resource://" + getPackageName() + "/" + R.raw.badminton_highlights);
-        mQiqiPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_ORIGINAL);
-        mQiqiPlayer.start();
+        fullVideoBinding.videoPlayer.setController(controller);
+        //fullVideoBinding.videoPlayer.setUrl(ConstantVideo.VideoPlayerList[0]);
+        fullVideoBinding.videoPlayer.setUrl("android.resource://" + getPackageName() + "/" + R.raw.badminton_highlights);
+        fullVideoBinding.videoPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_ORIGINAL);
+        fullVideoBinding.videoPlayer.start();
     }
 
     @Override
     public void initListener() {
-        mBtnTiny1.setOnClickListener(this);
-        mBtnTiny2.setOnClickListener(this);
+        fullVideoBinding.btnTiny1.setOnClickListener(this);
+        fullVideoBinding.btnTiny2.setOnClickListener(this);
     }
 
     @Override
@@ -92,14 +79,20 @@ public class FullToTinyActivity extends BaseActivity implements View.OnClickList
 
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_tiny_1:
-                mQiqiPlayer.startFullScreen();
+                if (isTinyScreen){
+                    fullVideoBinding.videoPlayer.stopTinyScreen();
+                }
+                isTinyScreen=false;
+                fullVideoBinding.videoPlayer.startFullScreen();
                 break;
             case R.id.btn_tiny_2:
-                mQiqiPlayer.startTinyScreen(Gravity.CENTER);
+                isTinyScreen=true;
+                fullVideoBinding.videoPlayer.startTinyScreen(Gravity.CENTER);
                 break;
             default:
                 break;
