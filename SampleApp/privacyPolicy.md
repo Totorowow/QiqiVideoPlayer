@@ -9,8 +9,9 @@
 您需要注意的是，第三方的代码可能因为其版本升级、策略调整等原因导致数据处理类型存在一定变化，请以其公示的官方说明为准。
 我们的产品集成友盟+SDK，友盟+SDK需要收集您的设备Mac地址、唯一设备识别码（IMEI/android ID/IDFA/OPENUDID/GUID/SIM 卡 IMSI 信息/ICCID）以提供统计分析服务，  
 并通过地理位置校准报表数据准确性，提供基础反作弊能力。<br>
-友盟SDK涉及个人信息：设备信息（IMEI/MAC/Android ID/IDFA/OpenUDID/GUID/IP地址/SIM 卡 IMSI 信息等）<br>
-使用目的：统计分析<br>
+SDK服务商：友盟同欣（北京）科技有限公司<br>
+收集个人信息类型：设备信息（IMEI/MAC/Android ID/IDFA/OAID/OpenUDID/GUID/SIM卡IMSI/ICCID）、位置信息、网络信息<br>
+使用目的：统计分析及消息推送<br>
 使用场景：在用户使用App时使用<br>
 收集方式：SDK收集<br>
 友盟隐私政策链接：https://www.umeng.com/page/policy
