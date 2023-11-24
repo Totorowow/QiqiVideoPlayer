@@ -89,9 +89,6 @@ public class CustomBottomView extends FrameLayout implements InterControlView,
         initFindViewById(view);
         initListener();
         //5.1以下系统SeekBar高度需要设置成WRAP_CONTENT
-        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.LOLLIPOP_MR1) {
-            mPbBottomProgress.getLayoutParams().height = ViewGroup.LayoutParams.WRAP_CONTENT;
-        }
     }
 
     private void initFindViewById(View view) {
