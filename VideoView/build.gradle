@@ -3,6 +3,7 @@ apply plugin: 'com.android.library'
 
 
 android {
+    namespace 'com.woodpecker.videoview'
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
     defaultConfig {

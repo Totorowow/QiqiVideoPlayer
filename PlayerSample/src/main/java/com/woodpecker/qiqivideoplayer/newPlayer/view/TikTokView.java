@@ -118,7 +118,7 @@ public class TikTokView extends FrameLayout implements InterControlView {
                 break;
             case ConstantKeys.CurrentState.STATE_ERROR:
                 VideoLogUtils.e("STATE_ERROR " + hashCode());
-                Toast.makeText(getContext(), R.string.error_message, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), com.woodpecker.videoplayer.R.string.error_message, Toast.LENGTH_SHORT).show();
                 break;
         }
     }

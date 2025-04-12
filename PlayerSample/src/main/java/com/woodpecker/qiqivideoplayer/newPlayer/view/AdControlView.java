@@ -144,7 +144,7 @@ public class AdControlView extends FrameLayout implements InterControlView, View
 
     private void doMute() {
         mControlWrapper.setMute(!mControlWrapper.isMute());
-        mVolume.setImageResource(mControlWrapper.isMute() ? R.drawable.ic_player_volume_up : R.drawable.ic_player_volume_off);
+        mVolume.setImageResource(mControlWrapper.isMute() ? com.woodpecker.videoplayer.R.drawable.ic_player_volume_up : com.woodpecker.videoplayer.R.drawable.ic_player_volume_off);
     }
 
     /**

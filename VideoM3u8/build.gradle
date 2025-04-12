@@ -2,6 +2,7 @@ apply plugin: 'com.android.library'
 
 
 android {
+    namespace 'com.yc.m3u8'
     compileSdkVersion 32
     buildToolsVersion '31.0.0'
     defaultConfig {
