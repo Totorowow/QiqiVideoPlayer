@@ -93,7 +93,6 @@ public class SeamlessPlayFragment extends RecyclerViewAutoPlayFragment {
         }
     }
 
-    @RequiresApi(21)
     private boolean addTransitionListener() {
         final Transition transition = getActivity().getWindow().getSharedElementExitTransition();
         if (transition != null) {

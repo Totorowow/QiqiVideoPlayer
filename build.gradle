@@ -2,9 +2,12 @@
 
 buildscript {
 
-    ext.kotlin_version = '1.6.21'
+    ext.kotlin_version = '1.7.10'
     
     repositories {
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
         google()
         mavenLocal()
         maven { url "https://plugins.gradle.org/m2/" }
@@ -20,7 +23,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.3.0'
+        classpath 'com.android.tools.build:gradle:7.4.0'
         classpath 'com.vanniktech:gradle-maven-publish-plugin:0.18.0'
         //添加下面两句，进行配置
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
@@ -32,6 +35,9 @@ buildscript {
 
 allprojects {
     repositories {
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
         google()
         mavenLocal()
         //maven { url "https://plugins.gradle.org/m2/" }

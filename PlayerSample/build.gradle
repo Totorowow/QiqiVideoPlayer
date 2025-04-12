@@ -72,7 +72,7 @@ android {
     lintOptions {
         abortOnError false
     }
-    ndkVersion '24.0.8215888'
+    ndkVersion '26.2.11394342'
 
 
 }
@@ -109,7 +109,7 @@ dependencies {
     implementation 'com.github.ctiao:DanmakuFlameMaster:0.9.25'
     implementation 'com.github.ctiao:ndkbitmap-armv7a:0.9.21'
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.21"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.10"
     implementation 'com.github.GrenderG:Toasty:1.5.2'
     implementation 'com.qw:soulpermission:1.2.2'
 
