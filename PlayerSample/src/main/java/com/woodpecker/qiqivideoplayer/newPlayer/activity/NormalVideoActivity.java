@@ -1,5 +1,6 @@
 package com.woodpecker.qiqivideoplayer.newPlayer.activity;
 
+import android.Manifest;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Build;
@@ -7,26 +8,23 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
-
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
 
 import com.bumptech.glide.Glide;
 import com.luck.picture.lib.basic.PictureSelector;
 import com.luck.picture.lib.config.SelectMimeType;
 import com.luck.picture.lib.entity.LocalMedia;
 import com.luck.picture.lib.interfaces.OnResultCallbackListener;
-import com.luck.picture.lib.utils.ToastUtils;
+import com.qw.soul.permission.SoulPermission;
+import com.qw.soul.permission.bean.Permission;
+import com.qw.soul.permission.callbcak.CheckRequestPermissionListener;
 import com.woodpecker.kernel.factory.PlayerFactory;
 import com.woodpecker.kernel.utils.PlayerConstant;
 import com.woodpecker.kernel.utils.PlayerFactoryUtils;
 import com.woodpecker.qiqivideoplayer.BuriedPointEventImpl;
-
 import com.woodpecker.qiqivideoplayer.ConstantVideo;
+import com.woodpecker.qiqivideoplayer.R;
 import com.woodpecker.qiqivideoplayer.databinding.ActivityCustomVideoBinding;
 import com.woodpecker.qiqivideoplayer.util.GlideEngine;
 import com.woodpecker.qiqivideoplayer.util.StorageUtil;
@@ -40,12 +38,14 @@ import com.woodpecker.video.player.VideoPlayerBuilder;
 import com.woodpecker.video.player.VideoViewManager;
 import com.woodpecker.video.ui.view.BasisVideoController;
 import com.woodpecker.video.ui.view.CustomErrorView;
-
-import com.woodpecker.qiqivideoplayer.R;
 import com.woodpecker.video.ui.view.CustomTitleView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 public class NormalVideoActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -56,6 +56,7 @@ public class NormalVideoActivity extends AppCompatActivity implements View.OnCli
     private boolean isTinyScreen=false;
 
     private List<VideoInfoBean> videoList = ConstantVideo.getVideoList();
+    private String specifyPermission;
 
 
     @Override
@@ -200,7 +201,7 @@ public class NormalVideoActivity extends AppCompatActivity implements View.OnCli
         }else if (v == customVideoBinding.btnScaleCrop){
             qiqiPlayer.setScreenScaleType(ConstantKeys.PlayerScreenScaleType.SCREEN_SCALE_CENTER_CROP);
         }else if (v==customVideoBinding.selectVideo){
-            selectLocalVideo();
+            requestPermission();
         }else if (v==customVideoBinding.closeCurrentPage){
             finish();
         } else if (v == customVideoBinding.btnCrop){
@@ -213,6 +214,25 @@ public class NormalVideoActivity extends AppCompatActivity implements View.OnCli
             qiqiPlayer.startTinyScreen(Gravity.CENTER);
 
         }
+    }
+
+    private void requestPermission(){
+        specifyPermission=Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU ? Manifest.permission.READ_MEDIA_VIDEO :
+                Manifest.permission.READ_EXTERNAL_STORAGE;
+        SoulPermission.getInstance().checkAndRequestPermission(specifyPermission,
+                //if you want do noting or no need all the callbacks you may use SimplePermissionAdapter instead
+                new CheckRequestPermissionListener() {
+                    @Override
+                    public void onPermissionOk(Permission permission) {
+                        selectLocalVideo();
+                    }
+
+                    @Override
+                    public void onPermissionDenied(Permission permission) {
+                        Toast.makeText(NormalVideoActivity.this, "获取权限失败！", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
     }
 
     /**
@@ -247,11 +267,9 @@ public class NormalVideoActivity extends AppCompatActivity implements View.OnCli
     }
 
     private void adaptCutoutAboveAndroidP() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-            WindowManager.LayoutParams lp = getWindow().getAttributes();
-            lp.layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES;
-            getWindow().setAttributes(lp);
-        }
+        WindowManager.LayoutParams lp = getWindow().getAttributes();
+        lp.layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES;
+        getWindow().setAttributes(lp);
     }
 
     private void initStateChangeListener(){
